@@ -24,6 +24,10 @@ function App() {
         <Route path='/Register' element={<Register/>}></Route>
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/*' element={<ErrorPage/>}></Route>
+        
+        <Route path="/" exact component={Home} />
+        <Route path="/error" component={ErrorPage} />
+    
       </Routes>
     </div>
   )

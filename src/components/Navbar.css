@@ -1,10 +1,12 @@
+/* line no 1 to 52 Navbar css */
 .active{
     color:#0000FF;
 }
+
 .logo{
-    width:150px;
-    height:150px;
-    margin-left: 20px;
+    width:120px;
+    height:120px;
+    margin-left: 60px;
 }
 .Photo{
     width:750px;
@@ -48,3 +50,27 @@ nav ul li a {
 nav ul li a:not(.active):hover {
     color:#0000FF;
 }
+li a.login {
+    border: 2px solid blue; 
+    padding: 10px 25px; 
+    border-radius: 25px; 
+    color: black; 
+}
+li a.login:hover {
+    color: blue; 
+}
+li a.login.active {
+    background-color: blue; 
+    color: white; 
+}
+/* line no 53 to 55 error page css */
+.page{
+    width:600px;
+    hight:600px;
+    margin-left:360px;
+}
+.text{
+    margin-left:470px;
+}
+
+
