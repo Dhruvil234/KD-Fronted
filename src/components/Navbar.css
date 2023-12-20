@@ -1,0 +1,50 @@
+.active{
+    color:#0000FF;
+}
+.logo{
+    width:150px;
+    height:150px;
+    margin-left: 20px;
+}
+.Photo{
+    width:750px;
+    height:750px;
+    margin-left: 200px;
+    
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+    color: black; 
+    font-color:black;
+    top: 0;
+}
+nav .title {
+    font-size: 1.5rem;
+    margin: 1.3rem;
+    padding:0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+nav ul {
+    display: flex;
+    margin-right: 60px; 
+}
+nav ul li {
+    font-size: 1.3rem;
+    color: black;
+    list-style: none;
+    margin: 0.5rem;
+}
+nav ul li a {
+    text-decoration: none;
+    padding: 0.5rem;
+    margin: 0 0.3rem;
+    color: black;
+}
+nav ul li a:not(.active):hover {
+    color:#0000FF;
+}
