@@ -2,7 +2,6 @@
 .active{
     color:#0000FF;
 }
-
 .logo{
     width:120px;
     height:120px;
@@ -65,12 +64,12 @@ li a.login.active {
 }
 /* line no 53 to 55 error page css */
 .page{
-    width:600px;
-    hight:600px;
-    margin-left:360px;
+    width:400px;
+    hight:400px;
+    margin-left:450px;
 }
 .text{
-    margin-left:470px;
+    margin-left:460px;
 }
 
 

@@ -9,13 +9,13 @@ import { Register } from './components/pages/Register'
 import { Login } from './components/pages/Login'
 import { Home } from './components/pages/Home'
 import { ErrorPage } from './components/pages/ErrorPage'
+import { Footer } from './components/pages/Footer'
 
 function App() {
 
   return (
     <div className="App">
       <h2><Navbar/></h2>
-      
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/Flight' element={<Flight/>}></Route>
@@ -24,12 +24,12 @@ function App() {
         <Route path='/Register' element={<Register/>}></Route>
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/*' element={<ErrorPage/>}></Route>
-        
         <Route path="/" exact component={Home} />
         <Route path="/error" component={ErrorPage} />
-    
       </Routes>
+      <Footer/>
     </div>
+    
   )
 }
 
