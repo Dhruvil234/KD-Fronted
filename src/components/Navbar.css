@@ -62,7 +62,7 @@ li a.login.active {
     background-color: blue; 
     color: white; 
 }
-/* line no 53 to 55 error page css */
+/* line no 65 to 70 error page css */
 .page{
     width:400px;
     hight:400px;
@@ -71,5 +71,103 @@ li a.login.active {
 .text{
     margin-left:460px;
 }
-
-
+.LoginPage{
+    width: 988px;
+    height : 450px;
+    border: 0.1em solid blue;
+    border-radius:55px;
+    margin-left: 168px;
+    margin-top: 30px;
+    margin-bottom: 300px;
+}
+.login{
+    width:380px;
+    height: 380px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom:25px;
+}
+.loginForm {
+    float: right; 
+    text-align: center;
+    padding: 25px;
+}
+h1 {
+    margin-top: 85px;
+    margin-right: 80px;
+    margin-bottom: 30px;
+}
+.inputContainer {
+    margin-bottom: 10px;
+    margin-top: 32px;
+    margin-right: 80px;
+}
+input {
+    width: 80%;
+    padding: 50px;
+    border-radius: 17px;
+    margin-bottom: 23px;
+    border: none;
+    background-color: lightgrey;
+}
+.loginButton {
+    padding: 8px 50px;
+    margin-right: 80px;
+    border: 2px solid blue;
+    color: blue;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 15px;
+}
+/* line no 124 to Register Page css */
+.RegPage{
+    display: flex;
+    width: 1050px;
+    height : 500px;
+    border: 2px solid blue;
+    border-radius:55px;
+    margin-left: 150px;
+    margin-top: 30px;
+    margin-bottom: 300px;
+}
+.Reg{
+    width:380px;
+    height: 380px;
+    margin-top: 40px;
+    margin-left: 43px;
+    margin-bottom:25px;
+}
+.RegForm {
+    float: right; 
+    text-align: center;
+    padding: 25px;
+}
+h1 {
+    margin-top: 60px;
+    margin-right: 80px;
+    margin-bottom: 30px;
+}
+.RegContainer {
+    margin-bottom: 10px;
+    margin-top: 32px;
+    margin-right: 50px;
+}
+input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 17px;
+    margin-bottom: 23px;
+    border: none;
+    background-color: lightgrey;
+}
+.RegButton {
+    padding: 8px 50px;
+    margin-right: 70px;
+    border: 2px solid blue;
+    color: blue;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 15px;
+}
