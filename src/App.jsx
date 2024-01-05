@@ -6,10 +6,12 @@ import { Hotel } from './components/pages/Hotel'
 import { Packages } from './components/pages/Packages'
 import { Flight } from './components/pages/Flight'
 import { Register } from './components/pages/Register'
-import { Login } from './components/pages/Login'
+import Login from './components/pages/Login'; // Adjust the path accordingly
 import { Home } from './components/pages/Home'
 import { ErrorPage } from './components/pages/ErrorPage'
 import { Footer } from './components/pages/Footer'
+import ForgotPassword from './components/pages/ForgotPassword'
+import  ChangedPassword  from './components/pages/ChangedPassword'
 
 function App() {
 
@@ -26,6 +28,9 @@ function App() {
         <Route path='/*' element={<ErrorPage/>}></Route>
         <Route path="/" exact component={Home} />
         <Route path="/error" component={ErrorPage} />
+        <Route path='/Forgot-password' element={<ForgotPassword />} />
+        <Route path='/Change-password' element={<ChangedPassword />} />
+
       </Routes>
     <Footer/>
   </div>

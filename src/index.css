@@ -7,3 +7,18 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+.toastBody {
+  font-family: "Inter" sans-serif;
+  font-size: 0.8rem;
+  
+}
+
+::-webkit-scrollbar {
+  width: 7px; 
+}
+::-webkit-scrollbar-thumb {
+  background-color: blue; 
+  border-radius: 6px;
+  height: 5px;
+}
+

@@ -76,86 +76,85 @@ li a.login.active {
     margin-bottom: 300px; 
 }
 /* line no 78 to 132 Login Page css */
-.LoginPage{
+.LoginPage {
     width: 988px;
-    height : 450px;
-    border: 0.1em solid blue;
-    border-radius:55px;
+    height: 450px;
+    border: 2.5px solid blue;
+    border-radius: 55px;
     margin-left: 168px;
     margin-top: 30px;
-    margin-bottom: 300px;
+    margin-bottom:300px;
 }
-.login{
-    width:380px;
+.loginImage {
+    width: 380px;
     height: 380px;
     margin-top: 40px;
     margin-left: 40px;
-    margin-bottom:25px;
-}
-.loginForm {
-    float: right; 
-    text-align: center;
-    padding: 25px;
+    margin-bottom: 25px;
 }
 h1 {
-    margin-top: 85px;
-    margin-right: 80px;
+    margin-top:15px;
+    margin-right: 4px;
     margin-bottom: 30px;
+}
+.loginForm {
+    text-align:center;
+    float:right;
+    margin-top:50px;
 }
 .inputContainer {
     margin-bottom: 10px;
     margin-top: 32px;
-    margin-right: 80px;
-}
-input {
+    margin-right: 90px;
     width: 80%;
-    padding: 50px;
     border-radius: 17px;
-    margin-bottom: 23px;
-    border: none;
-    background-color: #12086F;
+    margin-bottom: 10px;
+}
+.forgotPasswordLink {
+    margin-right: 240px;
 }
 .loginButton {
-    padding: 8px 50px;
-    margin-right: 80px;
+    padding: 2.5px 40px;
+    margin-right: 180px;
     border: 2px solid blue;
     color: blue;
+    text-align: center;
     border-radius: 20px;
     background-color: transparent;
     cursor: pointer;
     font-size: 15px;
 }
-.loginButton:hover{
-    color: white;
+.loginButton:hover {
     background-color: #12086F;
-    cursor: pointer;
+    color: white;
 }
 /* line no 133 to 192 Register Page css */
 .RegPage{
     display: flex;
     width: 1070px;
-    height : 500px;
+    height : 535px;
     border: 2px solid blue;
     border-radius:55px;
     margin-left: 120px;
     margin-top: 30px;
     margin-bottom: 300px;
 }
-.Reg{
+.RegImage{
     width:440px;
     height: 380px;
-    margin-top: 40px;
+    margin-top: 67px;
     margin-left: 40px;
     margin-bottom:25px;
 }
-.RegForm {
+.RegForm{
     float: right; 
     text-align: center;
     padding: 25px;
+    margin-top:30px;
 }
 h1 {
-    margin-top: 54px;
-    margin-right: 80px;
+    margin-top: 30px;
+    margin-right: 65px;
     margin-bottom: 30px;
 }
 .RegContainer {
@@ -167,7 +166,7 @@ input {
     width: 80%;
     padding: 12px;
     border-radius: 17px;
-    margin-bottom: 23px;
+    margin-bottom: 17px;
     border: none;
     color: white;
     background-color: #12086F;
@@ -176,8 +175,9 @@ input {
     color: white;
 }
 .RegButton {
-    padding: 8px 50px;
-    margin-right: 70px;
+    margin-top:10px;
+    padding: 3px 40px;
+    margin-right: 150px;
     border: 2px solid blue;
     color: blue;
     border-radius: 20px;
@@ -189,4 +189,84 @@ input {
     color: white;
     background-color: #12086F;
     cursor: pointer;
+}
+/* line no 193 to  Home Page css */
+.homepage{
+    width: 1100px;
+    display: flex;
+    margin-bottom: 500px;
+}
+.Travel{
+    width:320px;
+    height:320px;
+    margin-left:185px;
+}
+/* Forgot Password Page css */
+.ForgotContainer {
+    width: 440px;
+    height: 360px;
+    margin-bottom: 400px;
+    margin-top: 40px;
+    border: solid;
+    border-radius: 20px;
+    margin-left: 460px;
+    background-image: url("img_nature.jpg");
+    background-size: cover; /* Adjust to your preference */
+    background-position: center;
+    position: relative;
+}
+h3 {
+    color: blue;
+    margin-top: 30px;
+    margin-left: 140px;
+    margin-bottom: 35px;
+}
+input {
+    margin-left: 40px;
+    width: 80%; 
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc; 
+}
+.email {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.error {
+    margin-left:160px;
+    color: white; 
+}
+button {
+    width: 140px;
+    height: 25px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    margin-left: 140px;
+    background-color: transparent;
+    border-radius: 15px;
+    background-color: #12086F;
+    color: white;
+    cursor: pointer;
+}
+.ChangePasswordContainer{
+    width:500px;
+    height:400px;
+    border:solid;
+    border-radius:20px;
+    margin-bottom:500px;
+    margin-top:65px;
+    margin-left:420px;
+}
+h3{
+    color:black;
+    margin-top:45px;
+}
+.savebtn{
+    color:white;
+    background-color: #12086F;
+    margin-left:160px;
+}
+.sperror{
+    color:white;
+    margin-left:147px;
 }
