@@ -6,8 +6,7 @@ import { toast } from 'react-toastify';
 
 const ChangePassword = () => {
   
-    // Yup validation schema
-  const validationSchema = yup.object().shape({
+   const validationSchema = yup.object().shape({
     email: yup.string().email("Invalid email format").required("Email is required"),
     password: yup.string().min(6).required("Password is required"),
     confirmPassword: yup
