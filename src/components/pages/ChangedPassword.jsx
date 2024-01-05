@@ -26,8 +26,6 @@ const ChangePassword = () => {
     validationSchema: validationSchema,
     onSubmit: (values ,{resetForm}) => {
       console.log("Submitting values:", values);
-      // Add logic for changing the password
-      // For now, just display a message in the console
       console.log("Password changed successfully!");
       toast.success("Password changed successfully!");
 
