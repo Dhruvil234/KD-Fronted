@@ -1,4 +1,4 @@
-/* line no 1 to 52 Navbar css */
+/* line no 1 to 51 Navbar css */
 .active{
     color:#0000FF;
 }
@@ -49,6 +49,7 @@ nav ul li a {
 nav ul li a:not(.active):hover {
     color:#0000FF;
 }
+/* 53 to 65 login button bacground color */
 li a.login {
     border: 2px solid blue; 
     padding: 10px 25px; 
@@ -62,15 +63,19 @@ li a.login.active {
     background-color: blue; 
     color: white; 
 }
-/* line no 65 to 70 error page css */
+/* line no 66 to 70 error page css */
 .page{
-    width:400px;
-    hight:400px;
-    margin-left:450px;
+    width:550px;
+    hight:550px;
+    margin-left:400px;
+    margin-top: 30px;
+      
 }
 .text{
-    margin-left:460px;
+    margin-left:475px;
+    margin-bottom: 300px; 
 }
+/* line no 78 to 132 Login Page css */
 .LoginPage{
     width: 988px;
     height : 450px;
@@ -108,7 +113,7 @@ input {
     border-radius: 17px;
     margin-bottom: 23px;
     border: none;
-    background-color: lightgrey;
+    background-color: #12086F;
 }
 .loginButton {
     padding: 8px 50px;
@@ -120,22 +125,27 @@ input {
     cursor: pointer;
     font-size: 15px;
 }
-/* line no 124 to Register Page css */
+.loginButton:hover{
+    color: white;
+    background-color: #12086F;
+    cursor: pointer;
+}
+/* line no 133 to 192 Register Page css */
 .RegPage{
     display: flex;
-    width: 1050px;
+    width: 1070px;
     height : 500px;
     border: 2px solid blue;
     border-radius:55px;
-    margin-left: 150px;
+    margin-left: 120px;
     margin-top: 30px;
     margin-bottom: 300px;
 }
 .Reg{
-    width:380px;
+    width:440px;
     height: 380px;
     margin-top: 40px;
-    margin-left: 43px;
+    margin-left: 40px;
     margin-bottom:25px;
 }
 .RegForm {
@@ -144,7 +154,7 @@ input {
     padding: 25px;
 }
 h1 {
-    margin-top: 60px;
+    margin-top: 54px;
     margin-right: 80px;
     margin-bottom: 30px;
 }
@@ -159,7 +169,11 @@ input {
     border-radius: 17px;
     margin-bottom: 23px;
     border: none;
-    background-color: lightgrey;
+    color: white;
+    background-color: #12086F;
+}
+::placeholder{
+    color: white;
 }
 .RegButton {
     padding: 8px 50px;
@@ -170,4 +184,9 @@ input {
     background-color: transparent;
     cursor: pointer;
     font-size: 15px;
+}
+.RegButton:hover{
+    color: white;
+    background-color: #12086F;
+    cursor: pointer;
 }

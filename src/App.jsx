@@ -14,7 +14,7 @@ import { Footer } from './components/pages/Footer'
 function App() {
 
   return (
-    <div className="App">
+  <div className="App">
       <h2><Navbar/></h2>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
@@ -27,10 +27,8 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/error" component={ErrorPage} />
       </Routes>
-      <Footer/>
-    </div>
-    
+    <Footer/>
+  </div>
   )
 }
-
 export default App
