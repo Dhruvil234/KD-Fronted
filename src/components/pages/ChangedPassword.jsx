@@ -3,9 +3,12 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { toast } from 'react-toastify';
-
+import { useLocation } from "react-router-dom";
 const ChangePassword = () => {
-  
+  const location = useLocation();
+  const userEmail = location.state?.userEmail || "";
+
+
    const validationSchema = yup.object().shape({
     email: yup.string().email("Invalid email format").required("Email is required"),
     password: yup.string().min(6).required("Password is required"),
@@ -18,17 +21,38 @@ const ChangePassword = () => {
   // Formik form handling
   const formik = useFormik({
     initialValues: {
-      email: "",
+      email: userEmail,
       password: "",
       confirmPassword: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values ,{resetForm}) => {
-      console.log("Submitting values:", values);
-      console.log("Password changed successfully!");
-      toast.success("Password changed successfully!");
+    onSubmit: async(values ,{resetForm}) => {
+      try {
+        // Send PATCH request to update password
+        const response = await fetch('http://localhost:8080/api/updatepassword', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: values.email,
+            password: values.password,
+          }),
+        });
 
-      resetForm();
+        if (response.ok) {
+          const responseData = await response.json();
+          console.log("Password updated successfully:", responseData);
+          toast.success("Password updated successfully!");
+          resetForm();
+          navigate('/login');
+        } else {
+          const errorData = await response.json();
+          console.error('Password update failed:', errorData);
+        }
+      } catch (error) {
+        console.error('Error during password update:', error);
+      }
     },
   });
   const containerStyle = {
@@ -50,7 +74,7 @@ const ChangePassword = () => {
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-         
+          readOnly
         />
         {formik.touched.email && formik.errors.email && (
           <div className="sperror">{formik.errors.email}</div>
