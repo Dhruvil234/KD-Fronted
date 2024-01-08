@@ -4,6 +4,7 @@ import * as Yup from 'yup';  // Import Yup
 import login from '../../Images/login.png';
 import { NavLink } from 'react-router-dom';
 
+const loginapi = 'http://localhost:8080/api/login';
 // Define validation schema using Yup
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -17,11 +18,37 @@ const Login = () => {
       password: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values, { setSubmitting ,resetForm}) => {
+    onSubmit: async (values, { setSubmitting ,resetForm}) => {
       console.log('Login Data:', values);
-      // Perform login or other actions here
+      try {
+        // Simulating API call
+        const response = await fetch(loginapi, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        });
+
+        if (response.ok) {
+          const responseData = await response.json();
+          alert(responseData.message);
+
+          // Store token in local storage
+          localStorage.setItem('token', responseData.token);
+
+          // You can redirect the user or perform other actions as needed
+          window.location.href = '/';
+        } else {
+          const errorData = await response.json();
+          console.error('Login failed:', errorData);
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+      }
+
       resetForm();
-      setSubmitting(false); 
+      setSubmitting(false);
       
       
     },
