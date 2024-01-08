@@ -15,7 +15,6 @@ const ChangePassword = () => {
       .required("Confirm Password is required"),
   });
 
-  // Formik form handling
   const formik = useFormik({
     initialValues: {
       email: "",

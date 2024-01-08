@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import regImage from '../../Images/Reg.png';
 const passwordValidationRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&])(?=.*[0-9]).{6,}$/;
-const apiUrl = "Register URL";
+// const apiUrl = "Register URL";
 
 export const Register = () => {
   const formik = useFormik({
@@ -50,15 +50,13 @@ export const Register = () => {
     },
   });  
 
-  
-
   return (
     <form onSubmit={formik.handleSubmit}>
      <div className='RegPage'>
     <img src={regImage} alt='Register Page' className='RegImage' />
     <div className='RegForm'>
           <h1>Register</h1>
-          <div className='RegContainer'>
+          <div>
             <input
               type='text'
               placeholder='Full Name'
