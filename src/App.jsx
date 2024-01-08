@@ -12,6 +12,7 @@ import { ErrorPage } from './components/pages/ErrorPage'
 import { Footer } from './components/pages/Footer'
 import ForgotPassword from './components/pages/ForgotPassword'
 import  ChangedPassword  from './components/pages/ChangedPassword'
+import AdminPage from './components/pages/adminpage';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/error" component={ErrorPage} />
         <Route path='/Forgot-password' element={<ForgotPassword />} />
         <Route path='/Change-password' element={<ChangedPassword />} />
+        <Route path='/AdminPage' element={<AdminPage />} />
 
       </Routes>
     <Footer/>
