@@ -141,7 +141,7 @@ li a.login.active {
     height : 535px;
     border: 2px solid blue;
     border-radius:55px;
-    margin-left: 120px;
+    margin-left: 160px;
     margin-top: 30px;
     margin-bottom: 300px;
 }
@@ -296,54 +296,68 @@ input {
     width: 900px;
     height: 350px;
     margin-top: 30px;
-    margin-left: 210px;
+    margin-left: 220px;
     border-radius: 20px;
     border: 2px solid white;
-    margin-bottom: 500px;
+    margin-bottom: 50px;
 }
 .flightTag {
     margin-top: 25px;
     margin-left: 350px;
 }
 .flightField {
-    float:left;
-    display:flex;
+    float: left;
+    display: flex;
     align-items: center;
     margin-top: 32px;
     margin-left: 50px;
 }
+.flightseat {
+    margin-left: 10px;
+}
 .flightField label {
     margin-right: 5px;
     font-weight: bold;
+    color: black;
 }
 .selectcity {
     width: 230px;
     margin-bottom: 7px;
-    margin-right:3px;
+    margin-right: 3px;
 }
 .datepicker {
-    margin-left:2px;
+    margin-left: 2px;
     width: 130px;
     margin-bottom: 11px;
-    color:black;
-    background-color: white; 
+    color: black;
+    background-color: white;
 }
 .radioField {
-    font-weight: bold;
+    display:flex;
+    font-weight:bold;
+    float:left;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+.radioField label{
+    width:100px;
     display:flex;
     float:left;
-    margin-top: 20px;
-    margin-left: 50px;
+    margin-left:50px;
+    margin-right:2px;
 }
-.radioLabel {
+.radioButtons{
+    transform: scale(0.9); 
+    display:flex;
     float:left;
-    white-space: nowrap;
-    margin-right: 22px;
+    font-size:16px;
+    gap:5px;
+    margin-left:20px;
 }
 .flightbtn {
     width: 150px;
     height: 31px;
-    margin-top:21px;
+    margin-top:3px;
     margin-left:370px;
     margin-bottom: 10px;
     color: white;
@@ -352,4 +366,33 @@ input {
     background-color: blue;
     border-radius: 15px;
     cursor: pointer;
+}
+.additionalContainer{
+    margin-left:200px;
+    width:970px;
+    height:110px;
+    margin-top:30px;
+    margin-bottom:450px;
+    border-radius:20px;
+    border:2px solid blue;
+    display:flex;
+    gap:32px;
+}
+p{
+    margin-top:35px;
+    margin-left:60px;
+    font-weight:bold;
+    font-size:16px;
+    align-items:center;
+}
+.bookNowBtn{
+    margin-top:43px;
+    margin-left:30px;
+    width:100px;
+    height:30px; 
+    border-radius:20px;
+    cursor:pointer;
+    background-color: blue;  
+    color:white;
+    border-color:blue;
 }

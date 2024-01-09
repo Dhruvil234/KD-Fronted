@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -10,7 +11,11 @@ export const Flight = () => {
   const [departureDate, setDepartureDate] = useState(new Date());
   const [selectedSeat, setSelectedSeat] = useState(null);
   const [classSelection, setClassSelection] = useState(null);
-
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const navigate = useNavigate(); 
+  const handleBookNowClick = () => {
+      navigate('/Login');
+    };
   const cityOptions = [
     { value: 'Ahmedabad', label: 'Ahmedabad' },
     { value: 'Mumbai', label: 'Mumbai' },
@@ -51,107 +56,121 @@ export const Flight = () => {
       };
 
       await validationSchema.validate(formData, { abortEarly: false });
+
       console.log(formData);
-      
+
+      // Set formSubmitted to true when the form is successfully submitted
+      setFormSubmitted(true);
+
     } catch (error) {
-        alert(error.errors.join('\n'));
+      alert(error.errors.join('\n'));
     }
   };
-  
+
   const containerStyle = {
-    backgroundImage: 'url("https://travelobiz.com/wp-content/uploads/2021/11/Singapore-Airlines-Resumes-Flight-Bookings-From-India.jpg")',
+    backgroundImage: 'url("https://www.shutterstock.com/image-photo/white-model-plane-airplane-on-260nw-1696581118.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-  }
+  };
 
   return (
-    <div className='flightpage' style={containerStyle}>
-      <h3 className='flightTag'>Book Flight Ticket Online</h3>
+    <div>
+      <div className='flightpage' style={containerStyle}>
+        <h3 className='flightTag'>Book Flight Ticket Online</h3>
 
-      <div className='flightField'>
-        <label>Departure From :</label>
-        <Select
-          options={cityOptions}
-          className='selectcity'
-          placeholder='Select City'
-          value={departureCity}
-          onChange={handleDepartureCityChange}
-        />
-      </div>
-      
-      <div className='flightField'>
-        <label>Departure To :</label>
-        <Select
-          options={cityOptions.filter((city) => city.value !== departureCity?.value)}
-          className='selectcity'
-          placeholder='Select City'
-          value={destinationCity}
-          onChange={(selectedOption) => setDestinationCity(selectedOption)}
-          isDisabled={!departureCity}
-        />
-      </div>
+        <div className='flightField'>
+          <label>Departure From :</label>
+          <Select
+            options={cityOptions}
+            className='selectcity'
+            placeholder='Select City'
+            value={departureCity}
+            onChange={handleDepartureCityChange}
+          />
+        </div>
 
-      <div className='flightField'>
-        <label>Departure Date : </label>
-        <DatePicker
-          selected={departureDate}
-          onChange={(date) => setDepartureDate(date)}
-          dateFormat='dd/MM/yyyy'
-          className='datepicker'
-          minDate={new Date()}
-        />
-      </div>
+        <div className='flightField'>
+          <label>Departure To :</label>
+          <Select
+            options={cityOptions.filter((city) => city.value !== departureCity?.value)}
+            className='selectcity'
+            placeholder='Select City'
+            value={destinationCity}
+            onChange={(selectedOption) => setDestinationCity(selectedOption)}
+            isDisabled={!departureCity}
+          />
+        </div>
 
-      {/* Seat Selection */}
-      <div className='flightField'>
-        <label>Seat :</label>
-        <Select
-          options={seatOptions}
-          className='selectcity'
-          placeholder='Select Seat'
-          value={selectedSeat}
-          onChange={(selectedOption) => setSelectedSeat(selectedOption)}
-        />
-      </div>
+        <div className='flightField'>
+          <label>Departure Date : </label>
+          <DatePicker
+            selected={departureDate}
+            onChange={(date) => setDepartureDate(date)}
+            dateFormat='dd/MM/yyyy'
+            className='datepicker'
+            minDate={new Date()}
+          />
+        </div>
 
-      {/* Radio Buttons */}
-      <div className='radioField'>
-        <label>Class :</label>
-        <div>
-          <label className='radioLabel'>
-            <input
-              type='radio'
-              value='economy'
-              checked={classSelection?.value === 'economy'}
-              onChange={() => setClassSelection({ value: 'economy', label: 'Economy' })}
-            />
-            Economy
-          </label>
-          <label className='radioLabel'>
-            <input
-              type='radio'
-              value='premium-economy'
-              checked={classSelection?.value === 'premium-economy'}
-              onChange={() => setClassSelection({ value: 'premium-economy', label: 'Premium Economy' })}
-            />
-            Premium Economy
-          </label>
-          <label className='radioLabel'>
-            <input
-              type='radio'
-              value='business'
-              checked={classSelection?.value === 'business'}
-              onChange={() => setClassSelection({ value: 'business', label: 'Business' })}
-            />
-            Business
-          </label>
+        {/* Seat Selection */}
+        <div className='flightField'>
+          <label>Seat :</label>
+          <Select
+            options={seatOptions}
+            className='selectcity'
+            placeholder='Select Seat'
+            value={selectedSeat}
+            classNames='flightseat'
+            onChange={(selectedOption) => setSelectedSeat(selectedOption)}
+          />
+        </div>
+
+        {/* Class Selection - Radio Buttons */}
+<div className='radioField'>
+  <label>Class :</label>
+  <div className='radioButtons'>
+      <input
+        type='radio'
+        value='Economy'
+        checked={classSelection?.value === 'Economy'}
+        onChange={() => setClassSelection({ value: 'Economy', label: 'Economy' })}
+      />
+      Economy
+      <input
+        type='radio'
+        value='PremiumEconomy'
+        checked={classSelection?.value === 'PremiumEconomy'}
+        onChange={() => setClassSelection({ value: 'PremiumEconomy', label: 'Premium Economy' })}
+      />
+        Premium Economy
+      <input
+          type='radio'
+          value='Business'
+          checked={classSelection?.value === 'Business'}
+          onChange={() => setClassSelection({ value: 'Business', label: 'Business' })}
+          />
+          Business
         </div>
       </div>
 
-      {/* Search Button */}
-      <button type='submit' className='flightbtn' onClick={handleSearch}>
-        Search Flights
-      </button>
+        {/* Search Button */}
+        <button type='submit' className='flightbtn' onClick={handleSearch}>
+          Search Flights
+        </button>
+      </div>
+    
+      {/* Additional Container */}
+      {formSubmitted && (
+        <div className='additionalContainer'>
+          
+          <p>From: <br/>{departureCity?.label}</p>
+          <p>To: <br/>{destinationCity?.label}</p>
+          <p>Date: <br/>{departureDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
+          <p>Class: <br/>{classSelection?.label}</p>
+          <p>Price: <br/>9,999</p>
+          <button className='bookNowBtn' onClick={handleBookNowClick}>Book Now</button>
+        </div>
+      )}
     </div>
   );
 };
