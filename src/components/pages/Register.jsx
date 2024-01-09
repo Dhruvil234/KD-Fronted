@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import regImage from '../../Images/Reg.png';
+import { toast } from 'react-toastify';
 
 const passwordValidationRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&])(?=.*[0-9]).{6,}$/;
 const apiUrl = "http://localhost:8080/api/register";
@@ -48,6 +49,7 @@ export const Register = () => {
           console.log(responseData);
           resetForm();
           window.location.href = '/login';
+          
         } else {
           const errorData = await response.json();
           console.error('Registration failed:', errorData);
@@ -57,6 +59,7 @@ export const Register = () => {
       }
       console.log('Register data', values);
       resetForm();
+      toast.success("User Register Sucsessfully");
     },
   });  
 

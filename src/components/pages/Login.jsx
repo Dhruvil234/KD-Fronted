@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';  // Import Yup
 import login from '../../Images/login.png';
 import { NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const loginapi = 'http://localhost:8080/api/login';
 // Define validation schema using Yup
@@ -20,11 +21,11 @@ const Login = () => {
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting ,resetForm}) => {
       console.log('Login Data:', values);
-      // Special case check
+      toast.success("User Login Sucssesfully");
+        
       if (values.email === 'admin@123.gmail.com' && values.password === 'Adm@12') {
-        // Redirect to the admin page directly
         window.location.href = '/adminpage';
-        return; // Do not proceed with API call
+        return; 
       }
       try {
         // Simulating API call

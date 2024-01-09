@@ -4,6 +4,7 @@ import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 export const Flight = () => {
   const [departureCity, setDepartureCity] = useState(null);
@@ -15,6 +16,8 @@ export const Flight = () => {
   const navigate = useNavigate(); 
   const handleBookNowClick = () => {
       navigate('/Login');
+      toast.success("Ticket Booked Sucsessfully");
+
     };
   const cityOptions = [
     { value: 'Ahmedabad', label: 'Ahmedabad' },
