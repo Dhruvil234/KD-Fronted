@@ -75,8 +75,7 @@ export const Register = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               autoComplete='off'
-              className={formik.touched.fullName && formik.errors.fullName ? '' : ''}
-            />
+              className={formik.touched.fullName && formik.errors.fullName ? '' : ''}/>
             {formik.touched.fullName && formik.errors.fullName ? (
               <div className='validation-text'>{formik.errors.fullName}</div>
             ) : null}
@@ -89,8 +88,7 @@ export const Register = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               autoComplete='off'
-              className={formik.touched.mobileNumber && formik.errors.mobileNumber ? '' : ''}
-            />
+              className={formik.touched.mobileNumber && formik.errors.mobileNumber ? '' : ''}/>
             {formik.touched.mobileNumber && formik.errors.mobileNumber ? (
               <div className='validation-text'>{formik.errors.mobileNumber}</div>
             ) : null}

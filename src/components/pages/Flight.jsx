@@ -68,7 +68,6 @@ export const Flight = () => {
     <div className='flightpage' style={containerStyle}>
       <h3 className='flightTag'>Book Flight Ticket Online</h3>
 
-      {/* Departure City */}
       <div className='flightField'>
         <label>Departure From :</label>
         <Select
@@ -79,8 +78,7 @@ export const Flight = () => {
           onChange={handleDepartureCityChange}
         />
       </div>
-
-      {/* Destination City */}
+      
       <div className='flightField'>
         <label>Departure To :</label>
         <Select
@@ -93,7 +91,6 @@ export const Flight = () => {
         />
       </div>
 
-      {/* Departure Date */}
       <div className='flightField'>
         <label>Departure Date : </label>
         <DatePicker
