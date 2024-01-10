@@ -278,6 +278,7 @@ input {
     color:white;
     margin-left:147px;
 }
+/* Admin Page css */
 .adminpage{
     width:600px;
     height:400px;
@@ -290,6 +291,9 @@ input {
 .adminTag{
     margin-top:32px;
     margin-left:215px;
+}
+.admindetail{
+    margin-left:5px;
 }
 /* Flight Page css */
 .flightpage {
@@ -367,6 +371,7 @@ input {
     border-radius: 15px;
     cursor: pointer;
 }
+/* Flight page search Details */
 .additionalContainer{
     margin-left:200px;
     width:970px;
@@ -380,7 +385,7 @@ input {
 }
 p{
     margin-top:35px;
-    margin-left:60px;
+    margin-left:45px;
     font-weight:bold;
     font-size:16px;
     align-items:center;
@@ -396,6 +401,32 @@ p{
     color:white;
     border-color:blue;
 }
+/* Flight booking preview page */
 .previewcontainer{
-    
+    width:400px;
+    height:430px;
+    border:2px solid white;
+    border-radius:20px;
+    margin-left:480px;
+    margin-top:27px;
+    margin-bottom:400px;
+}
+.previewheading{
+    margin-top:27px;
+    margin-left:85px;
+}
+.previewDetailsTag{
+    margin-left:100px;
+}
+.paynowbtn{
+    margin-top:30px;
+    margin-left:105px;
+    width:170px;
+    height:30px; 
+    font-size:15px;
+    border-radius:20px;
+    cursor:pointer;
+    background-color: blue;  
+    color:white;
+    border-color:blue;
 }

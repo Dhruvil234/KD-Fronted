@@ -15,9 +15,16 @@ export const Flight = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const navigate = useNavigate(); 
   const handleBookNowClick = () => {
-      navigate('/flightpreview');
-    
-    };
+    navigate('/flightpreview', {
+      state: {
+        departureCity,
+        destinationCity,
+        departureDate,
+        selectedSeat,
+        classSelection,
+      },
+    });
+  };
   const cityOptions = [
     { value: 'Ahmedabad', label: 'Ahmedabad' },
     { value: 'Mumbai', label: 'Mumbai' },
@@ -162,7 +169,6 @@ export const Flight = () => {
     
       {formSubmitted && (
         <div className='additionalContainer'>
-          
           <p>From: <br/>{departureCity?.label}</p>
           <p>To: <br/>{destinationCity?.label}</p>
           <p>Date: <br/>{departureDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>

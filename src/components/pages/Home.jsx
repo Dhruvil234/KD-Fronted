@@ -10,7 +10,6 @@ export const Home = () => {
     <div className='homepage'>
         <img src={Travel} alt='Home Page' className='Travel' />
          <h1 className='tbb'>Travel Beyond Boundries</h1>
-         <h1>Your Name:{import.meta.env.VITE_NAME}</h1>
     </div>
   </div>
   )
