@@ -3,9 +3,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';  // Import Yup
 import login from '../../Images/login.png';
 import { NavLink } from 'react-router-dom';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
-const loginapi = 'http://localhost:8080/api/login';
+// const loginapi = 'http://localhost:8080/api/login';
 // Define validation schema using Yup
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -21,39 +22,40 @@ const Login = () => {
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting ,resetForm}) => {
       console.log('Login Data:', values);
-      toast.success("User Login Sucssesfully");
+      
         
-      if (values.email === 'admin@123.gmail.com' && values.password === 'Adm@12') {
+      if (values.email === import.meta.env.VITE_ADMIN_EMAIL && values.password === import.meta.env.VITE_ADMIN_PASSWORD) {
+        // Redirect to admin page if the credentials match
         window.location.href = '/adminpage';
-        return; 
+        return;
       }
-      try {
-        // Simulating API call
-        const response = await fetch(loginapi, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        });
+      // try {
+      //   // Simulating API call
+      //   const response = await fetch(loginapi, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(values),
+      //   });
 
-        if (response.ok) {
-          const responseData = await response.json();
-          alert(responseData.message);
+      //   if (response.ok) {
+      //     const responseData = await response.json();
+      //     alert(responseData.message);
 
-          // Store token in local storage
-          localStorage.setItem('token', responseData.token);
+      //     // Store token in local storage
+      //     localStorage.setItem('token', responseData.token);
 
-          // You can redirect the user or perform other actions as needed
-          window.location.href = '/';
-        } else {
-          const errorData = await response.json();
-          console.error('Login failed:', errorData);
-        }
-      } catch (error) {
-        console.error('Error during login:', error);
-      }
-
+      //     // You can redirect the user or perform other actions as needed
+      //     window.location.href = '/';
+      //   } else {
+      //     const errorData = await response.json();
+      //     console.error('Login failed:', errorData);
+      //   }
+      // } catch (error) {
+      //   console.error('Error during login:', error);
+      // }
+      // toast.success("User Login Sucssesfully");
       resetForm();
       setSubmitting(false);
       

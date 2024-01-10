@@ -4,7 +4,7 @@ import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as Yup from 'yup';
-import { toast } from 'react-toastify';
+
 
 export const Flight = () => {
   const [departureCity, setDepartureCity] = useState(null);
@@ -15,9 +15,8 @@ export const Flight = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const navigate = useNavigate(); 
   const handleBookNowClick = () => {
-      navigate('/Login');
-      toast.success("Ticket Booked Sucsessfully");
-
+      navigate('/flightpreview');
+    
     };
   const cityOptions = [
     { value: 'Ahmedabad', label: 'Ahmedabad' },
@@ -62,7 +61,6 @@ export const Flight = () => {
 
       console.log(formData);
 
-      // Set formSubmitted to true when the form is successfully submitted
       setFormSubmitted(true);
 
     } catch (error) {
@@ -162,7 +160,6 @@ export const Flight = () => {
         </button>
       </div>
     
-      {/* Additional Container */}
       {formSubmitted && (
         <div className='additionalContainer'>
           

@@ -13,6 +13,7 @@ import { Footer } from './components/pages/Footer'
 import ForgotPassword from './components/pages/ForgotPassword'
 import  ChangedPassword  from './components/pages/ChangedPassword'
 import AdminPage from './components/pages/adminpage';
+import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 
 function App() {
 
@@ -32,9 +33,13 @@ function App() {
         <Route path='/Forgot-password' element={<ForgotPassword />} />
         <Route path='/Change-password' element={<ChangedPassword />} />
         <Route path='/AdminPage' element={<AdminPage />} />
+        <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
+
+
 
       </Routes>
     <Footer/>
+    
   </div>
   )
 }
