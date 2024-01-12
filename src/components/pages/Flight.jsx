@@ -5,16 +5,17 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as Yup from 'yup';
 
-
+let responseData="";
 export const Flight = () => {
   const [departureCity, setDepartureCity] = useState(null);
   const [destinationCity, setDestinationCity] = useState(null);
   const [departureDate, setDepartureDate] = useState(new Date());
   const [selectedSeat, setSelectedSeat] = useState(null);
   const [classSelection, setClassSelection] = useState(null);
+  const [flightprice,setflightprice] = useState(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const navigate = useNavigate(); 
-  const handleBookNowClick = () => {
+  const handleBookNowClick = (flight) => {
     navigate('/flightpreview', {
       state: {
         departureCity,
@@ -22,6 +23,8 @@ export const Flight = () => {
         departureDate,
         selectedSeat,
         classSelection,
+        flightprice:flight.price,  
+        selectedFlight: flight,
       },
     });
   };
@@ -63,15 +66,32 @@ export const Flight = () => {
         Seat: selectedSeat,
         Class: classSelection,
       };
+      //console.log(formData)
+      const requestData = {
+        from: formData.From.value,
+        to: formData.To.value,
+        flightClass: formData.Class.value,
+      };
+      //console.log(requestData)
+      const response = await fetch('http://localhost:8080/api/findflights', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData),
+    });
 
-      await validationSchema.validate(formData, { abortEarly: false });
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
 
-      console.log(formData);
-
+    responseData= await response.json();
+    console.log(responseData);
+    
       setFormSubmitted(true);
-
+      setFlightData(responseData.flights);
     } catch (error) {
-      alert(error.errors.join('\n'));
+      //alert(error.errors.join('\n'));
     }
   };
 
@@ -166,17 +186,23 @@ export const Flight = () => {
           Search Flights
         </button>
       </div>
-    
-      {formSubmitted && (
-        <div className='additionalContainer'>
-          <p>From: <br/>{departureCity?.label}</p>
-          <p>To: <br/>{destinationCity?.label}</p>
-          <p>Date: <br/>{departureDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
-          <p>Class: <br/>{classSelection?.label}</p>
-          <p>Price: <br/>9,999</p>
-          <button className='bookNowBtn' onClick={handleBookNowClick}>Book Now</button>
-        </div>
-      )}
+        
+      {formSubmitted && responseData && responseData.success && responseData.flights && (
+  <div className=''>
+    {responseData.flights.map((flight) => (
+      <div key={flight._id} className='additionalContainer'>
+        <p>From: <br/>{flight.from}</p>
+        <p>To: <br/>{flight.to}</p>
+        <p>Class: <br/>{flight.flightClass}</p>
+        <p>Price: <br/>{flight.price}</p>
+
+        {/* Book Now Button */}
+        <button className='bookNowBtn' onClick={() => handleBookNowClick(flight)}>Book Now</button>
+      </div>
+    ))}
+  </div>
+)}
+
     </div>
   );
 };
