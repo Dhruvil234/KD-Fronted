@@ -283,17 +283,21 @@ input {
     width:600px;
     height:400px;
     margin-left:380px;
+    margin-top:30px;
     border:2px solid black;
     border-radius:20px;
     margin-bottom:500px;
-
+    border-color:blue;
 }
 .adminTag{
     margin-top:32px;
     margin-left:215px;
+    color:blue;
 }
 .admindetail{
-    margin-left:5px;
+    color:blue;
+    margin-top:10px;
+    margin-left:2px;
 }
 /* Flight Page css */
 .flightpage {

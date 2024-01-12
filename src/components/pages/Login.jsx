@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';  // Import Yup
 import login from '../../Images/login.png';
 import { NavLink } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
 // const loginapi = 'http://localhost:8080/api/login';
@@ -55,7 +55,7 @@ const Login = () => {
       // } catch (error) {
       //   console.error('Error during login:', error);
       // }
-      // toast.success("User Login Sucssesfully");
+       toast.success("User Login Sucssesfully");
       resetForm();
       setSubmitting(false);
       
