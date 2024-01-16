@@ -6,7 +6,7 @@ export const FlightBookingPreview = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { departureCity,destinationCity,departureDate,selectedSeat,classSelection,} = location.state || {};
+  const { departureCity,destinationCity,departureDate,selectedSeat,classSelection,flightprice} = location.state || {};
 
   const handleBookNowClick = () => {
     navigate('/');
@@ -27,6 +27,7 @@ export const FlightBookingPreview = () => {
         <p className='previewDetailsTag'>Date: {departureDate?.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
         <p className='previewDetailsTag'>Seat: {selectedSeat?.label}</p>
         <p className='previewDetailsTag'>Class: {classSelection?.label}</p>
+        <p className='previewDetailsTag'>Price: {flightprice}</p>
       <button className='paynowbtn' onClick={handleBookNowClick}>Proceed to Payment</button>
     </div>
   );
