@@ -193,6 +193,7 @@ export const Flight = () => {
       <div key={flight._id} className='additionalContainer'>
         <p>From: <br/>{flight.from}</p>
         <p>To: <br/>{flight.to}</p>
+        <p>Departure Date: <br/>{departureDate.toDateString()}</p>
         <p>Class: <br/>{flight.flightClass}</p>
         <p>Price: <br/>{flight.price}</p>
 
