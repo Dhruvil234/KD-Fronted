@@ -266,13 +266,22 @@ input {
     margin-left:420px;
 }
 .changeTag{
-    color:black;
-    margin-top:45px;
+    color:rgb(0, 0, 0);
+    margin-top:25px;
+    margin-left: 150px;
+    margin-bottom: 20px;
 }
 .changebtn{
     color:white;
     background-color: #12086F;
     margin-left:160px;
+    width: 170px;
+    height: 30px;
+    border-radius:20px;
+    font-size: 15px;
+}
+.changebtn:hover{
+    cursor: pointer;
 }
 .sperror{
     color:white;
