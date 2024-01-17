@@ -384,7 +384,6 @@ input {
     display:flex;
     gap:20px;
 }
-
 p{
     margin-top:35px;
     margin-left:45px;
@@ -441,7 +440,6 @@ p{
 .travel{
     width: 900px;
     display: flex;
-    border:2px solid blue;
     margin-top:50px;
     margin-left:220px;
     margin-bottom: 100px;
@@ -454,6 +452,30 @@ p{
     width:320px;
     height:320px;
     display:flex;
+}
+.travelinfo{
+    margin-left:70px;
+}
+.travelinfotage1{
+    color:#64F269;
+    font-weight: bold;
+    margin-left:160px;
+    margin-top:70px;
+    margin-bottom:5px;
+    font-size:40px;
+}
+.travelinfotage2{
+    margin-left:155px;
+    margin-top:10px;
+    font-size:35px;
+    margin-bottom:5px;
+}
+.travelinfotage3{
+    color:#0244BE;
+    font-size:45px;
+    margin-left:120px;
+    margin-top:10px;
+    margin-bottom:5px;
 }
 .flight {
     width: 900px;

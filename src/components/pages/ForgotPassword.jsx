@@ -104,12 +104,8 @@ const ForgotPassword = () => {
             )}
     </>
         )}
-
-       
-
         <button type="submit" className="forgotbtn">
-
-          {showOtpField ? 'Verify OTP' : 'Send OTP'}
+            {showOtpField ? 'Verify OTP' : 'Send OTP'}
         </button>
       </form>
     </div>

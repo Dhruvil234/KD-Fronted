@@ -25,11 +25,11 @@ export const Home = () => {
           <img src={Travel} alt='Home Page' className='Travelimage' />
         </div>
         <div className='travelinfo'>
-            <h1>Travel</h1>
-            <h1>Beyond</h1>
-            <h1>Boundires</h1>
-            <p>We Provide Booking  service like Flights,Hotels,
-    Holidays Packages with Budget price so Book Now..</p>
+            <h1 className='travelinfotage1'>Travel</h1>
+            <h1 className='travelinfotage2'>Beyond</h1>
+            <h1 className='travelinfotage3'>Boundires</h1>
+            <p>   We Provide Booking  service like Flights,Hotels,<br/>
+          Holidays Packages with Budget price so Book Now..</p>
         </div>
       </div>
 
