@@ -48,7 +48,7 @@ nav ul li a {
 nav ul li a:not(.active):hover {
     color:#0000FF;
 }
-/* 53 to 65 login button bacground color */
+/* 53 to 65 login button background color */
 li a.login {
     border: 2px solid blue; 
     padding: 10px 25px; 
@@ -196,17 +196,6 @@ input {
     color: white;
     background-color: #12086F;
     cursor: pointer;
-}
-/* line no 193 to  Home Page css */
-.homepage{
-    width: 1100px;
-    display: flex;
-    margin-bottom: 500px;
-}
-.Travel{
-    width:320px;
-    height:320px;
-    margin-left:185px;
 }
 /* Forgot Password Page css */
 .ForgotContainer {
@@ -408,7 +397,7 @@ p{
 /* Flight booking preview page */
 .previewcontainer{
     width:400px;
-    height:430px;
+    height:480px;
     border:2px solid white;
     border-radius:20px;
     margin-left:480px;
@@ -433,4 +422,74 @@ p{
     background-color: blue;  
     color:white;
     border-color:blue;
+}
+/* line no 193 to  Home Page css */
+.parentdiv{
+    width:1340px;
+    height:800px;
+    margin-bottom:1050px;
+}
+.travel{
+    width: 900px;
+    display: flex;
+    border:2px solid blue;
+    margin-top:50px;
+    margin-left:220px;
+    margin-bottom: 100px;
+}
+.travelimagediv{
+    width:320px;
+    height:320px;
+}
+.Travelimage{
+    width:320px;
+    height:320px;
+    display:flex;
+}
+.flight {
+    width: 900px;
+    height:370px;
+    display: flex;
+    border:2px solid blue;
+    margin-left: 220px;
+    margin-bottom: 100px;
+}
+.flightimagediv{
+    margin-left:530px;
+}
+.flightimage{
+    width:360px;
+    height:350px;
+} 
+.hotel {
+    width: 900px;
+    height:350px;
+    display: flex;
+    flex-direction: column;
+    border:2px solid blue;
+    margin-left: 220px;
+    margin-bottom: 100px;
+}
+.hotelimagediv{
+    width:350px;
+    height:350px;
+}
+.hotelimage {
+    width: 320px;
+    height: 320px;
+}
+.holiday{
+    width: 900px;
+    display: flex;
+    border:2px solid blue;
+    margin-left:220px;
+    margin-bottom:120px;
+}
+.holidayimagediv{
+    width:300px;
+    height:380px;
+}
+.holidayimage{
+    width:300px;
+    height:380px;
 }

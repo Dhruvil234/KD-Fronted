@@ -1,16 +1,55 @@
-import React from 'react'
+import React from 'react';
 import Travel from '../../Images/Travel.png';
 import Flight from '../../Images/Flight.png';
+import Hotel from '../../Images/Hotel.png';
+import Holiday from '../../Images/Holiday.png';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
-  console.log(import.meta.env); // Log the entire import.meta.env object
-  console.log(import.meta.env.VITE_NAME);
+  const navigate = useNavigate();
+
+  const handlebookflight = () => {
+    navigate('/Flight');
+  };
+  const handlebookhotel = () => {
+    navigate('/Hotel');
+  };
+  const handlebookholiday = () => {
+    navigate('/Packages');
+  }
+  
   return (
-    <div>
-    <div className='homepage'>
-        <img src={Travel} alt='Home Page' className='Travel' />
-         <h1 className='tbb'>Travel Beyond Boundries</h1>
+    <div className='parentdiv'>
+      <div className='travel'>
+        <div className='travelimagediv'>
+          <img src={Travel} alt='Home Page' className='Travelimage' />
+        </div>
+        <div className='travelinfo'>
+            <h1>Travel</h1>
+            <h1>Beyond</h1>
+            <h1>Boundires</h1>
+            <p>We Provide Booking  service like Flights,Hotels,
+    Holidays Packages with Budget price so Book Now..</p>
+        </div>
+      </div>
+
+      <div className='flight'>
+        <div className='flightimagediv'>
+          <img src={Flight} alt='Flight' className='flightimage' />
+        </div>
+      </div>
+
+      <div className='hotel'>
+        <div className='hotelimagediv'>
+          <img src={Hotel} alt='Hotel' className='hotelimage' />
+        </div>
+      </div>
+
+      <div className='holiday'>
+        <div className='holidayimagediv'>
+          <img src={Holiday} alt='Home Page' className='holidayimage' />
+        </div>
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};

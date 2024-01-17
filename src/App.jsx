@@ -6,7 +6,7 @@ import { Hotel } from './components/pages/Hotel'
 import { Packages } from './components/pages/Packages'
 import { Flight } from './components/pages/Flight'
 import { Register } from './components/pages/Register'
-import Login from './components/pages/Login'; // Adjust the path accordingly
+import Login from './components/pages/Login'; 
 import { Home } from './components/pages/Home'
 import { ErrorPage } from './components/pages/ErrorPage'
 import { Footer } from './components/pages/Footer'
@@ -14,6 +14,7 @@ import ForgotPassword from './components/pages/ForgotPassword'
 import  ChangedPassword  from './components/pages/ChangedPassword'
 import AdminPage from './components/pages/adminpage';
 import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
+import AdminRouteGuard from './components/pages/AdminRouteGuard'
 
 function App() {
 
@@ -32,8 +33,9 @@ function App() {
         <Route path="/error" component={ErrorPage} />
         <Route path='/Forgot-password' element={<ForgotPassword />} />
         <Route path='/Change-password' element={<ChangedPassword />} />
-        <Route path='/AdminPage' element={<AdminPage />} />
+        <Route path='/AdminPage' element={<AdminRouteGuard element={<AdminPage />} />} />
         <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
+
 
 
 
