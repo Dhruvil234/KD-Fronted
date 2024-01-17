@@ -102,9 +102,7 @@ export const Flight = () => {
             .map((key) => `${key}: ${errorMessages[key]}`)
             .join('\n')}`
         );
-      } else {
-        alert(error.message);
-      }
+      } 
     }
   };
 
