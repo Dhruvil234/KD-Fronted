@@ -66,6 +66,7 @@ export const Flight = () => {
         Seat: selectedSeat,
         Class: classSelection,
       };
+      await validationSchema.validate(formData, { abortEarly: false });
       //console.log(formData)
       const requestData = {
         from: formData.From.value,
@@ -91,7 +92,19 @@ export const Flight = () => {
       setFormSubmitted(true);
       setFlightData(responseData.flights);
     } catch (error) {
-      //alert(error.errors.join('\n'));
+      if (error instanceof Yup.ValidationError) {
+        const errorMessages = error.inner.reduce((messages, innerError) => {
+          return { ...messages, [innerError.path]: innerError.message };
+        }, {});
+        // Display error messages for each field
+        alert(
+          `\n${Object.keys(errorMessages)
+            .map((key) => `${key}: ${errorMessages[key]}`)
+            .join('\n')}`
+        );
+      } else {
+        alert(error.message);
+      }
     }
   };
 
