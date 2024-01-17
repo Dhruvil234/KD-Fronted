@@ -45,7 +45,7 @@ const ChangePassword = () => {
           console.log("Password updated successfully:", responseData);
           toast.success("Password updated successfully!");
           resetForm();
-          navigate('/login');
+          window.location.href='/Login';
         } else {
           const errorData = await response.json();
           console.error('Password update failed:', errorData);
