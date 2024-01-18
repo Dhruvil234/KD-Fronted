@@ -73,7 +73,7 @@ export const Flight = () => {
         to: formData.To.value,
         flightClass: formData.Class.value,
       };
-      //console.log(requestData)
+      console.log(requestData)
       const response = await fetch('http://localhost:8080/api/findflights', {
       method: 'POST',
       headers: {
@@ -102,8 +102,6 @@ export const Flight = () => {
             .map((key) => `${key}: ${errorMessages[key]}`)
             .join('\n')}`
         );
-      } else {
-        alert(error.message);
       }
     }
   };
