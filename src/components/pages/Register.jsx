@@ -58,8 +58,9 @@ export const Register = () => {
         console.error('Error during registration:', error);
       }
       console.log('Register data', values);
-      resetForm();
       toast.success("User Register Sucsessfully");
+      resetForm();
+      
     },
   });  
 
