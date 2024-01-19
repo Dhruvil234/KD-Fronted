@@ -431,26 +431,26 @@ p{
     color:white;
     border-color:blue;
 }
-/* line no 193 to  Home Page css */
+/* line no 434 to 635 Home Page css */
 .parentdiv{
     width:1340px;
     height:800px;
     margin-bottom:1000px;
 }
 .travel{
-    width: 900px;
+    width: 1000px;
     display: flex;
     margin-top:50px;
-    margin-left:250px;
+    margin-left:275px;
     margin-bottom: 70px;
 }
 .travelimagediv{
-    width:320px;
-    height:320px;
+    width:350px;
+    height:350px;
 }
 .Travelimage{
-    width:320px;
-    height:320px;
+    width:350px;
+    height:350px;
     display:flex;
 }
 .travelinfo{
@@ -459,21 +459,21 @@ p{
 .travelinfotage1{
     color:#64F269;
     font-weight: bold;
-    margin-left:150px;
+    margin-left:140px;
     margin-top:50px;
     margin-bottom:3px;
-    font-size:45px;
+    font-size:55px;
 }
 .travelinfotage2{
-    margin-left:155px;
+    margin-left:140px;
     margin-top:5px;
-    font-size:35px;
+    font-size:45px;
     margin-bottom:3px;
 }
 .travelinfotage3{
     color:#0244BE;
-    font-size:42px;
-    margin-left:120px;
+    font-size:52px;
+    margin-left:90px;
     margin-top:5px;
     margin-bottom:3px;
 }
@@ -483,7 +483,7 @@ p{
     width: 900px;
     height: 370px;
     display: flex;
-    margin-left: 220px;
+    margin-left: 265px;
     margin-bottom: 70px;
 }
 .flightimage {
@@ -495,26 +495,29 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-left:30px;
+    margin-left:20px;
     
 }
 .flightinfotag1{
     color:#0A92C6;
-    margin-left:150px;
+    margin-left:160px;
     margin-bottom:5px;
+    font-size:38px;
 }
 .flightinfotag2{
     margin-left:80px;
     margin-top:5px;
     margin-bottom:5px;
+    font-size:35px;
 }
 .flightinfotag3{
     margin-top:5px;
     margin-bottom:5px;
+    font-size:35px;
 }
 .bookbtnflight {
-    width: 170px;
-    height: 28px;
+    width: 200px;
+    height: 30px;
     border-radius: 15px;
     margin-top: 20px;
     border-color: #0A92C6;
@@ -522,17 +525,18 @@ p{
     background-color: transparent;
     cursor: pointer;
     font-weight: bold;
-    margin-left:85px;
+    font-size:18px;
+    margin-left:95px;
 }
 .bookbtnflight:hover {
     color: white;
     background-color: #0A92C6;
 }
 .hotel {
-    width: 900px;
+    width: 1000px;
     height:350px;
     display: flex;
-    margin-left: 260px;
+    margin-left: 240px;
     margin-bottom: 70px;
 }
 .hotelimagediv{
@@ -540,94 +544,96 @@ p{
     height:350px;
 }
 .hotelimage {
-    width: 320px;
-    height: 320px;
+    width: 350px;
+    height: 350px;
 }
 .hotelinfo{
     margin-top:100px;
 }
 .hotelinfotag1{
     color:#FF735C;
-    margin-left:207px;
-    font-size:25px;
+    margin-left:257px;
+    font-size:35px;
     margin-top:5px;
     margin-bottom:3px;
 }
 .hotelinfotag2{
     color:#FF735C;
-    font-size:25px;
+    font-size:35px;
     margin-top:5px;
-    margin-left:180px;
+    margin-left:230px;
     margin-bottom:3px;
 }
 .hotelinfotag3{
-    font-size:23px;
+    font-size:33px;
     margin-top:5px;
     font-weight:bold;
     margin-left:120px;
     margin-bottom:3px;
 }
 .bookbtnhotel{
-    width:170px;
-    height:28px;
+    width:200px;
+    height:30px;
     border-radius:15px;
     margin-top:20px;
-    margin-left:190px;
+    margin-left:255px;
     border-color:#FF735C;
     color:#FF735C;
     background-color:transparent;
     cursor:pointer;
     font-weight:bold;
+    font-size:18px;
 }
 .bookbtnhotel:hover{
     color:white;
     background-color:#FF735C;
 }
 .holiday{
-    width: 900px;
+    width: 1000px;
     display: flex;
-    margin-left:260px;
+    margin-left:280px;
     margin-bottom:120px;
 }
 .holidayimagediv{
-    width:300px;
-    height:380px;
+    width:330px;
+    height:410px;
 }
 .holidayimage{
-    width:300px;
-    height:380px;
+    width:320px;
+    height:420px;
 }
 .holidayinfo{
     margin-top:50px;
-    margin-left:160px;
+    margin-left:180px;
 }
 .holidayinfotag1{
-    font-size:30px;
+    font-size:35px;
     color:blue;
     margin-bottom:5px;
 }
 .holidayinfotag2{
-    font-size:30px;
+    font-size:35px;
     margin-bottom:5px;
     margin-top:5px;
     color:blue;
 }
 .holidayinfotag3{
-    font-size:30px;
+    font-size:35px;
     margin-bottom:5px;
     margin-top:7px;
 }
 .bookbtnholiday{
-    width:170px;
-    height:25px;
+    width:200px;
+    height:30px;
     color:blue;
     border-color:blue;
     background-color:transparent;
     cursor:pointer;
     margin-top:20px;
-    margin-left:40px;
+    margin-left:50px;
     border-radius:20px;
     font-weight:bold;
+    font-size:18px;
 }
 .bookbtnholiday:hover{
     color:white;
