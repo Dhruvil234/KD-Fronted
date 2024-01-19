@@ -639,3 +639,127 @@ p{
     color:white;
     background-color:blue;
 }
+/* line no 642 to Package css */
+.packagediv{
+    width:620px;
+    height:300px;
+    border:2px solid white;
+    border-radius:20px;
+    margin-top: 40px;
+    margin-bottom:400px;
+    margin-left:380px;
+    color:black
+}
+.pacakagtag{
+    color:sky blue;
+    margin-top:25px;
+    margin-left:120px;
+}
+.selectcitylabel{
+    margin-top:90px;
+    margin-left:150px;
+}
+.validationtext{
+    margin-left:220px;
+    font-weight:bold;
+    color:red;
+}
+.btnholiday{
+    width:180px;
+    height:28px;
+    margin-top:15px;
+    margin-left:220px;
+    border-radius:20px;
+    cursor:pointer;
+    color:blue;
+    border-color:blue;
+    color:white;
+    font-weight:bold;
+    background-color:blue;
+}
+.results-container{
+    margin-top:100px;
+    width:620px;
+    height:200px;
+    margin-right:50px;
+    border:2px solid blue;
+    border-radius:20px;
+    display:flex;
+}
+.resultinfo1{
+    width:310px;
+    height:200px;
+}
+.resultinfo2{
+    width:310px;
+    height:200px;
+}
+.resulttag{
+    margin-top:20px;
+    margin-left:43px;
+}
+.resultduration{
+    margin-top:20px;
+}
+.resultseller{
+    margin-top:20px;
+}
+.resultservice{
+    margin-top:20px;
+}
+.resultprice{
+    margin-left:80px;
+}
+.resultperperson{
+    font-size:12px;
+    margin-top:5px;
+    margin-left:80px;
+}
+.btnbookholiday{
+    width:130px;
+    height:25px;
+    cursor:pointer;
+    border-radius:20px;
+    border-color:blue;
+    color:white;
+    background-color:blue;
+    margin-top:30px;
+    margin-left:70px;
+}
+.holidaybookingpreview{
+    width:500px;
+    height:420px;
+    border:2px solid white;
+    border-radius:20px;
+    margin-top:40px;
+    margin-left:420px;
+    margin-bottom:300px;
+}
+.holidaybookingtag{
+    color:blue;
+    margin-top:20px;
+    margin-left:105px;
+}
+.holidaybookinginfo1{
+    color:black;
+    margin-top:35px;
+    margin-left:130px;
+}
+.holidaybookinginfo2,
+.holidaybookinginfo3,
+.holidaybookinginfo4,
+.holidaybookinginfo5{
+    color:black;
+    margin-left:130px;
+}
+.holidaybookbtn{
+    width:130px;
+    height:25px;
+    cursor:pointer;
+    border-radius:20px;
+    border-color:blue;
+    color:white;
+    background-color:blue;
+    margin-top:30px;
+    margin-left:180px;
+}

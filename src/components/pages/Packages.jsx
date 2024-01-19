@@ -1,8 +1,115 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Select from 'react-select';
+import { useNavigate } from 'react-router-dom';
 
 export const Packages = () => {
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState(null);
+  const [showResults, setShowResults] = useState(false); 
+  const navigate = useNavigate();
+
+  const validationSchema = Yup.object({
+    city: Yup.string().required('Select City is required'),
+    month: Yup.string().required('Select Month is required'),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      city: '',
+      month: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      // Handle the search functionality here
+      console.log('city:', values.city);
+      // Set the state to show the results container
+      setShowResults(true);
+    },
+  });
+
+  const months = [
+    'January', 'February', 'March', 'April',
+    'May', 'June', 'July', 'August',
+    'September', 'October', 'November', 'December'
+  ];
+
+  const cities = [
+    { value: 'Ahmedabad', label: 'Ahmedabad' },
+    { value: 'Delhi', label: 'Delhi' },
+    { value: 'Mumbai', label: 'Mumbai' },
+    { value: 'Goa', label: 'Goa' },
+    { value: 'Hyderabad', label: 'Hyderabad' },
+  ];
+
+  const handlebookholiday = () => {
+    navigate('/holidaypreview');
+  }
+
+  const containerStyle = {
+    backgroundImage: 'url("https://www.sushanttravels.com/uploads/Z8e6r0b_amazing-2451315_1280.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
+
   return (
-     <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum corporis recusandae sed unde. Doloribus quod ab cum voluptate cupiditate excepturi corporis expedita quia velit ipsum labore consequatur architecto nobis, blanditiis magni temporibus eaque optio praesentium unde minus fugit sapiente incidunt eum delectus. Quos aperiam magni minus odit cumque exercitationem quidem ducimus? Incidunt, odio similique. Culpa quasi necessitatibus quas esse! Qui ipsam vero sed expedita exercitationem nobis in quas nisi dicta debitis enim unde ab asperiores nihil eveniet, doloremque quisquam. Atque autem, fugit molestias excepturi suscipit minima voluptatibus ipsam porro perferendis iure vero culpa. Consequuntur ex excepturi pariatur eligendi quis asperiores quas, ad fuga qui, ipsam animi in corrupti! Id consectetur, earum quisquam beatae neque fugit? Vitae consectetur ad molestiae sapiente harum tempore possimus ducimus consequatur nobis quae. Assumenda quasi explicabo deserunt nam voluptatem debitis sed est natus nostrum enim quae ipsam quo et, placeat id possimus saepe perspiciatis animi! Sed soluta sequi, temporibus mollitia laudantium officiis vel fugiat veniam quidem repellat. Beatae est vero suscipit quia cupiditate architecto praesentium repudiandae possimus consequuntur sit numquam, et aliquam, inventore quisquam sunt expedita eum adipisci, aspernatur soluta accusamus nisi! Distinctio quisquam eaque vel maiores aliquid, cum ex consequatur magni libero quaerat, saepe mollitia! Ab praesentium reprehenderit sequi pariatur! Placeat, tenetur harum. Perspiciatis fugiat dicta temporibus est error molestiae numquam aut harum commodi, eum pariatur omnis ut repellat, aliquid neque sequi ullam, debitis veniam facilis incidunt ipsa esse explicabo? Ut nam commodi perferendis tenetur, dignissimos, consequuntur quo sed molestias pariatur omnis excepturi nihil molestiae ducimus? Harum distinctio aspernatur pariatur dignissimos nihil corporis rerum explicabo dolore iusto ducimus accusamus quo laborum dolorum quidem nesciunt ex aut inventore accusantium a earum, soluta quisquam? Ducimus vitae veniam, harum ipsum officia iure, dolorum, sunt corporis delectus vero molestias eaque hic nostrum quas perspiciatis optio quia libero doloribus amet eius eos fugiat beatae saepe! In quo rerum tempora doloremque? Deleniti error consectetur nulla. Unde earum, rerum impedit asperiores dolor cum iusto ratione! Similique, et saepe numquam totam praesentium dolorem veritatis optio porro eius nobis pariatur voluptate perferendis velit sequi illo excepturi, deserunt eligendi consequatur accusantium dicta accusamus sapiente amet nihil itaque! Numquam, animi sequi. Perspiciatis ipsa illum suscipit quae qui tempora? Accusantium corporis rerum aut voluptas beatae ut doloribus quod inventore ipsam veniam vitae, reiciendis quisquam minima dignissimos iure ab autem blanditiis excepturi neque porro, accusamus optio! Molestias exercitationem laborum architecto delectus eum cum rem consequuntur eaque commodi, quaerat vero sit qui amet dicta officiis consectetur minus voluptatibus tempore. Minus facilis dolorum quidem repudiandae possimus autem, facere ipsum voluptas necessitatibus quos vero aliquam optio. Velit molestiae dolorem qui ab reprehenderit inventore eos. Cum ullam, ad suscipit explicabo exercitationem placeat odit possimus. Dolores ea facere placeat dolorem explicabo? Impedit unde perspiciatis maiores vitae, voluptas officia? Facilis sint asperiores dolorum distinctio, nesciunt deserunt dolores ab quo debitis fuga mollitia tempore? Iusto corporis beatae, debitis distinctio similique eum, sequi quidem possimus odio dicta magnam commodi. Doloribus, dignissimos ex! Nobis cum ut molestiae doloremque praesentium vitae dolores rerum harum natus, soluta consequuntur debitis nesciunt quaerat velit voluptatum aperiam cupiditate exercitationem repellendus atque, eaque delectus nostrum consectetur. Natus eveniet doloremque repellendus fuga similique necessitatibus suscipit in sit nesciunt quidem? Dolor eos et, voluptates qui quaerat a reprehenderit. Itaque aliquid eos esse, ipsam molestias consequatur nihil quos earum laboriosam. Consectetur quaerat eveniet natus nobis fugit, eligendi incidunt reiciendis nisi delectus voluptate doloremque, temporibus fugiat non culpa maiores amet libero ab corrupti harum rerum voluptatibus aliquam numquam ratione? Voluptas, natus! Eveniet animi adipisci quia obcaecati quibusdam inventore, nihil repellat aperiam quis rerum cum? Nulla sit fugit accusantium? Tempore, iusto! Enim, deserunt necessitatibus nisi corporis reprehenderit omnis voluptatibus quo a similique incidunt rem dolorum temporibus magnam harum voluptates voluptate ex explicabo amet quibusdam odit debitis cupiditate facilis sunt assumenda. Officia voluptatibus doloribus nulla illum facere accusamus sed eum accusantium, nisi porro, error quo totam harum iure autem sint necessitatibus magnam dolorem laboriosam aliquam rem! Molestias aut dolore nemo deleniti officia ex alias sequi itaque enim in, voluptates dolor dolorum minus tenetur quibusdam corporis modi ad hic quaerat doloribus aliquam? Provident placeat ipsam vero perspiciatis soluta, similique sint porro. Nisi cumque quam neque, incidunt sapiente non rerum dolores quasi officia, commodi excepturi nobis sit numquam sunt provident, atque veniam culpa quis adipisci et! Repellat eum eveniet voluptatum officia recusandae commodi ipsam quas, officiis sit mollitia. Sed excepturi beatae consequatur consectetur natus maxime harum, sunt molestias odit mollitia doloremque praesentium magnam distinctio molestiae, dicta atque error voluptate in sit! Saepe reiciendis quas neque vero necessitatibus blanditiis corrupti pariatur fugiat! Laborum fuga ratione vitae ea impedit earum saepe eveniet quo harum, ut, temporibus velit aliquam repellat eos sed est doloremque natus exercitationem assumenda cumque atque tempore provident quasi. Amet autem, deserunt labore sint assumenda vero ipsa dolore asperiores atque illo reiciendis sunt quae sit maiores eveniet numquam. Sapiente maiores dolore maxime provident cum error placeat alias. Veniam maxime omnis qui quibusdam modi rerum aliquam enim. Illo, cum! Similique, delectus fugit natus, perspiciatis tempore optio ut dolor neque accusantium, cumque esse placeat dolores doloribus ullam soluta sunt cum magni distinctio porro nulla earum ratione ducimus nobis laboriosam. Corrupti tempore earum saepe animi impedit in doloribus ex id amet, recusandae quae possimus maiores nostrum perferendis ratione! Commodi nostrum excepturi totam delectus facilis, officia nulla libero nihil aliquam vel quidem iusto mollitia illum eaque distinctio corrupti magnam ducimus maiores? Ut quis dolore fuga vitae est ab cupiditate? Nesciunt, est asperiores. Consequuntur at animi dolore tempore explicabo commodi doloribus quidem maiores error, eius iusto. Beatae dolore atque minus reprehenderit doloremque eius. Ab assumenda temporibus atque, necessitatibus unde esse veniam placeat maxime delectus eveniet voluptate et saepe nisi corporis tempore sapiente omnis labore voluptatibus. Non, iste ullam. Ducimus dolores soluta ullam nostrum omnis consequuntur doloremque hic unde praesentium. Vitae, cum cumque id eligendi sunt veritatis! Tempore molestiae, pariatur in veniam explicabo possimus? Saepe dolorum beatae sit voluptatibus dolore sunt voluptates nihil deleniti ullam at, cum, repudiandae quis mollitia velit iure quia quod totam? Omnis fugiat, iure velit illo nobis similique ullam est sequi reprehenderit libero!
+    <div className='packagediv' style={containerStyle}>
+      <form onSubmit={formik.handleSubmit}>
+        <h2 className='pacakagtag'>Book Domestic Holiday Packages</h2>
+        
+        <label>Select City:</label>
+        <Select
+          id="city"
+          name="city"
+          className='selectcitytag'
+          placeholder='Select City'
+          options={cities}
+          value={selectedCity}
+          onChange={(selectedOption) => {
+            formik.setFieldValue('city', selectedOption.value);
+            setSelectedCity(selectedOption);
+          }}
+        />
+        {formik.touched.city && formik.errors.city ? (
+          <div className='validationtext'>{formik.errors.city}</div>
+        ) : null}<br />
+
+        <label htmlFor="month">Month of Travel:</label>
+        <Select
+          id="month"
+          name="month"
+          className='selectmonth'
+          placeholder='Select Month'
+          options={months.map(month => ({ value: month, label: month }))}
+          value={selectedMonth}
+          onChange={(selectedOption) => {
+            formik.setFieldValue('month', selectedOption.value);
+            setSelectedMonth(selectedOption);
+          }}
+        />
+        {formik.touched.month && formik.errors.month ? (
+          <div className='validationtext'>{formik.errors.month}</div>
+        ) : null}<br />
+
+        <button type="submit" className='btnholiday'>Search Package</button>
+      </form>
+
+      {showResults && (
+        <div className='results-container'>
+         <div className='resultinfo1'> 
+          <h3 className='resulttag'>Kankaria Lake</h3>
+          <p className='resultduration'>4 Night/5 Days</p>
+          <p className='resultseller'>Seller : KD Travels</p>
+          <p className='resultservice'>Service : Meals,Hotels,Transfer</p>
+        </div>
+        <div className='resultinfo2'>
+          <p className='resultprice'>Price : 1,999/</p>
+          <p className='resultperperson'>*Per Person</p>
+          <button type='submit'onClick={handlebookholiday} className='btnbookholiday' >Book Now</button>
+        </div>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};

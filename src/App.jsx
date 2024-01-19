@@ -15,6 +15,7 @@ import  ChangedPassword  from './components/pages/ChangedPassword'
 import AdminPage from './components/pages/adminpage';
 import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 import AdminRouteGuard from './components/pages/AdminRouteGuard'
+import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='/Change-password' element={<ChangedPassword />} />
         <Route path='/AdminPage' element={<AdminRouteGuard element={<AdminPage />} />} />
         <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
+        <Route path='/holidaypreview' element={<HolidayBookingPreview/>}/>
 
 
 
