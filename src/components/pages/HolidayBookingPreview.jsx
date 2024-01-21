@@ -17,11 +17,11 @@ export const HolidayBookingPreview = () => {
   return (
     <div className='holidaybookingpreview' style={containerStyle}>
         <h2 className='holidaybookingtag'>Holiday Booking Preview</h2>
-          <h2 className='holidaybookinginfo1'>Kankaria Lake</h2>
+          <h2 className='holidaybookinginfo1'>Gateway Of India</h2>
           <p className='holidaybookinginfo2'>4 Night/5 Days</p>
           <p className='holidaybookinginfo3'>Seller : KD Travels</p>
           <p className='holidaybookinginfo4'>Service : Meals,Hotels,Transfer</p>
-          <p className='holidaybookinginfo5'>Price : 1,999/</p>
+          <p className='holidaybookinginfo5'>Price : 19,999/</p>
           <button type='submit'onClick={handlebookholiday} className='holidaybookbtn' >Book Now</button>
 
     </div>

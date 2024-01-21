@@ -110,6 +110,7 @@ export const Flight = () => {
     backgroundImage: 'url("https://www.shutterstock.com/image-photo/white-model-plane-airplane-on-260nw-1696581118.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
   };
 
   return (
