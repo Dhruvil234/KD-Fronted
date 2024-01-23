@@ -636,19 +636,19 @@ p{
 }
 /* line no 642 to Package css */
 .packagediv{
-    width:620px;
+    width:670px;
     height:300px;
     border:2px solid white;
     border-radius:20px;
     margin-top: 40px;
     margin-bottom:400px;
-    margin-left:380px;
+    margin-left:340px;
     color:black
 }
 .pacakagtag{
     color: #000137;
     margin-top:25px;
-    margin-left:120px;
+    margin-left:150px;
 }
 .citydiv{
     display:flex;
@@ -656,7 +656,7 @@ p{
 }
 .city{
     margin-top:40px;
-    margin-left:150px;
+    margin-left:170px;
     font-weight:bold;
 }
 .selectcitytag{
@@ -674,7 +674,7 @@ p{
 }
 .date{
     margin-top:25px;
-    margin-left:173px;
+    margin-left:205px;
     margin-bottom:30px;
     font-weight:bold;
 }
@@ -685,7 +685,7 @@ p{
     width:180px;
     height:28px;
     margin-top:15px;
-    margin-left:220px;
+    margin-left:240px;
     border-radius:20px;
     cursor:pointer;
     color:blue;
@@ -695,42 +695,58 @@ p{
     background-color:blue;
 }
 .results-container{
-    margin-top:100px;
-    width:620px;
+    margin-top:140px;
+    width:670px;
     height:200px;
-    margin-right:50px;
     border:2px solid blue;
     border-radius:20px;
     display:flex;
+   
+}
+.resultimagecontainer{
+    width:210px;
+    height:180px;
+}
+.placeImage{
+    width:200px;
+    height:170px;
+    margin-left:15px;
+    margin-top:15px;
 }
 .resultinfo1{
-    width:310px;
+    width:290px;
     height:200px;
+    margin-left:5px;
 }
 .resultinfo2{
-    width:310px;
-    height:200px;
+    width:200px;
+    height:150px;
 }
 .resulttag{
     margin-top:20px;
-    margin-left:43px;
+    margin-left:23px;
 }
 .resultduration{
     margin-top:20px;
+    margin-left:23px;
 }
 .resultseller{
     margin-top:20px;
+    margin-left:23px;
 }
 .resultservice{
     margin-top:20px;
+    font-size:15px;
+    margin-left:23px;
 }
 .resultprice{
-    margin-left:80px;
+    margin-top:45px;
+    margin-left:20px;
 }
 .resultperperson{
     font-size:12px;
     margin-top:5px;
-    margin-left:80px;
+    margin-left:20px;
 }
 .btnbookholiday{
     width:130px;
@@ -740,16 +756,17 @@ p{
     border-color:blue;
     color:white;
     background-color:blue;
-    margin-top:30px;
-    margin-left:70px;
+    margin-top:20px;
+    margin-left:20px;
 }
+/* line no 762 to 800 Holiday Preview css */
 .holidaybookingpreview{
     width:500px;
-    height:420px;
+    height:480px;
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
-    margin-left:420px;
+    margin-left:440px;
     margin-bottom:300px;
 }
 .holidaybookingtag{
@@ -765,7 +782,8 @@ p{
 .holidaybookinginfo2,
 .holidaybookinginfo3,
 .holidaybookinginfo4,
-.holidaybookinginfo5{
+.holidaybookinginfo5,
+.holidaybookinginfo6{
     color:black;
     margin-left:130px;
 }

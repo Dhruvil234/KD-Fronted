@@ -69,9 +69,6 @@ const ForgotPassword = () => {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
   }
 
-  
-  
-
   return (
     <div className="ForgotContainer" style={containerStyle}>
       <h3 className="forgotTag">Forgot Password</h3>

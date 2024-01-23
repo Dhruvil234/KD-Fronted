@@ -96,7 +96,7 @@ export const Flight = () => {
         const errorMessages = error.inner.reduce((messages, innerError) => {
           return { ...messages, [innerError.path]: innerError.message };
         }, {});
-        // Display error messages for each field
+        
         alert(
           `\n${Object.keys(errorMessages)
             .map((key) => `${key}: ${errorMessages[key]}`)
@@ -193,7 +193,6 @@ export const Flight = () => {
         </div>
       </div>
 
-        {/* Search Button */}
         <button type='submit' className='flightbtn' onClick={handleSearch}>
           Search Flights
         </button>

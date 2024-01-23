@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import Select from 'react-select';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
-import { isAfter, subDays } from 'date-fns'; 
+import { subDays } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export const Packages = () => {
@@ -23,14 +23,13 @@ export const Packages = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log('city:', values.city);
+      console.log(`city: "${values.city}"`);
       setShowResults(true);
-      
     },
   });
 
   const handlebookholiday = () => {
-    navigate('/holidaypreview');
+    navigate('/holidaypreview', { state: { selectedDate: formik.values.date } });
   };
 
   const containerStyle = {
@@ -50,54 +49,58 @@ export const Packages = () => {
 
   return (
     <div className='packagediv' style={containerStyle}>
-      <form onSubmit={formik.handleSubmit}>
+      <div className='packagedata'>     
+        <form onSubmit={formik.handleSubmit}>
         <h2 className='pacakagtag'>Book Domestic Holiday Packages</h2>
-          <div className='citydiv'>
-            <label className='city'>Select City :</label>
-            <Select
-              id='city'
-              name='city'
-              className='selectcitytag'
-              placeholder='Select City'
-              options={cities}
-              value={selectedCity}
-              onChange={(selectedOption) => {
-                formik.setFieldValue('city', selectedOption.value);
-                setSelectedCity(selectedOption);
-              }}
-            />
-          </div>
-          {formik.touched.city && formik.errors.city ? (
-              <div className='validationtext'>{formik.errors.city}</div>
-            ) : null}
+        <div className='citydiv'>
+          <label className='city'>Select City :</label>
+          <Select
+            id='city'
+            name='city'
+            className='selectcitytag'
+            placeholder='Select City'
+            options={cities}
+            value={selectedCity}
+            onChange={(selectedOption) => {
+              formik.setFieldValue('city', selectedOption.value);
+              setSelectedCity(selectedOption);
+            }}
+          />
+        </div>
+        {formik.touched.city && formik.errors.city ? (
+          <div className='validationtext'>{formik.errors.city}</div>
+        ) : null}
 
-          <div className='form-group'>
-            <label className='date'>Date of Travel :</label>
-            <DatePicker
-              id='date'
-              name='date'
-              className='datepicker'
-              selected={formik.values.date}
-              onChange={(date) => formik.setFieldValue('date', date)}
-              dateFormat='dd/MM/yyyy'
-              placeholderText='Select Date'
-              minDate={subDays(new Date(), -1)} 
-            />
-            {formik.touched.date && formik.errors.date ? (
-              <div className='validationtext'>{formik.errors.date}</div>
-            ) : null}
-          
+        <div className='form-group'>
+          <label className='date'>Date of Travel :</label>
+          <DatePicker
+            id='date'
+            name='date'
+            className='datepicker'
+            selected={formik.values.date} 
+            onChange={(date) => formik.setFieldValue('date', date)}
+            dateFormat='dd/MM/yyyy'
+            placeholderText='Select Date'
+            minDate={subDays(new Date(), -1)}
+          />
+          {formik.touched.date && formik.errors.date ? (
+            <div className='validationtext'>{formik.errors.date}</div>
+          ) : null}
         </div>
 
         <button type='submit' className='btnholiday'>
           Search Package
         </button>
       </form>
-
+    </div>
+ 
       {showResults && (
         <div className='results-container'>
+          <div className='resultimagecontainer'>
+            <img src="/RedFort.png" alt='Place image' className='placeImage' />
+          </div>
           <div className='resultinfo1'>
-            <h3 className='resulttag'>Gateway Of India</h3>
+            <h3 className='resulttag'>Red Fort</h3>
             <p className='resultduration'>4 Night/5 Days</p>
             <p className='resultseller'>Seller : KD Travels</p>
             <p className='resultservice'>Service : Meals,Hotels,Transfer</p>
