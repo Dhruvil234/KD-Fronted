@@ -688,7 +688,6 @@ p{
     margin-left:240px;
     border-radius:20px;
     cursor:pointer;
-    color:blue;
     border-color:blue;
     color:white;
     font-weight:bold;
@@ -797,4 +796,14 @@ p{
     background-color:blue;
     margin-top:30px;
     margin-left:180px;
+}
+/* line no 801 to Hotel Page css */
+.hoteldiv{
+    width:700px;
+    height:400px;
+    border-radius:20px;
+    border:2px solid #FF735C;
+    margin-bottom:300px;
+    margin-top:30px;
+    margin-left:325px;
 }

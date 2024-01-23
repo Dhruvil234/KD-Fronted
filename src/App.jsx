@@ -24,17 +24,17 @@ function App() {
       <h2><Navbar/></h2>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/Flight' element={<Flight/>}></Route>
-        <Route path='/Hotel' element={<Hotel/>}></Route>
-        <Route path='/Packages' element={<Packages/>}></Route>
-        <Route path='/Register' element={<Register/>}></Route>
-        <Route path='/Login' element={<Login/>}></Route>
+        <Route path='/flight' element={<Flight/>}></Route>
+        <Route path='/hotel' element={<Hotel/>}></Route>
+        <Route path='/packages' element={<Packages/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
         <Route path='/*' element={<ErrorPage/>}></Route>
         <Route path="/" exact component={Home} />
-        <Route path="/error" component={ErrorPage} />
-        <Route path='/Forgot-password' element={<ForgotPassword />} />
-        <Route path='/Change-password' element={<ChangedPassword />} />
-        <Route path='/AdminPage' element={<AdminRouteGuard element={<AdminPage />} />} />
+        <Route path="/errorpage" component={ErrorPage} />
+        <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/change-password' element={<ChangedPassword />} />
+        <Route path='/adminPage' element={<AdminRouteGuard element={<AdminPage />} />} />
         <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
         <Route path='/holidaypreview' element={<HolidayBookingPreview/>}/>
 

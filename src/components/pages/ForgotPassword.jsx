@@ -50,7 +50,7 @@ const ForgotPassword = () => {
           if (values.otp === userotp) {
             // in this now user want to move this page <Route path='/Change-password' element={<ChangedPassword />} />
             alert("OTP Match Sucessfully!.");
-            navigate('/Change-password',{ state: { userEmail: values.email } });
+            navigate('/change-password',{ state: { userEmail: values.email } });
           } else {
             alert('Invalid OTP. Please try again.');
           }

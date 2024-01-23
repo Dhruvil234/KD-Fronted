@@ -9,7 +9,7 @@ const AdminRouteGuard = ({ element }) => {
     return element;
   } else {
     // Redirect to a 404 page or any other page for unauthorized access
-    return <Navigate to="/ErrorPage" />;
+    return <Navigate to="/error" />;
   }
 };
     AdminRouteGuard.propTypes = {
