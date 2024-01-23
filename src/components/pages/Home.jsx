@@ -9,13 +9,13 @@ export const Home = () => {
   const navigate = useNavigate();
 
   const handlebookflight = () => {
-    navigate('/flight');
+    navigate('/Flight');
   };
   const handlebookhotel = () => {
-    navigate('/hotel');
+    navigate('/Hotel');
   };
   const handlebookholiday = () => {
-    navigate('/packages');
+    navigate('/Packages');
   }
   
   return (

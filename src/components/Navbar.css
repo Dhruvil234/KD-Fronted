@@ -761,7 +761,7 @@ p{
 /* line no 762 to 800 Holiday Preview css */
 .holidaybookingpreview{
     width:500px;
-    height:480px;
+    height:585px;
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
@@ -782,9 +782,12 @@ p{
 .holidaybookinginfo3,
 .holidaybookinginfo4,
 .holidaybookinginfo5,
-.holidaybookinginfo6{
+.holidaybookinginfo6,
+.holidaybookinginfo7,
+.holidaybookinginfo8{
     color:black;
     margin-left:130px;
+    
 }
 .holidaybookbtn{
     width:130px;

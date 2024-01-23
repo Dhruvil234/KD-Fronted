@@ -8,8 +8,7 @@ const AdminRouteGuard = ({ element }) => {
   if (isAdmin === 'true') {
     return element;
   } else {
-    // Redirect to a 404 page or any other page for unauthorized access
-    return <Navigate to="/error" />;
+      return <Navigate to="/error" />;
   }
 };
     AdminRouteGuard.propTypes = {

@@ -26,6 +26,8 @@ export const HolidayBookingPreview = () => {
           <p className='holidaybookinginfo4'>Seller : KD Travels</p>
           <p className='holidaybookinginfo5'>Service : Meals,Hotels,Transfer</p>
           <p className='holidaybookinginfo6'>Price : 19,999/</p>
+          <p className='holidaybookinginfo7'>Name: Mistry Dhruvil </p>
+          <p className='holidaybookinginfo8'>Email: 21bcubs@gmail.com</p>
           <button type='submit'onClick={handlebookholiday} className='holidaybookbtn' >Book Now</button>
     </div>
   )
