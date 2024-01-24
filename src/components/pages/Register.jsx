@@ -4,8 +4,9 @@ import * as Yup from 'yup';
 import regImage from '../../Images/Reg.png';
 import { toast } from 'react-toastify';
 
+const API = import.meta.env.VITE_BACKENDAPI;
 const passwordValidationRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&])(?=.*[0-9]).{6,}$/;
-const apiUrl = "http://localhost:8080/api/register";
+const apiUrl = `${API}/api/register`;
 
 export const Register = () => {
   const formik = useFormik({
@@ -47,6 +48,8 @@ export const Register = () => {
           const responseData = await response.json();
           alert(responseData.message);
           console.log(responseData);
+          localStorage.setItem('userFullName', values.fullName);
+          localStorage.setItem('userEmail', values.email);
           resetForm();
           window.location.href = '/login';
           

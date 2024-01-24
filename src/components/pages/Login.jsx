@@ -6,8 +6,9 @@ import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
-const loginapi = 'http://localhost:8080/api/login';
-// Define validation schema using Yup
+const API = import.meta.env.VITE_BACKENDAPI;
+const loginapi = `${API}/api/login`;
+
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Email is required'),
   password: Yup.string().min(6).required('Password is required'),

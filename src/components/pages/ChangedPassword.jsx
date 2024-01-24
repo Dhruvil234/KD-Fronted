@@ -4,6 +4,9 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { toast } from 'react-toastify';
 import { useLocation } from "react-router-dom";
+
+const API = import.meta.env.VITE_BACKENDAPI;
+const changepasswordapi = `${API}/api/updatepassword`;
 const ChangePassword = () => {
   const location = useLocation();
   const userEmail = location.state?.userEmail || "";
@@ -29,7 +32,7 @@ const ChangePassword = () => {
     onSubmit: async(values ,{resetForm}) => {
       try {
         // Send PATCH request to update password
-        const response = await fetch('http://localhost:8080/api/updatepassword', {
+        const response = await fetch(changepasswordapi, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

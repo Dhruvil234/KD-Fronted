@@ -404,8 +404,8 @@ p{
 }
 /* Flight booking preview page */
 .previewcontainer{
-    width:400px;
-    height:480px;
+    width:430px;
+    height:580px;
     border:2px solid white;
     border-radius:20px;
     margin-left:480px;

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+
+const API = import.meta.env.VITE_BACKENDAPI;
+const ForgotPasswordapi = `${API}/api/sendotp`;
+
 let userotp="";
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -28,7 +32,7 @@ const ForgotPassword = () => {
       try {
         if (!showOtpField) {
           // Send email to API to get OTP
-          const response = await fetch('http://localhost:8080/api/sendotp', {
+          const response = await fetch(ForgotPasswordapi, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -48,7 +52,6 @@ const ForgotPassword = () => {
           }
         } else {
           if (values.otp === userotp) {
-            // in this now user want to move this page <Route path='/Change-password' element={<ChangedPassword />} />
             alert("OTP Match Sucessfully!.");
             navigate('/Change-password',{ state: { userEmail: values.email } });
           } else {
