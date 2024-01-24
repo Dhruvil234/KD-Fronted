@@ -5,6 +5,9 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import * as Yup from 'yup';
 
+const API = import.meta.env.VITE_BACKENDAPI;
+const flightsearchapi = `${API}/api/findflights`;
+
 let responseData="";
 export const Flight = () => {
   const [departureCity, setDepartureCity] = useState(null);
@@ -73,8 +76,8 @@ export const Flight = () => {
         to: formData.To.value,
         flightClass: formData.Class.value,
       };
-      //console.log(requestData)
-      const response = await fetch('http://localhost:8080/api/findflights', {
+      console.log(requestData)
+      const response = await fetch(flightsearchapi, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +105,7 @@ export const Flight = () => {
             .map((key) => `${key}: ${errorMessages[key]}`)
             .join('\n')}`
         );
-      } 
+      }
     }
   };
 
