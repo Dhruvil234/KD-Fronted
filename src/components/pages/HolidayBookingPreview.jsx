@@ -13,7 +13,7 @@ export const HolidayBookingPreview = () => {
     }
     
     const containerStyle = {
-        backgroundImage: 'url("https://img.freepik.com/free-photo/pouch-map-toy-airplane-blue-background-with-space-writing-text_23-2147958180.jpg")',
+        backgroundImage: 'url("https://png.pngtree.com/background/20230403/original/pngtree-suitcase-blue-sky-white-clouds-sun-global-vacation-travel-advertising-background-picture-image_2273235.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       };

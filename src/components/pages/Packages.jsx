@@ -57,7 +57,7 @@ export const Packages = () => {
           <Select
             id='city'
             name='city'
-            className='selectcitytag'
+            className='packagecitytag'
             placeholder='Select City'
             options={cities}
             value={selectedCity}

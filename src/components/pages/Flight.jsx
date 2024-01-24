@@ -31,7 +31,7 @@ export const Flight = () => {
   const cityOptions = [
     { value: 'Ahmedabad', label: 'Ahmedabad' },
     { value: 'Mumbai', label: 'Mumbai' },
-    { value: 'Delhi', label: 'Delhi' },
+    { value: 'Delhi', label: 'Delhi' },                     
     { value: 'Goa', label: 'Goa' },
     { value: 'Hyderabad', label: 'Hyderabad' },
   ];
