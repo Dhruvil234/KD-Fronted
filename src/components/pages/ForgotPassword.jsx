@@ -53,7 +53,7 @@ const ForgotPassword = () => {
         } else {
           if (values.otp === userotp) {
             alert("OTP Match Sucessfully!.");
-            navigate('/Change-password',{ state: { userEmail: values.email } });
+            navigate('/change-password',{ state: { userEmail: values.email } });
           } else {
             alert('Invalid OTP. Please try again.');
           }
@@ -66,11 +66,11 @@ const ForgotPassword = () => {
     },
   });
   const containerStyle = {
-    backgroundImage: 'url("https://wallpapers.com/images/hd/microsoft-teams-blur-background-2560-x-1440-h8us0dd16jbes4ho.jpg")',
+    backgroundImage: 'url("https://app.shipmonk.com/assets/images/login/@1x/ShipMonk-warehouse-5.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
   }
-  
 
   return (
     <div className="ForgotContainer" style={containerStyle}>

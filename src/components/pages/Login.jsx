@@ -4,7 +4,6 @@ import * as Yup from 'yup';  // Import Yup
 import login from '../../Images/login.png';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const loginapi = `${API}/api/login`;
@@ -26,13 +25,11 @@ const Login = () => {
       
         
       if (values.email === import.meta.env.VITE_ADMIN_EMAIL && values.password === import.meta.env.VITE_ADMIN_PASSWORD) {
-        // Redirect to admin page if the credentials match
         localStorage.setItem('isAdmin','true');
-        window.location.href = '/Adminpage';
+        window.location.href = '/adminpage';
         return;
       }
       try {
-        // Simulating API call
         const response = await fetch(loginapi, {
           method: 'POST',
           headers: {
@@ -47,8 +44,6 @@ const Login = () => {
 
           // Store token in local storage
           localStorage.setItem('token', responseData.token);
-
-          // You can redirect the user or perform other actions as needed
           window.location.href = '/';
         } else {
           const errorData = await response.json();
@@ -98,7 +93,7 @@ const Login = () => {
             )}
           
           <div className='forgotPasswordLink'>
-            <NavLink to='/Forgot-Password' style={{ color: 'blue', textDecoration: 'none' }}>
+            <NavLink to='/Forgot-password' style={{ color: 'blue', textDecoration: 'none' }}>
               Forgot Password
             </NavLink>
           </div>

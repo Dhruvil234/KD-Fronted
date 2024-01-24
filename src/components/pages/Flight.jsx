@@ -34,7 +34,7 @@ export const Flight = () => {
   const cityOptions = [
     { value: 'Ahmedabad', label: 'Ahmedabad' },
     { value: 'Mumbai', label: 'Mumbai' },
-    { value: 'Delhi', label: 'Delhi' },
+    { value: 'Delhi', label: 'Delhi' },                     
     { value: 'Goa', label: 'Goa' },
     { value: 'Hyderabad', label: 'Hyderabad' },
   ];
@@ -99,7 +99,7 @@ export const Flight = () => {
         const errorMessages = error.inner.reduce((messages, innerError) => {
           return { ...messages, [innerError.path]: innerError.message };
         }, {});
-        // Display error messages for each field
+        
         alert(
           `\n${Object.keys(errorMessages)
             .map((key) => `${key}: ${errorMessages[key]}`)
@@ -113,6 +113,7 @@ export const Flight = () => {
     backgroundImage: 'url("https://www.shutterstock.com/image-photo/white-model-plane-airplane-on-260nw-1696581118.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
   };
 
   return (
@@ -195,7 +196,6 @@ export const Flight = () => {
         </div>
       </div>
 
-        {/* Search Button */}
         <button type='submit' className='flightbtn' onClick={handleSearch}>
           Search Flights
         </button>

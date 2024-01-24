@@ -203,16 +203,12 @@ input {
     height: 360px;
     margin-bottom: 400px;
     margin-top: 40px;
-    border: solid;
+    border: solid white;
     border-radius: 20px;
     margin-left: 460px;
-    background-image: url("img_nature.jpg");
-    background-size: cover; /* Adjust to your preference */
-    background-position: center;
-    position: relative;
 }
 .forgotTag {
-    color: blue;
+    color: white;
     margin-top: 30px;
     margin-left: 140px;
     margin-bottom: 35px;
@@ -248,14 +244,14 @@ input {
 .ChangePasswordContainer{
     width:500px;
     height:400px;
-    border:solid;
+    border:solid white;
     border-radius:20px;
     margin-bottom:500px;
-    margin-top:65px;
-    margin-left:420px;
+    margin-top:40px;
+    margin-left:430px;
 }
 .changeTag{
-    color:rgb(0, 0, 0);
+    color:white;
     margin-top:25px;
     margin-left: 150px;
     margin-bottom: 20px;
@@ -496,7 +492,6 @@ p{
     justify-content: center;
     align-items: flex-start;
     margin-left:20px;
-    
 }
 .flightinfotag1{
     color:#0A92C6;
@@ -638,4 +633,246 @@ p{
 .bookbtnholiday:hover{
     color:white;
     background-color:blue;
+}
+/* line no 642 to Package css */
+.packagediv{
+    width:670px;
+    height:300px;
+    border:2px solid white;
+    border-radius:20px;
+    margin-top: 40px;
+    margin-bottom:400px;
+    margin-left:340px;
+    color:black
+}
+.pacakagtag{
+    color: #000137;
+    margin-top:25px;
+    margin-left:150px;
+}
+.citydiv{
+    display:flex;
+    
+}
+.city{
+    margin-top:40px;
+    margin-left:170px;
+    font-weight:bold;
+}
+.packagecitytag{
+    width:220px;
+    margin-left:5px;
+    margin-top:30px;
+    margin-bottom:13px;
+    font-weight:bold;
+} 
+.validationtext{
+    margin-left:280px;
+    margin-bottom:10px;
+    font-weight:bold;
+    color:red;
+}
+.date{
+    margin-top:25px;
+    margin-left:205px;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+.datepicker{
+    margin-left:5px;
+}
+.btnholiday{
+    width:180px;
+    height:28px;
+    margin-top:15px;
+    margin-left:240px;
+    border-radius:20px;
+    cursor:pointer;
+    border-color:blue;
+    color:white;
+    font-weight:bold;
+    background-color:blue;
+}
+.results-container{
+    margin-top:140px;
+    width:670px;
+    height:200px;
+    border:2px solid blue;
+    border-radius:20px;
+    display:flex;
+   
+}
+.resultimagecontainer{
+    width:210px;
+    height:180px;
+}
+.placeImage{
+    width:200px;
+    height:170px;
+    margin-left:15px;
+    margin-top:15px;
+}
+.resultinfo1{
+    width:290px;
+    height:200px;
+    margin-left:5px;
+}
+.resultinfo2{
+    width:200px;
+    height:150px;
+}
+.resulttag{
+    margin-top:20px;
+    margin-left:23px;
+}
+.resultduration{
+    margin-top:20px;
+    margin-left:23px;
+}
+.resultseller{
+    margin-top:20px;
+    margin-left:23px;
+}
+.resultservice{
+    margin-top:20px;
+    font-size:15px;
+    margin-left:23px;
+}
+.resultprice{
+    margin-top:45px;
+    margin-left:20px;
+}
+.resultperperson{
+    font-size:12px;
+    margin-top:5px;
+    margin-left:20px;
+}
+.btnbookholiday{
+    width:130px;
+    height:25px;
+    cursor:pointer;
+    border-radius:20px;
+    border-color:blue;
+    color:white;
+    background-color:blue;
+    margin-top:20px;
+    margin-left:20px;
+}
+/* line no 762 to 800 Holiday Preview css */
+.holidaybookingpreview{
+    width:500px;
+    height:585px;
+    border:2px solid white;
+    border-radius:20px;
+    margin-top:40px;
+    margin-left:440px;
+    margin-bottom:300px;
+}
+.holidaybookingtag{
+    color:black;
+    margin-top:20px;
+    margin-left:105px;
+}
+.holidaybookinginfo1{
+    color:black;
+    margin-top:35px;
+    margin-left:130px;
+}
+.holidaybookinginfo2,
+.holidaybookinginfo3,
+.holidaybookinginfo4,
+.holidaybookinginfo5,
+.holidaybookinginfo6,
+.holidaybookinginfo7,
+.holidaybookinginfo8{
+    color:black;
+    margin-left:130px;
+    
+}
+.holidaybookbtn{
+    width:130px;
+    height:25px;
+    cursor:pointer;
+    border-radius:20px;
+    border-color:blue;
+    color:white;
+    background-color:blue;
+    margin-top:30px;
+    margin-left:180px;
+}
+/* line no 801 to Hotel Page css */
+.hoteldiv{
+    width:700px;
+    height:400px;
+    border-radius:20px;
+    border:2px solid white;
+    margin-bottom:300px;
+    margin-top:30px;
+    margin-left:325px;
+}
+.hoteltag{
+    margin-top:18px;
+    margin-left:185px;
+}
+.hotelinfodata{
+    width:400px;
+    height:46px;
+    display:flex;
+    margin-left:65px;
+    margin-top:30px;
+}
+.hotelcitylabel{
+    margin-top:10px;
+    font-weight:bold;
+}
+.hotelcitydropdown{
+    width:200px;
+    margin-left:7px;
+    font-weight:bold;
+}
+.hotelvalidationcity{
+    font-weight:bold;
+    color:red;
+    margin-left:190px;
+}
+.datesection{
+    width:530px;
+    height:45px;
+    margin-top:20px;
+    margin-left:65px;
+    display:flex;
+}
+.hotelvalidationdiv{
+    width:350px;
+    height:30px;
+    display:flex;
+    font-weight:bold;
+    margin-top:3px;
+    margin-left:350px;
+    color:red;
+}
+.checkindate{
+   margin-top:8px;
+   font-weight:bold;
+}
+.checkoutdate{
+    margin-top:8px;
+    font-weight:bold;
+    margin-left:75px;
+}
+.datepicker{
+    font-weight:bold;
+}
+.hotelbookbtn{
+    width:160px;
+    height:30px;
+    border:2px solid #FF735C;
+    border-radius:20px;
+    color:white;
+    background-color:#FF735C;
+    cursor:pointer;
+    font-size:15.5px;
+    font-weight:bold;
+    margin-left:270px;
+    margin-top:55px;
 }

@@ -1,7 +1,135 @@
-import React from 'react'
+import React from 'react';
+import Select from 'react-select';
+import { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import DatePicker from 'react-datepicker';
+import { addDays } from 'date-fns';
 
 export const Hotel = () => {
+  const [selectedCity, setSelectedCity] = useState(null);
+
+  const validationSchema = Yup.object({
+    city: Yup.string().required('City is required'),
+    checkinDate: Yup.date().required('Check-in date is required'),
+    checkOutDate: Yup.date()
+      .min(Yup.ref('checkinDate'), 'Check-out date must be after check-in date')
+      .required('Check-out date is required'),
+  });
+
+  const cities = [
+    { value: 'Ahmedabad', label: 'Ahmedabad' },
+    { value: 'Delhi', label: 'Delhi' },
+    { value: 'Mumbai', label: 'Mumbai' },
+    { value: 'Goa', label: 'Goa' },
+    { value: 'Hyderabad', label: 'Hyderabad' },
+  ];
+
+  const adultoptions = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+    { value: '4', label: '4' },
+    { value: '5', label: '5' },
+    { value: '6', label: '6' },
+    { value: '7', label: '7' },
+    { value: '8', label: '8' },
+  ];
+
+  const childoptions = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+    { value: '4', label: '4' },
+  ];
+
+  const roomoptions = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+  ];
+
+  const formik = useFormik({
+    initialValues: {
+      city: '',
+      checkinDate: new Date(),
+      checkOutDate: null,
+      adults: '1',
+      children: '1',
+      rooms: '1',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      console.log(`city: "${values.city}"`);
+    },
+  });
+  const containerStyle = {
+    backgroundImage: 'url("https://seoimgak.mmtcdn.com/blog/sites/default/files/Hero_Image1_22.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
+  };
+
   return (
-     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellendus dolores temporibus labore porro voluptatibus beatae delectus recusandae animi suscipit cum rem voluptas id, sed iure. Vel, quos delectus alias, odio, quisquam cupiditate modi dolor dolorem consequuntur aut neque nostrum sequi dolorum error hic ullam fugiat tenetur illo doloribus accusamus? Eum numquam nobis minima corporis magnam sapiente est! Nemo harum voluptatum voluptates libero, at facilis deserunt eum soluta itaque qui et quis dolorem rerum cum nam quo quia commodi sapiente nesciunt, assumenda totam ratione voluptas placeat accusamus! Tenetur aliquam ipsam cumque id consequatur reiciendis facilis reprehenderit quisquam suscipit facere quidem quaerat tempora illum hic, magnam itaque porro modi veritatis in obcaecati quos ad. Aspernatur repellendus illum facere sed possimus esse, mollitia inventore explicabo, reiciendis, eligendi voluptas perspiciatis nostrum. Cumque quod odio dolorum repellendus totam consequatur obcaecati molestias voluptatum sapiente libero nobis assumenda est ipsum repellat aut, accusantium modi recusandae illo, accusamus fugiat quia, sed eveniet. Sint sit dignissimos perferendis commodi possimus suscipit quidem voluptatem ipsa, voluptate, eaque exercitationem sed? Veniam optio eligendi dolores soluta ipsa, repellat vero autem illo omnis nihil vel impedit fugit voluptate facilis! Aperiam perferendis suscipit maxime dolorem? Est earum aut saepe excepturi maxime odio expedita recusandae animi quaerat fugit cumque atque nemo hic, iste nulla suscipit doloribus impedit, perferendis incidunt quod voluptas minus facilis quam quisquam! Ipsum esse explicabo ea minima eligendi sapiente veniam natus vitae quod fugiat tempore, assumenda obcaecati nemo placeat iure ducimus necessitatibus vel, nesciunt molestias deserunt error recusandae molestiae? Praesentium explicabo possimus qui repellat inventore eaque vero sit adipisci distinctio, voluptatum beatae doloremque sunt aliquam similique non fuga natus nemo consequatur nisi hic, iure aut! Aperiam asperiores deleniti vitae id sequi consectetur deserunt blanditiis ipsum voluptatibus enim veritatis fuga inventore minus recusandae hic molestiae accusantium, nisi quidem commodi sit labore omnis vero totam. Minus quibusdam, est eveniet eius necessitatibus dolores voluptatum magni nesciunt reprehenderit porro obcaecati qui excepturi beatae delectus eos? Quisquam reiciendis, suscipit doloremque saepe dolorum aliquid magni explicabo nemo asperiores. Eius itaque ab, ducimus veniam sit quo! Fugiat praesentium ipsa eligendi aspernatur esse voluptatem amet odit suscipit, vel aperiam vitae et non nostrum quam reprehenderit facilis assumenda corrupti ex deserunt. Quidem explicabo inventore non odit suscipit! Excepturi accusamus animi tempore adipisci. Alias, et labore architecto a voluptate ullam illo illum. Voluptatibus animi earum placeat maxime perspiciatis optio amet ea minima voluptatem, eveniet suscipit? Dolorum, iusto provident molestiae, quaerat similique dolorem fuga inventore deserunt aliquam nihil temporibus dolores exercitationem omnis tempore cum dicta, pariatur necessitatibus nesciunt esse impedit numquam. Tempora, eum quam. Odit, velit laudantium odio labore, aperiam alias facilis commodi ea minima, est itaque tenetur eligendi! Sit assumenda minus vel ab! Illum repudiandae laudantium necessitatibus, voluptas exercitationem omnis, officia officiis tempore ut amet eum reiciendis laborum impedit culpa id obcaecati in vel debitis? Soluta porro et expedita. Magnam repudiandae cum praesentium modi maxime maiores natus! Eum veniam delectus non impedit vitae dicta corrupti eos ipsam quae doloribus eligendi quaerat ex animi cupiditate quam amet, qui architecto iste accusantium debitis rem? Aut sint ipsum vel blanditiis illo consequatur optio corrupti illum facere fugit? Quisquam doloribus voluptas quod dignissimos cum animi fuga in dolorem adipisci ipsum obcaecati qui, consequuntur eos eum nobis exercitationem eaque porro architecto quasi est! Esse, quaerat nulla. Totam libero consequatur nemo ex asperiores debitis non officia eius illo modi similique dolor id minima eveniet voluptatem, provident molestias deleniti enim esse cum minus labore fugiat quia? Atque possimus, cumque assumenda nemo, expedita odit minus corporis ducimus rem error natus quos fuga corrupti, doloremque voluptatem eveniet. Excepturi repellendus fugiat aliquid aspernatur error hic nisi nulla, doloribus doloremque alias fuga ab sit, nihil voluptatibus ipsam, iure dicta quidem quaerat. Vitae rem, consectetur est laboriosam inventore nisi. Doloribus porro est veniam doloremque? Hic assumenda ipsa nisi quae nam sunt dolor deserunt, illo distinctio a natus similique, quis doloremque animi error possimus beatae? Obcaecati dignissimos doloremque explicabo animi sed veritatis ut neque quia cum eveniet nemo nostrum doloribus, incidunt quis libero soluta expedita beatae molestias labore. Corrupti fuga maiores nulla eos unde! Et, ullam? Autem repudiandae sit accusantium quisquam quo quod nulla tenetur inventore corrupti, repellat libero harum iste provident facere dolore explicabo officia quia ut quam nihil! Consequuntur repellendus a non, quod quos aspernatur facere sed. Aut commodi exercitationem ab eos nulla inventore magnam hic deserunt a eaque, repellendus veritatis sapiente voluptates, dicta distinctio nostrum quos repudiandae maiores, minima aliquid sit quo omnis velit blanditiis. Ipsa aliquam vero voluptas porro dolores explicabo sed maxime, ratione libero consectetur reprehenderit magnam unde eaque est eius. Dignissimos fuga ipsam cupiditate quo, recusandae enim! Adipisci asperiores, eum odio ad maxime eveniet deleniti ullam illo facere accusamus laborum ipsam qui labore quo voluptatum vitae facilis rem tempora error impedit alias blanditiis possimus, vero tempore? Iure dicta harum, nisi consectetur deleniti et laborum architecto, sapiente voluptatum, blanditiis eaque alias molestiae. Porro, quisquam pariatur. Maxime accusamus pariatur sapiente quos, cumque tempora numquam ipsum dolores soluta perferendis assumenda unde officiis, accusantium, enim rem quas. Ratione repellendus aliquam sit vitae, dolorem ullam laboriosam accusantium maiores eaque quo, nisi, eum voluptate. Commodi perspiciatis fugit id quo, sit sequi optio dolorum asperiores cum vel suscipit odit earum itaque beatae excepturi. Itaque, molestias deleniti voluptatem at, obcaecati nostrum debitis illo quis ipsam quaerat atque incidunt reiciendis distinctio libero ea maiores odio labore nobis? Harum dolore aut, cum, culpa amet laudantium repellat placeat corporis eos consectetur saepe cupiditate unde neque debitis ea tenetur eveniet minima!</div>
-  )
-}
+    <form onSubmit={formik.handleSubmit}>
+      <div className='hoteldiv' style={containerStyle}>
+        <h3 className='hoteltag'>Book on India’s Largest Hotel Network</h3>
+        <div className='hotelinfodata'>
+          <label className='hotelcitylabel'>Select City :</label>
+          <Select
+            id='city'
+            name='city'
+            className='hotelcitydropdown'
+            placeholder='Select City'
+            options={cities}
+            value={selectedCity}
+            onChange={(selectedOption) => {
+              formik.setFieldValue('city', selectedOption.value);
+              setSelectedCity(selectedOption);
+            }}
+          />
+        </div>
+        {formik.touched.city && formik.errors.city ? (
+          <div className='hotelvalidationcity'>{formik.errors.city}</div>
+        ) : null}
+        <div className='datesection'>
+          <label className='checkindate'>Check-in:</label>
+          <DatePicker
+            id='checkinDate'
+            name='checkinDate'
+            className='datepicker'
+            autoComplete='off'
+            selected={formik.values.checkinDate}
+            onChange={(date) => formik.setFieldValue('checkinDate', date)}
+            dateFormat='dd/MM/yyyy'
+            minDate={addDays(new Date(), 1)}
+          />
+          <label className='checkoutdate'>Check-out:</label>
+          <DatePicker
+            id='checkOutDate'
+            name='checkOutDate'
+            className='datepicker'
+            autoComplete='off'
+            selected={formik.values.checkOutDate}
+            onChange={(date) => formik.setFieldValue('checkOutDate', date)}
+            dateFormat='dd/MM/yyyy'
+            minDate={formik.values.checkinDate ? addDays(formik.values.checkinDate, 1) : new Date()}
+            disabled={!formik.values.checkinDate}
+          />
+        </div>
+        <div className='hotelvalidationdiv'>
+          {formik.touched.checkOutDate && formik.errors.checkOutDate ? (
+           <div>{formik.errors.checkOutDate}</div>
+          ) : null}
+        </div>  
+        <div className='hoteltravellerdiv'>
+        
+        </div>
+        
+        <button type='submit' className='hotelbookbtn'>
+          Search Hotel
+        </button>
+      </div>
+    </form>
+  );
+};

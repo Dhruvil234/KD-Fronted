@@ -46,7 +46,7 @@ export const Home = () => {
 
       <div className='hotel'>
         <div className='hotelimagediv'>
-          <img src={Hotel} alt='Hotel' className='hotelimage' />
+          <img src={Hotel} alt='Hotel' className='hotelimage'/>
         </div>
         <div className='hotelinfo'>
           <h1 className='hotelinfotag1'>Book Today</h1>

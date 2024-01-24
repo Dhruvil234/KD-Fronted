@@ -19,6 +19,7 @@ body {
   list-style: none;
   height: 160px;
   width: 100%;
+  position:sticky;
   margin-top: auto; 
 }
 .column {
