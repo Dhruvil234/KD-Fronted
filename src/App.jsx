@@ -16,6 +16,7 @@ import AdminPage from './components/pages/adminpage';
 import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 import AdminRouteGuard from './components/pages/AdminRouteGuard'
 import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
+import { Hotelpreview } from './components/pages/hotelpreview'
 
 function App() {
 
@@ -37,10 +38,7 @@ function App() {
         <Route path='/AdminPage' element={<AdminRouteGuard element={<AdminPage />} />} />
         <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
         <Route path='/holidaypreview' element={<HolidayBookingPreview/>}/>
-
-
-
-
+        <Route path='/hotelpreview' element={<Hotelpreview/>}/>
       </Routes>
     <Footer/>
     

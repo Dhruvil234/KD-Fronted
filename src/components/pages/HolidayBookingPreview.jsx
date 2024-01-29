@@ -13,9 +13,10 @@ export const HolidayBookingPreview = () => {
     }
     
     const containerStyle = {
-        backgroundImage: 'url("https://png.pngtree.com/background/20230403/original/pngtree-suitcase-blue-sky-white-clouds-sun-global-vacation-travel-advertising-background-picture-image_2273235.jpg")',
+        backgroundImage: 'url("https://holidaypackages.yatra.com/media/test_module_1/2021/Aug/72d31d54a22713735e46135fcec834a6.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
       };
   return (
     <div className='holidaybookingpreview' style={containerStyle}>
