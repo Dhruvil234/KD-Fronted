@@ -98,7 +98,7 @@ export const Packages = () => {
   ];
 
   return (
-      <div className='random'>
+  <div className='random'>
       <div className='packagediv' style={containerStyle}>
       <div className='packagedata'>     
         <form onSubmit={formik.handleSubmit}>

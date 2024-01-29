@@ -272,27 +272,6 @@ input {
     color:white;
     margin-left:147px;
 }
-/* Admin Page css */
-.adminpage{
-    width:600px;
-    height:400px;
-    margin-left:380px;
-    margin-top:30px;
-    border:2px solid black;
-    border-radius:20px;
-    margin-bottom:500px;
-    border-color:blue;
-}
-.adminTag{
-    margin-top:32px;
-    margin-left:215px;
-    color:blue;
-}
-.admindetail{
-    color:blue;
-    margin-top:10px;
-    margin-left:2px;
-}
 /* Flight Page css */
 .flightpage {
     width: 900px;
@@ -660,7 +639,6 @@ p{
 }
 .citydiv{
     display:flex;
-    
 }
 .city{
     margin-top:40px;
@@ -717,13 +695,10 @@ p{
     border-radius:20px;
     display: flex;
     gap: 20px;
-    
 }
 .resultimagecontainer{
     width:210px;
     height:180px;
-    
-    
 }
 .placeImage{
     width:200px;
@@ -1093,3 +1068,81 @@ p{
     margin-top:30px;
     margin-left:180px;
 }
+/* Admin Page css */
+.adminpage{
+    width:200px;
+    height:340px;
+    border:2px solid blue;
+    border-top:none;
+    border-bottom:none;
+    margin-bottom:3px;
+}
+.adminflight{
+    width:50px;
+    height:40px;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    background-color:transparent;
+    font-size:20px;
+    margin-top:30px;
+    margin-left:80px;
+    margin-bottom:7px;
+    cursor:pointer;
+
+}
+.adminflight:hover{
+    color:blue;
+    cursor:pointer;
+}
+.adminhotel{
+    width:50px;
+    height:60px;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    background-color:transparent;
+    font-size:20px;
+    margin-left:80px;
+    cursor:pointer;
+}
+.adminhotel:hover{
+    color:blue;
+    cursor:pointer;
+}
+.adminpackage{
+    width:50px;
+    height:60px;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    background-color:transparent;
+    font-size:20px;
+    margin-left:60px;
+    cursor:pointer;
+}
+.adminpackage:hover{
+    color:blue;
+    cursor:pointer;
+}
+.admincontact{
+    width:50px;
+    height:60px;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    background-color:transparent;
+    font-size:20px;
+    margin-left:70px;
+    cursor:pointer;
+}
+.admincontact:hover{
+    color:blue;
+    cursor:pointer;
+}
+
+

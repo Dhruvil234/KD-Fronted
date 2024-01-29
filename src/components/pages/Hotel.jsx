@@ -105,9 +105,10 @@ export const Hotel = () => {
   };
 
   return (
-    <div>
-    <form onSubmit={formik.handleSubmit}>
-      <div className='hoteldiv' style={containerStyle}>
+  <div>
+      <div>
+            <form onSubmit={formik.handleSubmit}>
+         <div className='hoteldiv' style={containerStyle}>
         <h3 className='hoteltag'>Book on India’s Largest Hotel Network</h3>
         <div className='hotelinfodata'>
           <label className='hotelcitylabel'>Select City :</label>
@@ -183,7 +184,12 @@ export const Hotel = () => {
           Search Hotel
         </button>
 
-        {showResults && (
+        
+      </div>
+          </form>
+      </div>
+      <div>
+      {showResults && (
         <div className='hotelresults-container'>
           <div className='hotelresultimagecontainer'>
             <img src="/hotelimage.avif" alt='Place image' className='hotelImage' />
@@ -204,7 +210,6 @@ export const Hotel = () => {
         </div>
       )}
       </div>
-    </form>
-    </div>
+  </div> 
   );
 };
