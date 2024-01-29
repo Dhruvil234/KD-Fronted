@@ -797,12 +797,23 @@ p{
     margin-left:180px;
 }
 /* line no 801 to 1032 Hotel Page css */
+.randomhotel{
+    height: auto;
+}
+.randomhotel_{
+    display: flex;
+}
+.randomhotelresult_{
+    display: flex;
+    padding-left: 330px;
+    margin-bottom:40px;
+    margin-top:-10px;
+}
 .hoteldiv{
     width:700px;
     height:405px;
     border-radius:20px;
     border:2px solid white;
-    margin-bottom:500px;
     margin-top:30px;
     margin-left:325px;
 }

@@ -105,8 +105,8 @@ export const Hotel = () => {
   };
 
   return (
-  <div>
-      <div>
+  <div className='randomhotel'>
+      <div className='randomhotel_'>
             <form onSubmit={formik.handleSubmit}>
          <div className='hoteldiv' style={containerStyle}>
         <h3 className='hoteltag'>Book on India’s Largest Hotel Network</h3>
@@ -188,7 +188,7 @@ export const Hotel = () => {
       </div>
           </form>
       </div>
-      <div>
+      <div className='randomhotelresult_'>
       {showResults && (
         <div className='hotelresults-container'>
           <div className='hotelresultimagecontainer'>
