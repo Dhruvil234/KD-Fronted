@@ -6,14 +6,18 @@ import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { subDays } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
+const API = import.meta.env.VITE_BACKENDAPI;
+const searchpackageapi = `${API}/api/getpackagesbycity`;
 
 export const Packages = () => {
   const [selectedCity, setSelectedCity] = useState(null);
   const [showResults, setShowResults] = useState(false);
+  const [holidayPackages, setHolidayPackages] = useState([]);
   const navigate = useNavigate();
 
   const validationSchema = Yup.object({
     city: Yup.string().required('City is required'),
+    date:Yup.date().min(new Date(), 'Departure date must be in the future').required('Departure date is required')
   });
 
   const formik = useFormik({
@@ -22,15 +26,61 @@ export const Packages = () => {
       date: new Date(), 
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log(`city: "${values.city}"`);
-      setShowResults(true);
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch(searchpackageapi, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            city: values.city,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+
+        const responseData = await response.json();
+        console.log('API Response:', responseData);
+        setHolidayPackages(responseData.holidayPackages);
+        console.log(responseData.holidayPackages)
+
+        setShowResults(true);
+      } catch (error) {
+        console.error('Error fetching packages:', error);
+        // Handle error as needed
+      }
+
+
+    
     },
   });
 
-  const handlebookholiday = () => {
-    navigate('/holidaypreview', { state: { selectedDate: formik.values.date } });
+  const handlebookholiday = (selectedPackage) => {
+    console.log('Selected Holiday Package Details:', {
+      holidayName: selectedPackage.holidayName,
+      duration: selectedPackage.duration,
+      seller: 'KD TRAVELS',
+      service: selectedPackage.service,
+      price: selectedPackage.price
+    });
+  
+    navigate('/holidaypreview', {
+      state: {
+        selectedDate: formik.values.date,
+        holidayPackage: {
+          holidayName: selectedPackage.holidayName,
+          duration: selectedPackage.duration,
+          seller: 'KD TRAVELS',
+          service: selectedPackage.service,
+          price: selectedPackage.price
+        }
+      }
+    });
   };
+  
 
   const containerStyle = {
     backgroundImage: 'url("https://i0.wp.com/madhuonthego.com/wp-content/uploads/2023/12/Alleppey.jpg?fit=5477%2C3651&ssl=1")',
@@ -48,7 +98,8 @@ export const Packages = () => {
   ];
 
   return (
-    <div className='packagediv' style={containerStyle}>
+      <div className='random'>
+      <div className='packagediv' style={containerStyle}>
       <div className='packagedata'>     
         <form onSubmit={formik.handleSubmit}>
         <h2 className='pacakagtag'>Book Domestic Holiday Packages</h2>
@@ -93,27 +144,33 @@ export const Packages = () => {
         </button>
       </form>
     </div>
- 
-      {showResults && (
-        <div className='results-container'>
-          <div className='resultimagecontainer'>
-            <img src="/RedFort.png" alt='Place image' className='placeImage' />
-          </div>
-          <div className='resultinfo1'>
-            <h3 className='resulttag'>Red Fort</h3>
-            <p className='resultduration'>4 Night/5 Days</p>
-            <p className='resultseller'>Seller : KD Travels</p>
-            <p className='resultservice'>Service : Meals,Hotels,Transfer</p>
-          </div>
-          <div className='resultinfo2'>
-            <p className='resultprice'>Price : 19,999/</p>
-            <p className='resultperperson'>*Per Person</p>
-            <button type='submit' onClick={handlebookholiday} className='btnbookholiday'>
-              Book Now
-            </button>
-          </div>
+      </div>
+      <div className='random_'>
+        {/* Package display based on response   */}
+        {showResults && (
+          <div className='results-container'>
+          {holidayPackages.map((holidayPackage) => (
+            <div key={holidayPackage._id} className='resultItem'>
+              <div className='resultimagecontainer'>
+                <img src={holidayPackage.holidayImage} alt='Holiday Package' className='placeImage' />
+              </div>
+              <div className='resultinfo1'>
+                <h3 className='resulttag'>{holidayPackage.holidayName}</h3>
+                <p className='resultduration'>{holidayPackage.duration}</p>
+                <p className='resultduration'>Seller:KD TRAVELS</p>
+                <p className='resultseller'>Service : {holidayPackage.service}</p>
+              </div>
+              <div className='resultinfo2'>
+                <p className='resultprice'>Price : {holidayPackage.price}<br/>*per person</p>
+                <button type='button' onClick={() => handlebookholiday(holidayPackage)}className='btnbookholiday'>
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       )}
-    </div>
-  );
+      </div>
+  </div>
+);
 };
