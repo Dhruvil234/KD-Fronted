@@ -6,7 +6,7 @@ import { Hotel } from './components/pages/Hotel'
 import { Packages } from './components/pages/Packages'
 import { Flight } from './components/pages/Flight'
 import { Register } from './components/pages/Register'
-import Login from './components/pages/Login'; 
+import Login from './components/pages/Login'
 import { Home } from './components/pages/Home'
 import { ErrorPage } from './components/pages/ErrorPage'
 import { Footer } from './components/pages/Footer'
@@ -17,6 +17,9 @@ import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 import AdminRouteGuard from './components/pages/AdminRouteGuard'
 import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
 import { Hotelpreview } from './components/pages/hotelpreview'
+import  AdminFlight  from './components/pages/AdminFlight'
+import  {Updateflight}  from './components/pages/Updateflight'
+import { Bookedflight } from './components/pages/Bookedflight'
 
 function App() {
 
@@ -39,6 +42,10 @@ function App() {
         <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
         <Route path='/holidaypreview' element={<HolidayBookingPreview/>}/>
         <Route path='/hotelpreview' element={<Hotelpreview/>}/>
+        <Route path='/adminflight' element={<AdminFlight/>}/>
+        <Route path='/updateflight' element={<Updateflight/>}/>
+        <Route path='/bookedflight' element={<Bookedflight/>}/>
+        
       </Routes>
     <Footer/>
     

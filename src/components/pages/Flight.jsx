@@ -131,7 +131,6 @@ export const Flight = () => {
             onChange={handleDepartureCityChange}
           />
         </div>
-
         <div className='flightField'>
           <label>Departure To :</label>
           <Select
@@ -143,7 +142,6 @@ export const Flight = () => {
             isDisabled={!departureCity}
           />
         </div>
-
         <div className='flightField'>
           <label>Departure Date : </label>
           <DatePicker

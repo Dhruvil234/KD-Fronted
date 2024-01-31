@@ -1081,6 +1081,12 @@ p{
 }
 /* Admin Page css */
 .adminpage{
+    width:1100px;
+    height:337px;
+    margin-bottom:3px;
+    display:flex;
+}
+.sidebar{
     width:200px;
     height:340px;
     border:2px solid blue;
@@ -1097,11 +1103,9 @@ p{
     border-right:none;
     background-color:transparent;
     font-size:20px;
-    margin-top:30px;
-    margin-left:80px;
+    margin-left:65px;
     margin-bottom:7px;
     cursor:pointer;
-
 }
 .adminflight:hover{
     color:blue;
@@ -1109,14 +1113,14 @@ p{
 }
 .adminhotel{
     width:50px;
-    height:60px;
+    height:50px;
     border-top:none;
     border-bottom:none;
     border-left:none;
     border-right:none;
     background-color:transparent;
     font-size:20px;
-    margin-left:80px;
+    margin-left:65px;
     cursor:pointer;
 }
 .adminhotel:hover{
@@ -1125,14 +1129,14 @@ p{
 }
 .adminpackage{
     width:50px;
-    height:60px;
+    height:50px;
     border-top:none;
     border-bottom:none;
     border-left:none;
     border-right:none;
     background-color:transparent;
     font-size:20px;
-    margin-left:60px;
+    margin-left:45px;
     cursor:pointer;
 }
 .adminpackage:hover{
@@ -1141,19 +1145,302 @@ p{
 }
 .admincontact{
     width:50px;
-    height:60px;
+    height:50px;
     border-top:none;
     border-bottom:none;
     border-left:none;
     border-right:none;
     background-color:transparent;
     font-size:20px;
-    margin-left:70px;
+    margin-left:55px;
     cursor:pointer;
 }
 .admincontact:hover{
     color:blue;
     cursor:pointer;
 }
+.adminmaininfo{
+    width:800px;
+    height:340px;
+}
+.adminbookedflights{
+    width:125px;
+    height:50px;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    background-color:transparent;
+    font-size:20px;
+    margin-left:30px;
+    cursor:pointer;
+}
+.adminbookedflights:hover{
+    color:blue;
+    cursor:pointer;
+}
+/* FLight table css */ 
+.addflightbtn{
+    width:140px;
+    height:25px;
+    color:#0A92C6;
+    background-color:white;
+    border-color:#0A92C6;
+    border-radius:15px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:30px;
+    margin-left:710px;
+    margin-bottom:17px;
+}
+.addflightbtn:hover{
+    background-color:#0A92C6;
+    color:white;
+    cursor:pointer;
+}
+.button-spacing {
+    margin-left: 10px; 
+}
+.flight-table {
+    width: 700px;
+    border-collapse: collapse;
+    margin-left:150px;
+}
+.flight-table th, .flight-table td {
+    padding: 10px;
+    text-align: center;
+}
+.flight-table th {
+    background-color: #0A92C6;
+    color:white;
+}
+.actionpanel{
+    width:210px;
+}
+.updatebtn{
+    width:70px;
+    height:25px;
+    background-color:white;
+    color:#228b22;
+    border-color:white; 
+    border-radius:15px;
+    cursor:pointer;
+    font-size:15px;
+    margin-left:15px;
+}
+.updatebtn:hover{
+    color:white;
+    background-color:#228b22;
+}
+.deletebtn{
+    width:70px;
+    height:25px;
+    background-color:white;
+    color:red;
+    border-color:white;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:15px;
+}
+.deletebtn:hover{
+    color:white;
+    background:red;
+}
+.selectedOption {
+    color: blue;
+}
+.adminpage {
+    display: flex;
+}
+.adminflightdiv{
+    width:450px;
+    height:470px;
+    border:2px solid blue;
+    border-radius:20px;
+    margin-left:450px;
+    margin-bottom:100px;
+}
+.addflighttag{
+    margin-top:15px;
+    margin-left:120px;
+}
+.addflightfrom{
+    width:450px;
+    height:60px;
+    display:flex;
+    font-weight:bold;
+    margin-top:40px;
+}
+.addflightto{
+    width:400px;
+    height:60px;
+    display:flex;
+    font-weight:bold;
+}
+.addflightlabel1{
+    margin-top:10px;
+    margin-left:50px;
+    font-weight:bold;
+}
+.addflightlabel2{
+    margin-top:10px;
+    margin-left:50px;
+}
+.addcity1{
+    width:200px;
+    margin-left:5px;
+}
+.addcity2{
+    width:220px;
+    margin-left:5px;
+} 
+.addflightclass{
+    width:430px;
+    height:55px;
+    margin-left:50px;
+    font-weight:bold;
+    display:flex;
+    
+}
+.addflightlabel3{
+    margin-top:10px;
+}
+.flightclass{
+    width:250px;
+    margin-left:5px;
+}
+.addflightprice{
+    width:330px;
+    height:60px;
+    margin-left:50px;
+    margin-top:10px;
+    display:flex;
+    font-weight:bold;
+}
+.addflightlabel4{
+    margin-top:10px;
+}
+.custom-flightprice{
+    width:220px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+}
+.addflightbutton{
+    width:130px;
+    height:30px;
+    margin-left:155px;
+    margin-top:15px;
+    background-color:blue;
+    color:white;
+    border-color:blue;
+    border-radius:15px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.custom-flightprice::placeholder{
+    color:black;
+    font-size:16px;
+}
+/* admin page add flight validation */
+.errorfrom{
+    width:240px;
+    margin-left:170px;
+    margin-bottom:10px;
+    font-weight:bold;
+    color:red;
+}
+.errorto{
+    width:240px;
+    margin-left:170px;
+    margin-bottom:10px;
+    font-weight:bold;
+    color:red;
+}
+.priceerror{
+    width:240px;
+    margin-left:150px;
+    margin-bottom:10px;
+    font-weight:bold;
+    color:red;
 
-
+}
+/* Update Flight Details */
+.updateflightdiv{
+    width:450px;
+    height:470px;
+    border:2px solid blue;
+    margin-left:460px;
+    margin-bottom:200px;
+    margin-top:25px;
+    border-radius:15px;
+} 
+.updateflighttag{
+    margin-top:20px;
+    margin-left:125px;
+}
+.updateflightfrom{
+    width:450px;
+    height:60px;
+    display:flex;
+    font-weight:bold;
+    margin-top:35px;
+}
+.updateflightlabel1{
+    margin-top:10px;
+    margin-left:50px;
+    font-weight:bold;
+}
+.updateflightto{
+    width:400px;
+    height:60px;
+    display:flex;
+    font-weight:bold;
+    margin-top:10px;
+}
+.updateflightlabel2{
+    margin-top:10px;
+    margin-left:50px;
+}
+.updateflightclass{
+    width:430px;
+    height:55px;
+    margin-left:50px;
+    font-weight:bold;
+    display:flex;
+    margin-top:10px;
+}
+.updateflightlabel3{
+    margin-top:10px;
+}
+.updateflightprice{
+    width:330px;
+    height:60px;
+    margin-left:50px;
+    margin-top:10px;
+    display:flex;
+    font-weight:bold;
+}
+.updateflightlabel4{
+    margin-top:10px;
+}
+.update-flightprice{
+    width:220px;
+    margin-left:5px;
+    background-color:white;
+    color:black; 
+}
+.updateflight-btn{
+    width:120px;
+    height:25px;
+    cursor:pointer;
+    background-color:blue;
+    color:white;
+    border-radius:17px;
+    border-color:blue;
+    font-size:15px;
+    margin-top:20px;
+    margin-left:165px;
+}
