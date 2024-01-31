@@ -55,6 +55,25 @@ li a.login {
     border-radius: 25px; 
     color: black; 
 }
+.logout{
+    border: 2px solid blue; 
+    padding: 10px 25px; 
+    border-radius: 25px; 
+    color: black; 
+    background-color: white;
+    font-size: 18px;
+    margin-top: -70px;
+}
+.logout:hover{
+    border: 2px solid blue; 
+    padding: 10px 25px; 
+    border-radius: 25px; 
+    color: rgb(255, 255, 255); 
+    background-color: rgb(107, 154, 255);
+    font-size: 18px;
+    margin-top: -70px;
+    cursor: pointer;
+}
 li a.login:hover {
     color: blue; 
 }
@@ -897,6 +916,7 @@ p{
     background-color:transparent;
     border:1px solid black;
     cursor:pointer;
+    border-radius: 3px;
 }
 .adultincrementbtn{
     width:19px;
@@ -905,6 +925,7 @@ p{
     background-color:transparent;
     border:1px solid black;
     cursor:pointer;
+    border-radius: 3px;
 }
 .childcounter{
     width:75px;
@@ -924,6 +945,7 @@ p{
     background-color:transparent;
     border:1px solid black;
     cursor:pointer;
+    border-radius: 3px;
 }
 .childincrementbtn{
     width:19px;
@@ -932,6 +954,7 @@ p{
     background-color:transparent;
     border:1px solid black;
     cursor:pointer;
+    border-radius: 3px;
 }
 .roomcounter{
     width:75px;
@@ -951,6 +974,7 @@ p{
     background-color:transparent;
     border:1px solid black;
     cursor:pointer;
+    border-radius: 3px;
 }
 .roomincrementbtn{
     width:19px;
@@ -959,6 +983,7 @@ p{
     background-color:transparent;
     border:1px solid black;
     cursor:pointer;
+    border-radius: 3px;
 }
 .hotelbookbtn{
     width:160px;
@@ -977,7 +1002,7 @@ p{
     width:700px;
     height:200px;
     border:2px solid #FF735C;
-    margin-top:95px;
+    margin-top:45px;
     border-radius:20px;
     display:flex;
 }
@@ -990,6 +1015,8 @@ p{
     height:170px;
     margin-left:15px;
     margin-top:15px;
+    border:1px solid #FF735C;
+    border-radius: 10px;
 }
 .hotelresultinfo1{
     width:290px;
@@ -1039,24 +1066,24 @@ p{
 }
 /* line no 1033 to 1074 Hotel Preview Page css */
 .hotelpreviewdiv{
-    width:500px;
-    height:585px;
+    width:600px;
+    height:850px;
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
-    margin-left:440px;
+    margin-left:430px;
     margin-bottom:300px;
 
 }
 .hotelbookingtag{
     color:black;
     margin-top:20px;
-    margin-left:105px;
+    margin-left:125px;
 }
 .hotelbookinginfo1{
     color:black;
     margin-top:35px;
-    margin-left:130px;
+    margin-left:120px;
 }
 .hotelbookinginfo2,
 .hotelbookinginfo3,
@@ -1066,7 +1093,7 @@ p{
 .hotelbookinginfo7,
 .hotelbookinginfo8{
     color:black;
-    margin-left:130px;
+    margin-left:120px;
 }
 .hotelpreviewbtn{
     width:130px;

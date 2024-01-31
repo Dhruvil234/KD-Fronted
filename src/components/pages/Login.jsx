@@ -42,8 +42,15 @@ const Login = () => {
           const responseData = await response.json();
           alert(responseData.message);
 
-          // Store token in local storage
           localStorage.setItem('token', responseData.token);
+          console.log('Token set in local storage:', localStorage.getItem('token'));
+
+          // Store token in local storage
+          //localStorage.setItem('token', responseData.token);
+
+         // Set timeout to remove token after 1 minute
+      
+
           window.location.href = '/';
         } else {
           const errorData = await response.json();
@@ -58,6 +65,12 @@ const Login = () => {
       
     },
   });
+
+  setTimeout(() => {
+    console.log('Removing token...');
+    localStorage.removeItem('token');
+  }, 2 * 24 * 60 * 60 * 1000); // 2 * 24 * 60 * 60 * 1000 =  2 days 
+
 
   return (
     <div className='LoginPage'>

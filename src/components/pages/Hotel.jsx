@@ -11,21 +11,47 @@ import { FaMinus } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { MdFamilyRestroom } from "react-icons/md";
 import { MdHotel } from "react-icons/md";
-import { FaRegStar } from "react-icons/fa";
+
+
+const API = import.meta.env.VITE_BACKENDAPI;
+const hotelsearchapi = `${API}/api/gethotelsbycity`;
 
 export const Hotel = () => {
   const [selectedCity, setSelectedCity] = useState(null);
   const [counter,setCounter] = useState(1);
-  const [childcounter,setchildcounter] = useState(1);
+  const [childcounter,setchildcounter] = useState(0);
   const [roomcounter,setroomcounter] = useState(1);
   const [showResults, setShowResults] = useState(false);
-  const [selectedCityName, setSelectedCityName] = useState('');
+  const [hotels, setHotels] = useState([]);
   const navigate = useNavigate();
 
-  const handlebookhotel = () => {
-    navigate('/hotelpreview', { state: { selectedCheckinDate: formik.values.checkinDate,
-                                        selectedCheckoutDate:formik.values.checkOutDate
-                                       }});
+  const [selectedHotelName, setSelectedHotelName] = useState('');
+  const [selectedHotelService, setSelectedHotelService] = useState('');
+  const [selectedHotelPrice, setSelectedHotelPrice] = useState(0);
+  const [selectedHotelRating, setSelectedHotelRating] = useState(0);
+
+  const handlebookhotel = (hotel) => {
+    console.log("Selected Hotel Details:", hotel);
+
+    const { hotelName, service, price, rating } = hotel;
+    setSelectedHotelName(hotelName);
+    setSelectedHotelService(service);
+    setSelectedHotelPrice(price);
+    setSelectedHotelRating(rating);
+    
+    navigate('/hotelpreview', { 
+      state: {
+        selectedCheckinDate: formik.values.checkinDate,
+        selectedCheckoutDate: formik.values.checkOutDate,
+        selectedHotelName: hotelName,
+        userSelectedHotelService: service,
+        selectedHotelPrice: price,
+        selectedHotelRating:rating,
+        counter,
+        childcounter,
+        roomcounter
+      }
+    });
   };
 
   const increment = () => {
@@ -44,7 +70,7 @@ export const Hotel = () => {
     }
   };
   const childdecrement = () => {
-    if (childcounter > 1) {
+    if (childcounter > 0) {
       setchildcounter((val) => val - 1);
     }
   };
@@ -91,14 +117,25 @@ export const Hotel = () => {
       rooms: '1',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {                         
-    console.log(`city: "${values.city}"`);               //https://img.freepik.com/free-photo/blur-hotel-room_74190-5745.jpg?w=996&t=st=1706090244~exp=1706090844~hmac=1cc438fc8fa33990d67ccb3adad8ad0969c5f3150110444a78cc2047c566189d
-    setShowResults(true);                                //https://img.freepik.com/free-photo/blurred-double-bed_1203-120.jpg?w=996&t=st=1706090174~exp=1706090774~hmac=30c0734a953d01357f7886fe0f523348594f996eccbcd9445753897289cfb526
-    setSelectedCityName(selectedCity ? selectedCity.label : '');                      
+    onSubmit: (values) => {                                         
+    fetch(hotelsearchapi, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ city: values.city }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setHotels(data.hotels);
+          setShowResults(true);
+        })
+        .catch((error) => console.error('Error:', error));
+  
    },
   });
   const containerStyle = {
-    backgroundImage: 'url("https://img.freepik.com/free-photo/blurred-double-bed_1203-120.jpg?w=996&t=st=1706090174~exp=1706090774~hmac=30c0734a953d01357f7886fe0f523348594f996eccbcd9445753897289cfb526")',
+    backgroundImage: 'url("https://img.freepik.com/free-photo/blurred-double-bed_1203-120.jpg?w=996&t=st=1706596629~exp=1706597229~hmac=48285cad8d1ed8b80eee7c61d964314d6e399df5c114692444226081e32c5dcb")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',
@@ -162,21 +199,21 @@ export const Hotel = () => {
             <p>Traveller :</p>
             <div className='adultcounter'>
               <p><FaUser /> Adult</p>
-              <button type='button' className='adultdecrementbtn' onClick={decrement}><FaMinus /></button>
+              <button type='button' className='adultdecrementbtn' onClick={decrement}><FaMinus style={{marginTop:"2px"}}/></button>
               {counter}
-              <button type='button' className='adultincrementbtn' onClick={increment}><FaPlus /></button>
+              <button type='button' className='adultincrementbtn' onClick={increment}><FaPlus style={{marginTop:"2px"}} /></button>
             </div>
             <div className='childcounter'>
               <p><MdFamilyRestroom /> Child</p>
-              <button type='button' className='childdecrementbtn' onClick={childdecrement}><FaMinus /></button>
+              <button type='button' className='childdecrementbtn' onClick={childdecrement}><FaMinus style={{marginTop:"2px"}}/></button>
               {childcounter}
-              <button type='button' className='childincrementbtn' onClick={childincrement}><FaPlus /></button>
+              <button type='button' className='childincrementbtn' onClick={childincrement}><FaPlus style={{marginTop:"2px"}} /></button>
             </div>
             <div className='roomcounter'>
               <p><MdHotel /> Room</p>
-              <button type='button' className='roomdecrementbtn' onClick={roomdecrement}><FaMinus /></button>
+              <button type='button' className='roomdecrementbtn' onClick={roomdecrement}><FaMinus style={{marginTop:"2px"}}/></button>
               {roomcounter}
-              <button type='button' className='roomincrementbtn' onClick={roomincrement}><FaPlus /></button>
+              <button type='button' className='roomincrementbtn' onClick={roomincrement}><FaPlus style={{marginTop:"2px"}} /></button>
             </div>
         </div>
         
@@ -189,26 +226,30 @@ export const Hotel = () => {
           </form>
       </div>
       <div className='randomhotelresult_'>
-      {showResults && (
-        <div className='hotelresults-container'>
-          <div className='hotelresultimagecontainer'>
-            <img src="/hotelimage.avif" alt='Place image' className='hotelImage' />
-          </div>
-          <div className='hotelresultinfo1'>
-            <h3 className='hotelresulttag'>Taj Hotel</h3>
-            <p className='hotelresultduration'>Rating : 4/5</p>
-            <p className='hotelresultcity'>City Name : {selectedCityName}</p>
-            <p className='hotelresultservice'>Service : Breakfast,Lunch,Dinner</p>
-          </div>
-          <div className='hotelresultinfo2'>
-            <p className='hotelresultprice'>Price : 19,999/</p>
-            <p className='hotelresultperperson'>*Per Person</p>
-            <button type='submit' className='btnbookhotel' onClick={handlebookhotel}>
-              Book Now
-            </button>
-          </div>
+        <div className=''>
+        {showResults && hotels.length > 0 && (
+          hotels.map((hotel, index) => (
+            <div key={index} className='hotelresults-container'>
+              <div className='hotelresultimagecontainer'>
+                <img src={hotel.hotelImage} alt='Place image' className='hotelImage' />
+              </div>
+              <div className='hotelresultinfo1'>
+                <h3 className='hotelresulttag'>{hotel.hotelName}</h3>
+                <p className='hotelresultduration'>Rating: {hotel.rating}/5</p>
+                <p className='hotelresultcity'>City Name: {hotel.city}</p>
+                <p className='hotelresultservice'>Service: {hotel.service}</p>
+              </div>
+              <div className='hotelresultinfo2'>
+                <p className='hotelresultprice'>Price: {hotel.price}/-</p>
+                <p className='hotelresultperperson'>For 1 Night</p>
+                <button type='submit' className='btnbookhotel' onClick={() => handlebookhotel(hotel)}>
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))
+        )}
         </div>
-      )}
       </div>
   </div> 
   );
