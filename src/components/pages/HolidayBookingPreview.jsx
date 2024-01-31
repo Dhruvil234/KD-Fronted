@@ -14,6 +14,7 @@ export const HolidayBookingPreview = () => {
       // Check if user details are available in local storage
       const storedUserName = localStorage.getItem('userFullName');
       const storedUserEmail = localStorage.getItem('userEmail');
+      const token = localStorage.getItem('token');
   
       // If not available, redirect to register page
       if (!storedUserName || !storedUserEmail) {
@@ -22,6 +23,9 @@ export const HolidayBookingPreview = () => {
         // Set user details for display
         setUserName(storedUserName);
         setUserEmail(storedUserEmail);
+        if(!token){
+          navigate('/Login');
+        }
       }
     }, [navigate]);
     
@@ -44,7 +48,7 @@ export const HolidayBookingPreview = () => {
         <p className='holidaybookinginfo3'>Date of Travel: {selectedDate ? selectedDate.toLocaleDateString('en-GB') : 'No date selected'}</p>
         <p className='holidaybookinginfo4'>Seller: {holidayPackage?.seller}</p>
         <p className='holidaybookinginfo5'>Service: {holidayPackage?.service}</p>
-        <p className='holidaybookinginfo6'>Price: {holidayPackage?.price}</p>
+        <p className='holidaybookinginfo6'>Price:Rs. {holidayPackage?.price}/-</p>
         <p className='holidaybookinginfo7'>Name: {userName}</p>
         <p className='holidaybookinginfo8'>Email: {userEmail}</p>
         <button type='submit'onClick={handlebookholiday} className='holidaybookbtn' >Book Now</button>

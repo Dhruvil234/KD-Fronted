@@ -14,6 +14,7 @@ export const FlightBookingPreview = () => {
     // Check if user details are available in local storage
     const storedUserName = localStorage.getItem('userFullName');
     const storedUserEmail = localStorage.getItem('userEmail');
+    const token = localStorage.getItem('token');
 
     // If not available, redirect to register page
     if (!storedUserName || !storedUserEmail) {
@@ -22,6 +23,9 @@ export const FlightBookingPreview = () => {
       // Set user details for display
       setUserName(storedUserName);
       setUserEmail(storedUserEmail);
+      if(!token){
+        navigate('/Login');
+      }
     }
   }, [navigate]);
 
@@ -44,7 +48,7 @@ export const FlightBookingPreview = () => {
         <p className='previewDetailsTag'>Date: {departureDate?.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
         <p className='previewDetailsTag'>Seat: {selectedSeat?.label}</p>
         <p className='previewDetailsTag'>Class: {classSelection?.label}</p>
-        <p className='previewDetailsTag'>Price: {flightprice}</p>
+        <p className='previewDetailsTag'>Price:Rs. {flightprice}/-</p>
         <p className='previewDetailsTag'>Name: {userName}</p>
         <p className='previewDetailsTag'>Email: {userEmail}</p>
       <button className='paynowbtn' onClick={handleBookNowClick}>Proceed to Payment</button>
