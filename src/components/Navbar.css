@@ -776,7 +776,7 @@ p{
 /* line no 762 to 800 Holiday Preview css */
 .holidaybookingpreview{
     width:500px;
-    height:585px;
+    height:690px;
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
@@ -1470,4 +1470,10 @@ p{
     font-size:15px;
     margin-top:20px;
     margin-left:165px;
+}
+
+.adflightdashboard,.adholidayinfo,.adhotelinfo{
+    border: 1px dotted blue;
+    border-radius: 7px;
+    margin: 10px;
 }

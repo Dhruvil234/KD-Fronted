@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import AdminContact from "./AdminContact";
+import AdminDashboard from "./AdminDashboard"
 import AdminBookedFlightData from "./AdminBookedFlightData";
 
 const API = import.meta.env.VITE_BACKENDAPI;
@@ -135,6 +136,9 @@ export const AdminPage = () => {
     }else if (selectedOption === "bookedFlight" && showTable) { // Render AdminBookedFlight component when "Booked Flight" option is selected
       console.log("booked flight")
       return <AdminBookedFlightData />;
+    }else if (selectedOption === 'dashboard' && showTable) {
+      // Render AdminDashboard component when "Dashboard" option is selected
+      return <AdminDashboard />;
     }
   };
 
@@ -233,6 +237,17 @@ export const AdminPage = () => {
                   onClick={() => handleOptionClick("bookedPackage")}
                 >
                   Booked Package
+                </button>
+            </li>
+            <li>
+                <button
+                  type="submit"
+                  className={`admindashboard ${
+                    selectedOption === "dashboard" ? "selectedOption" : ""
+                  }`}
+                  onClick={() => handleOptionClick("dashboard")}
+                >
+                  DashBoard
                 </button>
             </li>
             {/* Add other buttons here */}

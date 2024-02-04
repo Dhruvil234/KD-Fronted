@@ -44,6 +44,7 @@ export const HolidayBookingPreview = () => {
     <div className='holidaybookingpreview' style={containerStyle}>
         <h2 className='holidaybookingtag'>Holiday Booking Preview</h2>
         <h2 className='holidaybookinginfo1'>{holidayPackage?.holidayName}</h2>
+        <p className='holidaybookinginfo2'>City: {holidayPackage?.city}</p>
         <p className='holidaybookinginfo2'>Duration: {holidayPackage?.duration}</p>
         <p className='holidaybookinginfo3'>Date of Travel: {selectedDate ? selectedDate.toLocaleDateString('en-GB') : 'No date selected'}</p>
         <p className='holidaybookinginfo4'>Seller: {holidayPackage?.seller}</p>

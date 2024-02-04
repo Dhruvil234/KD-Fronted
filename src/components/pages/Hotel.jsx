@@ -49,7 +49,8 @@ export const Hotel = () => {
         selectedHotelRating:rating,
         counter,
         childcounter,
-        roomcounter
+        roomcounter,
+        cityName: formik.values.city,
       }
     });
   };
