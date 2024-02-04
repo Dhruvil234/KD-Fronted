@@ -9,6 +9,10 @@ export const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("token") !== null
   );
+  
+  const [isAdmin, setIsAdmin] = useState(
+    localStorage.getItem("isAdmin") === "true"
+  );
 
   const handleLogout = () => {
     // Remove user data from localStorage
@@ -59,9 +63,16 @@ export const Navbar = () => {
           </>
         )}
         {isLoggedIn && (
-          <li>
-            <button onClick={handleLogout} className="logout">Logout</button>
-          </li>
+          <>
+            {isAdmin && (
+              <li>
+                <NavLink to={"/Adminpage"}>Admin</NavLink>
+              </li>
+            )}
+            <li>
+              <button onClick={handleLogout} className="logout">Logout</button>
+            </li>
+          </>
         )}
       </ul>
     </nav>

@@ -1109,7 +1109,7 @@ p{
 /* Admin Page css */
 .adminpage{
     width:1100px;
-    height:337px;
+    height:auto;
     margin-bottom:3px;
     display:flex;
 }
@@ -1188,7 +1188,7 @@ p{
 }
 .adminmaininfo{
     width:800px;
-    height:340px;
+    height:auto;
 }
 .adminbookedflights{
     width:125px;

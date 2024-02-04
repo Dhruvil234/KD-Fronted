@@ -196,7 +196,7 @@ export const Hotel = () => {
           ) : null}
         </div>  
         <div className='hoteltravellerdiv'>
-            <p>Traveller :</p>
+            <p>Traveller:</p>
             <div className='adultcounter'>
               <p><FaUser /> Adult</p>
               <button type='button' className='adultdecrementbtn' onClick={decrement}><FaMinus style={{marginTop:"2px"}}/></button>
