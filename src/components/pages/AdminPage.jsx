@@ -12,11 +12,12 @@ const API = import.meta.env.VITE_BACKENDAPI;
 const getallflight = `${API}/api/getflights`;
 let deleteflight = `${API}/api/deleteflight`;
 
+
+
 export const AdminPage = () => {
   const [selectedOption, setSelectedOption] = useState(""); // State to track selected option
   const [showTable, setShowTable] = useState(true);
-  const [selectedbookedflights,setselectedbookedflight] = useState("")
-  // const [showbookedflights,setshowbookedflights] = useState(true)
+  const [tableData, setTableData] = useState([]);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,10 +40,6 @@ export const AdminPage = () => {
     setSelectedOption(option);
     setShowTable(true);
   };
-  const handlebookedflights = (option) => {
-    setselectedbookedflight(option);
-
-  }
 
   const handleDelete = async (id) => {
     const isConfirmed = window.confirm("Are you sure you want to delete this flight?");
@@ -146,14 +143,6 @@ export const AdminPage = () => {
       return <AdminDashboard />;
     }
   };
-  const bookedflighttable = () =>{
-    if (selectedbookedflights === "bookedflight") {
-      return (
-      <>
-          <h1>Booked Flights</h1>
-      </>
-    )}
-  }
 
   return (
     <>
@@ -172,12 +161,15 @@ export const AdminPage = () => {
                   marginBottom: "25px",
                 }}
               />
-            </NavLink>
+            </NavLink>{" "}
             <li>
               <button
                 type="submit"
-                className={`adminflight ${selectedOption === "flight" ? "selectedOption" : ""}`}
-                onClick={() => handleOptionClick("flight")}>
+                className={`adminflight ${
+                  selectedOption === "flight" ? "selectedOption" : ""
+                }`}
+                onClick={() => handleOptionClick("flight")}
+              >
                 Flight
               </button>
             </li>
@@ -217,12 +209,53 @@ export const AdminPage = () => {
              
             </li>
             <li>
+                <button
+                  type="submit"
+                  className={`adminbookedflights ${
+                    selectedOption === "bookedFlight" ? "selectedOption" : ""
+                  }`}
+                  onClick={() => handleOptionClick("bookedFlight")}
+                >
+                  Booked Flight
+                </button>
+            </li>
+            <li>
+                <button
+                  type="submit"
+                  className={`adminbookedhotel ${
+                    selectedOption === "bookedHotel" ? "selectedOption" : ""
+                  }`}
+                  onClick={() => handleOptionClick("bookedHotel")}
+                >
+                  Booked Hotel
+                </button>
+            </li>
+            <li>
+                <button
+                  type="submit"
+                  className={`adminbookedpackage ${
+                    selectedOption === "bookedPackage" ? "selectedOption" : ""
+                  }`}
+                  onClick={() => handleOptionClick("bookedPackage")}
+                >
+                  Booked Package
+                </button>
+            </li>
+            <li>
+                <button
+                  type="submit"
+                  className={`admindashboard ${
+                    selectedOption === "dashboard" ? "selectedOption" : ""
+                  }`}
+                  onClick={() => handleOptionClick("dashboard")}
+                >
+                  DashBoard
+                </button>
             </li>
             {/* Add other buttons here */}
           </ul>
         </div>
         <div className="adminmaininfo">{renderTable()}</div>
-        <div className="bookedflightsinfo">{bookedflighttable()}</div>
       </div>
       <hr style={{ borderColor: "blue" }} />
     </>
