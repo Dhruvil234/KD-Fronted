@@ -19,7 +19,8 @@ export const Hotelpreview = () => {
     selectedHotelRating, 
     counter,
     childcounter,
-    roomcounter } = location.state || {};
+    roomcounter,
+    cityName } = location.state || {};
 
 
   const [userName, setUserName] = useState('');
@@ -53,6 +54,7 @@ export const Hotelpreview = () => {
     <div className='hotelpreviewdiv' style={containerStyle}>
       <h2 className='hotelbookingtag'>Hotel Booking Preview</h2>
       <h2 className='hotelbookinginfo1'>{selectedHotelName}</h2>
+      <h2 className='hotelbookinginfo1'>city:{cityName}</h2>
       <p className='hotelbookinginfo2'>Check-in Date : {selectedCheckinDate ? selectedCheckinDate.toLocaleDateString('en-GB') : 'No date selected'}</p>
       <p className='hotelbookinginfo3'>Check-out Date : {selectedCheckoutDate ? selectedCheckoutDate.toLocaleDateString('en-GB') : 'No date selected'}</p>
       <p className='hotelbookinginfo4'>Seller : KD Travels</p>

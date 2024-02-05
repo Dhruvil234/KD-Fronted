@@ -1,32 +1,35 @@
-import React from 'react';
-import Select from 'react-select';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import Select from "react-select";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+
+const API = import.meta.env.VITE_BACKENDAPI;
+const flightaddapi = `${API}/api/addflight`;
 
 const AdminFlight = () => {
   const cityOptions = [
-    { value: 'Ahmedabad', label: 'Ahmedabad' },
-    { value: 'Mumbai', label: 'Mumbai' },
-    { value: 'Delhi', label: 'Delhi' },
-    { value: 'Goa', label: 'Goa' },
-    { value: 'Hyderabad', label: 'Hyderabad' },
+    { value: "Ahmedabad", label: "Ahmedabad" },
+    { value: "Mumbai", label: "Mumbai" },
+    { value: "Delhi", label: "Delhi" },
+    { value: "Goa", label: "Goa" },
+    { value: "Hyderabad", label: "Hyderabad" },
   ];
 
   const classOptions = [
-    { value: 'Economy', label: 'Economy' },
-    { value: 'PremiumEconomy', label: 'Premium Economy' },
-    { value: 'Business', label: 'Business' },
+    { value: "Economy", label: "Economy" },
+    { value: "PremiumEconomy", label: "Premium Economy" },
+    { value: "Business", label: "Business" },
   ];
 
   const navigate = useNavigate();
-  
+
   const validationSchema = Yup.object().shape({
-    departureCity: Yup.object().required('Departure city is required'),
-    destinationCity: Yup.object().required('Destination city is required'),
-    price: Yup.number().required('Price is required'),
+    departureCity: Yup.object().required("Departure city is required"),
+    destinationCity: Yup.object().required("Destination city is required"),
+    price: Yup.number().required("Price is required"),
   });
 
   const formik = useFormik({
@@ -34,83 +37,106 @@ const AdminFlight = () => {
       departureCity: null,
       destinationCity: null,
       flightClass: classOptions[0],
-      price: '',
+      price: "",
     },
     validationSchema,
     onSubmit: (values) => {
       const newFlight = {
         from: values.departureCity.label,
         to: values.destinationCity.label,
-        class: values.flightClass.label,
+        flightClass: values.flightClass.label,
         price: values.price,
       };
-      toast.success('Flight details added successfully');
-      console.log('Flight Details:', newFlight);
-      navigate('/adminpage',{ state: 
-      { from: formik.values.departureCity,
-        to: formik.values.destinationCity,
-        flightClass: formik.values.flightClass,
-        flightpriceInput: formik.values.price,
-       }});
+      fetch(flightaddapi, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newFlight),
+      })
+        .then((response) => {
+          if (response.status === 201) {
+            return response.json();
+          } else {
+            throw new Error("Failed to add flight");
+          }
+        })
+        .then((data) => {
+          toast.success(data.message);
+          console.log("Flight Details:", newFlight);
+          navigate("/adminpage");
+        })
+        .catch((error) => {
+          console.error("Error adding flight:", error.message);
+          toast.error(error.message);
+        });
     },
   });
 
   return (
-    <div className='adminflightdiv'>
-      <h2 className='addflighttag'>Add Flight Detail</h2>
+    <div className="adminflightdiv">
+      <h2 className="addflighttag">Add Flight Detail</h2>
       <form onSubmit={formik.handleSubmit}>
-        <div className='addflightfrom'>
-          <label className='addflightlabel1'>Departure From :</label>
+        <div className="addflightfrom">
+          <label className="addflightlabel1">Departure From :</label>
           <Select
-            id='fromcity'
+            id="fromcity"
             options={cityOptions}
-            className='addcity1'
+            className="addcity1"
             value={formik.values.departureCity}
-            onChange={(selectedOption) => formik.setFieldValue('departureCity', selectedOption)}
+            onChange={(selectedOption) =>
+              formik.setFieldValue("departureCity", selectedOption)
+            }
           />
         </div>
-          {formik.touched.departureCity && formik.errors.departureCity && (
-            <div className='errorfrom'>{formik.errors.departureCity}</div>
-          )}
-        <div className='addflightto'>
-          <label className='addflightlabel2'>Departure To :</label>
+        {formik.touched.departureCity && formik.errors.departureCity && (
+          <div className="errorfrom">{formik.errors.departureCity}</div>
+        )}
+        <div className="addflightto">
+          <label className="addflightlabel2">Departure To :</label>
           <Select
-            options={cityOptions.filter((city) => city.value !== formik.values.departureCity?.value)}
-            className='addcity2'
-            id='tocity'
+            options={cityOptions.filter(
+              (city) => city.value !== formik.values.departureCity?.value
+            )}
+            className="addcity2"
+            id="tocity"
             value={formik.values.destinationCity}
-            onChange={(selectedOption) => formik.setFieldValue('destinationCity', selectedOption)}
+            onChange={(selectedOption) =>
+              formik.setFieldValue("destinationCity", selectedOption)
+            }
             isDisabled={!formik.values.departureCity}
           />
         </div>
         {formik.touched.destinationCity && formik.errors.destinationCity && (
-            <div className='errorto'>{formik.errors.destinationCity}</div>
-          )}
-        <div className='addflightclass'>
-          <label className='addflightlabel3'>Class :</label>
+          <div className="errorto">{formik.errors.destinationCity}</div>
+        )}
+        <div className="addflightclass">
+          <label className="addflightlabel3">Class :</label>
           <Select
-            id='classflight'
+            id="classflight"
             options={classOptions}
-            className='flightclass'
+            className="flightclass"
             value={formik.values.flightClass}
-            onChange={(selectedOption) => formik.setFieldValue('flightClass', selectedOption)}
+            onChange={(selectedOption) =>
+              formik.setFieldValue("flightClass", selectedOption)
+            }
           />
         </div>
-        <div className='addflightprice'>
-          <label className='addflightlabel4'>Price :</label>
+        <div className="addflightprice">
+          <label className="addflightlabel4">Price :</label>
           <input
-            type='number'  
-            placeholder='Enter Price'
-            autoComplete='off'
-            className='custom-flightprice'  
-            id='flightPriceInput'
-            {...formik.getFieldProps('price')}
+            type="number"
+            placeholder="Enter Price"
+            autoComplete="off"
+            className="custom-flightprice"
+            id="flightPriceInput"
+            {...formik.getFieldProps("price")}
           />
         </div>
         {formik.touched.price && formik.errors.price && (
-            <div className='priceerror'>{formik.errors.price}</div>
-          )}
-        <button type='submit' className='addflightbutton'>
+          <div className="priceerror">{formik.errors.price}</div>
+        )}
+        <button type="submit" className="addflightbutton">
           Add Flight
         </button>
       </form>

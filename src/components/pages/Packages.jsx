@@ -64,7 +64,8 @@ export const Packages = () => {
       duration: selectedPackage.duration,
       seller: 'KD TRAVELS',
       service: selectedPackage.service,
-      price: selectedPackage.price
+      price: selectedPackage.price,
+      city: formik.values.city
     });
   
     navigate('/holidaypreview', {
@@ -75,7 +76,8 @@ export const Packages = () => {
           duration: selectedPackage.duration,
           seller: 'KD TRAVELS',
           service: selectedPackage.service,
-          price: selectedPackage.price
+          price: selectedPackage.price,
+          city: formik.values.city
         }
       }
     });

@@ -12,14 +12,13 @@ import { ErrorPage } from './components/pages/ErrorPage'
 import { Footer } from './components/pages/Footer'
 import ForgotPassword from './components/pages/ForgotPassword'
 import  ChangedPassword  from './components/pages/ChangedPassword'
-import AdminPage from './components/pages/adminpage';
+import { AdminPage } from './components/pages/AdminPage';
 import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 import AdminRouteGuard from './components/pages/AdminRouteGuard'
 import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
 import { Hotelpreview } from './components/pages/hotelpreview'
 import  AdminFlight  from './components/pages/AdminFlight'
 import  {Updateflight}  from './components/pages/Updateflight'
-import { Bookedflight } from './components/pages/Bookedflight'
 
 function App() {
 
@@ -44,7 +43,7 @@ function App() {
         <Route path='/hotelpreview' element={<Hotelpreview/>}/>
         <Route path='/adminflight' element={<AdminFlight/>}/>
         <Route path='/updateflight' element={<Updateflight/>}/>
-        <Route path='/bookedflight' element={<Bookedflight/>}/>
+
         
       </Routes>
     <Footer/>

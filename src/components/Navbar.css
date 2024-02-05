@@ -785,7 +785,7 @@ p{
 /* line no 762 to 800 Holiday Preview css */
 .holidaybookingpreview{
     width:500px;
-    height:585px;
+    height:690px;
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
@@ -1118,7 +1118,7 @@ p{
 /* Admin Page css */
 .adminpage{
     width:1100px;
-    height:337px;
+    height:auto;
     margin-bottom:3px;
     display:flex;
 }
@@ -1197,7 +1197,7 @@ p{
 }
 .adminmaininfo{
     width:800px;
-    height:340px;
+    height:auto;
 }
 .adminbookedflights{
     width:125px;
@@ -1479,4 +1479,10 @@ p{
     font-size:15px;
     margin-top:20px;
     margin-left:165px;
+}
+
+.adflightdashboard,.adholidayinfo,.adhotelinfo{
+    border: 1px dotted blue;
+    border-radius: 7px;
+    margin: 10px;
 }
