@@ -130,7 +130,16 @@ li a.login.active {
     /* box-sizing: border-box; */
 }
 .forgotPasswordLink {
-    margin-right: 220px;
+    width:280px;
+    margin-left:60px;
+    height:40px;
+    display:flex;
+}
+.navforgotpassword{
+    width:140px;
+}
+.navregister{
+    width:140px;
 }
 .loginButton {
     width:120px;
