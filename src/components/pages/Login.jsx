@@ -106,10 +106,18 @@ const Login = () => {
             )}
           
           <div className='forgotPasswordLink'>
-            <NavLink to='/Forgot-password' style={{ color: 'blue', textDecoration: 'none' }}>
-              Forgot Password
-            </NavLink>
+            <div className='navforgotpassword'>
+                <NavLink to='/Forgot-password'  style={{ color: 'blue', textDecoration: 'none' }}>
+                  Forgot Password
+                </NavLink>
+            </div>
+            <div className='navregister'>
+                  <NavLink to='/Register'  style={{ color: 'blue', textDecoration: 'none' }}>
+                    Register Your Self
+                  </NavLink>
+            </div>
           </div>
+          
           <button type='submit' className='loginButton'>
             Login
           </button>

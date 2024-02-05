@@ -7,7 +7,8 @@ import { useLocation } from "react-router-dom";
 export const AdminPage = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [showTable, setShowTable] = useState(true);
-  const [tableData, setTableData] = useState([]);
+  const [selectedbookedflights,setselectedbookedflight] = useState("")
+  // const [showbookedflights,setshowbookedflights] = useState(true)
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,6 +22,10 @@ export const AdminPage = () => {
     setSelectedOption(option);
     setShowTable(true);
   };
+  const handlebookedflights = (option) => {
+    setselectedbookedflight(option);
+
+  }
 
   const handleDelete = () => {
     const isConfirmed = window.confirm("This flight data will be deleted");
@@ -107,6 +112,14 @@ export const AdminPage = () => {
       );
     }
   };
+  const bookedflighttable = () =>{
+    if (selectedbookedflights === "bookedflight") {
+      return (
+      <>
+          <h1>Booked Flights</h1>
+      </>
+    )}
+  }
 
   return (
     <>
@@ -125,15 +138,12 @@ export const AdminPage = () => {
                   marginBottom: "25px",
                 }}
               />
-            </NavLink>{" "}
+            </NavLink>
             <li>
               <button
                 type="submit"
-                className={`adminflight ${
-                  selectedOption === "flight" ? "selectedOption" : ""
-                }`}
-                onClick={() => handleOptionClick("flight")}
-              >
+                className={`adminflight ${selectedOption === "flight" ? "selectedOption" : ""}`}
+                onClick={() => handleOptionClick("flight")}>
                 Flight
               </button>
             </li>
@@ -153,13 +163,17 @@ export const AdminPage = () => {
               </button>
             </li>
             <li>
-              <button type="submit" className="adminbookedflights">
+              <button type="submit" 
+              // className="adminbookedflights" 
+              className={`${selectedbookedflights === "bookedflight" ? "selectedbookedflights" : ""}`}
+                onClick={() => handlebookedflights ("bookedflight")}>
                 Booked Flight
               </button>
             </li>
           </ul>
         </div>
         <div className="adminmaininfo">{renderTable()}</div>
+        <div className="bookedflightsinfo">{bookedflighttable()}</div>
       </div>
       <hr style={{ borderColor: "blue" }} />
     </>
