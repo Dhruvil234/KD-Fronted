@@ -7,12 +7,14 @@ import { toast } from "react-toastify";
 import AdminContact from "./AdminContact";
 import AdminDashboard from "./AdminDashboard"
 import AdminBookedFlightData from "./AdminBookedFlightData";
+import { AdminHotel } from "./AdminHotel";
+import { Adminholiday } from "./Adminholiday";
+import { AdminBookedHotelData } from "./AdminBookedHotelData";
+import { AdminBookedHolidayData } from "./AdminBookedHolidayData";
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const getallflight = `${API}/api/getflights`;
 let deleteflight = `${API}/api/deleteflight`;
-
-
 
 export const AdminPage = () => {
   const [selectedOption, setSelectedOption] = useState(""); // State to track selected option
@@ -132,15 +134,20 @@ export const AdminPage = () => {
           </table>
         </>
       );
-    } else if (selectedOption === "contact" && showTable) { // Render AdminContact component when "Contact" option is selected
-      console.log("conatact click")
-      return <AdminContact />;
-    }else if (selectedOption === "bookedFlight" && showTable) { // Render AdminBookedFlight component when "Booked Flight" option is selected
-      console.log("booked flight")
-      return <AdminBookedFlightData />;
+    } else if (selectedOption === "contact" && showTable) { 
+        return <AdminContact />;
+    }else if (selectedOption === "bookedFlight" && showTable) { 
+        return <AdminBookedFlightData />;
     }else if (selectedOption === 'dashboard' && showTable) {
-      // Render AdminDashboard component when "Dashboard" option is selected
-      return <AdminDashboard />;
+        return <AdminDashboard />;
+    }else if (selectedOption === 'hotel' && showTable) {
+      return <AdminHotel />;
+    }else if (selectedOption === 'holiday' && showTable) {
+      return <Adminholiday />;
+    }else if (selectedOption === 'bookedHotel' && showTable) {
+      return <AdminBookedHotelData />;
+    }else if (selectedOption === 'bookedPackage' && showTable) {
+      return <AdminBookedHolidayData />;
     }
   };
 
@@ -158,20 +165,20 @@ export const AdminPage = () => {
                   color: "blue",
                   marginLeft: "15px",
                   marginTop: "20px",
-                  marginBottom: "25px",
+                  marginBottom: "10px",
                 }}
               />
             </NavLink>{" "}
             <li>
-              <button
-                type="submit"
-                className={`adminflight ${
-                  selectedOption === "flight" ? "selectedOption" : ""
-                }`}
-                onClick={() => handleOptionClick("flight")}
-              >
-                Flight
-              </button>
+                <button
+                  type="submit"
+                  className={`admindashboard ${
+                    selectedOption === "dashboard" ? "selectedOption" : ""
+                  }`}
+                  onClick={() => handleOptionClick("dashboard")}
+                >
+                  DashBoard
+                </button>
             </li>
             <li>
               <button
@@ -182,6 +189,17 @@ export const AdminPage = () => {
                 onClick={() => handleOptionClick("contact")}
               >
                 Contact
+              </button>
+            </li>
+            <li>
+              <button
+                type="submit"
+                className={`adminflight ${
+                  selectedOption === "flight" ? "selectedOption" : ""
+                }`}
+                onClick={() => handleOptionClick("flight")}
+              >
+                Flight
               </button>
             </li>
             <li>
@@ -204,7 +222,7 @@ export const AdminPage = () => {
                   }`}
                   onClick={() => handleOptionClick("holiday")}
                 >
-                  Holiday
+                  Package
                 </button>
              
             </li>
@@ -241,17 +259,7 @@ export const AdminPage = () => {
                   Booked Package
                 </button>
             </li>
-            <li>
-                <button
-                  type="submit"
-                  className={`admindashboard ${
-                    selectedOption === "dashboard" ? "selectedOption" : ""
-                  }`}
-                  onClick={() => handleOptionClick("dashboard")}
-                >
-                  DashBoard
-                </button>
-            </li>
+            
             {/* Add other buttons here */}
           </ul>
         </div>

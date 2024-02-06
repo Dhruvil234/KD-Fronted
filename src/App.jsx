@@ -43,8 +43,6 @@ function App() {
         <Route path='/hotelpreview' element={<Hotelpreview/>}/>
         <Route path='/adminflight' element={<AdminFlight/>}/>
         <Route path='/updateflight' element={<Updateflight/>}/>
-
-        
       </Routes>
     <Footer/>
     
