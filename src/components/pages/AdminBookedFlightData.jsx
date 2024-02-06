@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MdFlightTakeoff } from "react-icons/md";
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const adminbookeflightdataapi = `${API}/api/getallbookedflightdata`;
@@ -26,7 +27,7 @@ function AdminBookedFlightData() {
 
   return (
     <div>
-      <h1 style={{marginLeft:"360px"}}>Booked Flight Data</h1>
+      <h1 style={{marginLeft:"360px"}}>Booked Flight Data <MdFlightTakeoff style={{marginBottom:'-5px',marginLeft:'10px',width:'48px'}}/></h1>
       <table className="flight-table">
         <thead>
           <tr>
