@@ -1527,11 +1527,6 @@ p{
     margin-top:20px;
     margin-left:165px;
 }
-.adflightdashboard,.adholidayinfo,.adhotelinfo{
-    border: 1px dotted blue;
-    border-radius: 7px;
-    margin: 10px;
-}
 /* Contact page css */
 .contact-table {
     width: 100%;
@@ -1556,5 +1551,36 @@ p{
 }
 .contact-table tbody tr:hover {
     background-color: #ddd;
+}
+.addpackagebtn{
+    width:150px;
+    height:28px;
+    margin-top:30px;
+    margin-left:775px;
+    font-size:15.5px;
+    font-weight:bold;
+    border-radius:20px;
+    color:#00B200;
+    border-color:#00B200;
+    background-color:transparent;
+    cursor:pointer;
+    margin-bottom:15px;
+}
+.addpackagebtn:hover{
+    color:white;
+    background-color:#00B200;
+    border-color:#00B200;
+}
+.holiday-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-left:130px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.holiday-table th, .holiday-table td {
+    padding: 12px;
+    text-align: center;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
 }
   

@@ -3,7 +3,19 @@ import React from 'react'
 export const Adminholiday = () => {
   return (
     <div>
-        <h1>Admin can see holiday data here</h1>
+      <button className='addpackagebtn'>Add Package</button>
+        <table className='holiday-table'>
+        <thead>
+          <tr>
+            <th>HolidayImage</th>
+            <th>HolidayName</th>
+            <th>Duration</th>
+            <th>City</th>
+            <th>Services</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        </table>
     </div>
   )
 }
