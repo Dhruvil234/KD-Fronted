@@ -1945,7 +1945,19 @@ p{
     margin-left:45px;  
     font-weight:bold; 
 }
-
-
+/* Update Package page css */
+.updatepackagediv{
+    width:500px;
+    height:600px;
+    border:2px solid #00B200;
+    border-radius:20px;
+    margin-top:20px;
+    margin-left:430px;
+    margin-bottom:50px;
+}
+.updatepackagetag{
+    margin-left:110px;
+    margin-top:20px;
+}
 
 
