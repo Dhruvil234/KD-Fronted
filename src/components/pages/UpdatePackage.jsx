@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import { useFormik } from 'formik'; 
 import * as Yup from 'yup'; 
+import { toast } from 'react-toastify';
 
 export const UpdatePackage = () => {
   const [fileInfo, setFileInfo] = useState(null);
@@ -25,9 +26,11 @@ export const UpdatePackage = () => {
     return '';
   }
   const cities = [
-    { value: 'New York', label: 'New York' },
-    { value: 'London', label: 'London' },
-    { value: 'Paris', label: 'Paris' },
+    { value: 'Ahmedabad', label: 'Ahmedabad' },
+    { value: 'Delhi', label: 'Delhi' },
+    { value: 'Mumbai', label: 'Mumbai' },
+    { value: 'Goa', label: 'Goa' },
+    { value: 'Hyderabad', label: 'Hyderabad' },
   ];
 
   const formik = useFormik({
@@ -45,9 +48,10 @@ export const UpdatePackage = () => {
       service: Yup.string().trim().required('Service is required'),
       price: Yup.number().required('Price is required'),
     }),
-    onSubmit: (values) => {
-      // Placeholder for form submission logic
+    onSubmit: (values,resetForm) => {
       console.log('Form submitted with values:', values);
+      toast.success("Package Updated Sucsessfully")
+      resetForm();
     },
   });
 
