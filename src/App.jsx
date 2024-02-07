@@ -17,8 +17,9 @@ import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 import AdminRouteGuard from './components/pages/AdminRouteGuard'
 import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
 import { Hotelpreview } from './components/pages/hotelpreview'
-import  AdminFlight  from './components/pages/AdminFlight'
+import  AdminFlight  from './components/pages/AddFlight'
 import  {Updateflight}  from './components/pages/Updateflight'
+import { AddPackage } from './components/AddPackage'
 
 function App() {
 
@@ -41,8 +42,10 @@ function App() {
         <Route path='/flightpreview' element={<FlightBookingPreview/>}/>
         <Route path='/holidaypreview' element={<HolidayBookingPreview/>}/>
         <Route path='/hotelpreview' element={<Hotelpreview/>}/>
-        <Route path='/adminflight' element={<AdminFlight/>}/>
+        <Route path='/addflight' element={<AdminFlight/>}/>
         <Route path='/updateflight' element={<Updateflight/>}/>
+        <Route path='/addpackage' element={<AddPackage/>}/>
+        
       </Routes>
     <Footer/>
     

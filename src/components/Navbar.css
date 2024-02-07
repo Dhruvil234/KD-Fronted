@@ -1554,11 +1554,38 @@ p{
 .contact-table tbody tr:hover {
     background-color: #ddd;
 }
+/*Add Package css*/
+.addpackagediv{
+    width:500px;
+    height:600px;
+    border:2px solid #00B200;
+    border-radius:20px;
+    margin-top:20px;
+    margin-left:430px;
+    margin-bottom:50px;
+}
+.addpackagetag{
+    margin-left:130px;
+    margin-top:15px;
+}
+.holiday-table{
+    width: 120%;
+    border-collapse: collapse;
+    margin-left:60px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
+}
+.holiday-table th, .holiday-table td {
+    padding: 12px;
+    text-align: center;
+    background-color:#00B200;
+    color:white;
+}
 .addpackagebtn{
-    width:150px;
-    height:28px;
+    width:170px;
+    height:32px;
     margin-top:30px;
-    margin-left:775px;
+    margin-left:853px;
     font-size:15.5px;
     font-weight:bold;
     border-radius:20px;
@@ -1572,17 +1599,204 @@ p{
     color:white;
     background-color:#00B200;
     border-color:#00B200;
+    boxShadow: 0 4px 8px rgba(0, 0, 0, 1.5)
 }
-.holiday-table{
-    width: 100%;
+.holidayimagediv{
+    width:500px;
+    height:70px;
+    margin-top:25px;
+}
+.inputypefile{
+    width:230px;
+    height:40px;
+    margin-left:5px;
+    background-color:transparent;
+}
+.holidayimagelabel{
+    font-weight:bold;
+    margin-top:10px;
+    margin-left:60px;
+}
+.choosefiletag{
+    margin-top:-10px;
+    margin-left:180px;
+}
+.holidaynamediv{
+    width:500px;
+    height:50px;
+    display:flex;
+    margin-top:5px;
+}
+.holidaynamelabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypetext{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypetext::placeholder{
+    color:#6a6a6a ;
+}
+.holidaydurationdiv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:17px;
+}
+.holidaydurationlabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypeduration{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypeduration::placeholder{
+    color:#6a6a6a ;
+}
+.holidaycitydiv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:20px;
+}
+.holidaycitylabel{
+    margin-top:10px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.holidaycityinput{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+    font-weight:bold;
+}
+.holidayservicediv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:20px;
+}
+.holidayservicelabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypeservice{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypeservice::placeholder{
+    color:#6a6a6a ;
+}
+.holidaypricediv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:20px;
+}
+.holidaypricelabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypeforprice{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypeforprice::placeholder{
+    color:#6a6a6a ;
+}
+.addpackage-button{
+    width:150px;
+    height:27px;
+    cursor:pointer;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    margin-top:26px;
+    margin-left:170px;
+    color:white;
+    background-color:#00B200;
+    border-color:#00B200;
+}
+.holidaynamevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-7px;
+    margin-left:190px;
+    margin-bottom:3px;
+}
+.holidaydurationvalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-4px;
+    margin-left:170px;
+}
+.holidaycityvalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:1px;
+    margin-left:120px;
+}
+.holidayservicevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-3px;
+    margin-left:150px;
+}
+.holidayspricevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-3px;
+    margin-left:150px;
+}
+.holidayimagevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-10px;
+    margin-left:175px;
+
+}
+/* booked Holiday table css */
+.bookedholiday-table{
+    width: 120%;
     border-collapse: collapse;
-    margin-left:130px;
+    margin-left:60px;
     font-family: 'Inter', sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    margin-left:80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
-.holiday-table th, .holiday-table td {
+.bookedpackagetag{
+    margin-left:350px;
+    margin-bottom:30px;
+}
+.bookedholiday-table th, .bookedholiday-table td {
     padding: 12px;
     text-align: center;
-    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+    background-color:#00B200;
+    color:white;
 }
-  

@@ -79,7 +79,7 @@ export const AdminPage = () => {
   };
 
   const handleaddflight = () => {
-    navigate("/adminflight");
+    navigate("/addflight");
   };
 
   const renderTable = () => {
