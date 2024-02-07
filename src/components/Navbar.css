@@ -1578,8 +1578,18 @@ p{
 .holiday-table th, .holiday-table td {
     padding: 12px;
     text-align: center;
+    color:black;
+    font-weight:bold;
+}
+.holiday-table th{
     background-color:#00B200;
     color:white;
+}
+.holiday-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.holiday-table tbody tr:hover {
+    background-color: #cccccc;
 }
 .addpackagebtn{
     width:170px;

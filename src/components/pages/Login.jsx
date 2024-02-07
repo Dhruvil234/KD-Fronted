@@ -69,7 +69,7 @@ const Login = () => {
   setTimeout(() => {
     console.log('Removing token...');
     localStorage.removeItem('token');
-  }, 2 * 24 * 60 * 60 * 1000); // 2 * 24 * 60 * 60 * 1000 =  2 days 
+  }, 30 * 60 * 1000); // 30 Minutes
 
 
   return (
