@@ -1786,8 +1786,8 @@ p{
     border-collapse: collapse;
     margin-left:60px;
     font-family: 'Inter', sans-serif;
-    
     margin-left:80px;
+    margin-bottom:40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
 .bookedpackagetag{
@@ -1795,8 +1795,40 @@ p{
     margin-bottom:30px;
 }
 .bookedholiday-table th, .bookedholiday-table td {
-    padding: 12px;
+    padding: 10px;
     text-align: center;
+    border: #ddd;
+    font-weight:bold;
+}
+.bookedholiday-table th{
     background-color:#00B200;
     color:white;
+}
+.bookedholiday-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.bookedholiday-table tbody tr:hover {
+    background-color: #cccccc;
+}
+.holidayupdatebtn{
+    margin-right:8px;
+    background-color:blue;
+    color:white;
+    border-color:blue;
+    border-radius:2px;
+}
+.holidaydeletebtn{
+    background-color:red;
+    color:white;
+    border-color:red;
+    border-radius:2px;
+}
+/* Admin Dashboard Css */
+.dashboarddiv{
+    width:1000px;
+    height:500px;
+    display:flex;
+}
+.adflightdashboard{
+    border:2px solid black;
 }
