@@ -6,7 +6,7 @@ import { TbBeach } from "react-icons/tb";
 function AdminDashboard() {
   
   return (
-    <>
+    <div className='dashboarddiv'>
       <div className="adflightdashboard">
         <h1>Flight Info <FaMoneyBillTrendUp /></h1>
         <p>Total Flight Book: </p>
@@ -37,7 +37,7 @@ function AdminDashboard() {
           <p>Goa</p>
           <p>Hydrabad</p>
       </div>
-    </>
+    </div>
   );
 }
 

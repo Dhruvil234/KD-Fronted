@@ -36,10 +36,6 @@ export const AddPackage = () => {
       price: Yup.number().required('Price is required'),
     }),
     onSubmit: async (values,{ resetForm }) => {
-      if (!fileInfo) {
-        toast.error('Please choose a holiday image');
-        return;
-      }
     
       const formData = new FormData();
       formData.append('holidayImage', fileInfo);
@@ -66,6 +62,8 @@ export const AddPackage = () => {
         console.error('Error adding package:', error);
         alert('Failed to add package');
       }
+      toast.success('Package added successfully!');
+      resetForm();
     },
   });
 
