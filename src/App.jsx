@@ -19,7 +19,8 @@ import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
 import { Hotelpreview } from './components/pages/hotelpreview'
 import  AdminFlight  from './components/pages/AddFlight'
 import  {Updateflight}  from './components/pages/Updateflight'
-import { AddPackage } from './components/AddPackage'
+import { AddPackage } from './components/pages/AddPackage'
+
 
 function App() {
 

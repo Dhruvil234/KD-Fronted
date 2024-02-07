@@ -35,14 +35,37 @@ export const AddPackage = () => {
       service: Yup.string().trim().required('Service is required'),
       price: Yup.number().required('Price is required'),
     }),
-    onSubmit: (values,{ resetForm }) => {
+    onSubmit: async (values,{ resetForm }) => {
       if (!fileInfo) {
         toast.error('Please choose a holiday image');
         return;
       }
-      console.log('Package Name: ', values.holidayName);
-      toast.success('Package added successfully!');
-      resetForm();
+    
+      const formData = new FormData();
+      formData.append('holidayImage', fileInfo);
+      formData.append('holidayName', values.holidayName);
+      formData.append('duration', values.duration);
+      formData.append('city', values.city);
+      formData.append('service', values.service);
+      formData.append('price', values.price);
+      console.log(formData)
+
+      try {
+        const response = await fetch('http://localhost:8080/api/addpackagedetails', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to add package');
+        }
+
+        toast.success('Package added successfully!');
+        resetForm();
+      } catch (error) {
+        console.error('Error adding package:', error);
+        alert('Failed to add package');
+      }
     },
   });
 
