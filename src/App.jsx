@@ -20,6 +20,7 @@ import { Hotelpreview } from './components/pages/hotelpreview'
 import  AdminFlight  from './components/pages/AddFlight'
 import  {Updateflight}  from './components/pages/Updateflight'
 import { AddPackage } from './components/pages/AddPackage'
+import { UpdatePackage } from './components/pages/updatepackage'
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path='/addflight' element={<AdminFlight/>}/>
         <Route path='/updateflight' element={<Updateflight/>}/>
         <Route path='/addpackage' element={<AddPackage/>}/>
+        <Route path='/updatepackage' element={<UpdatePackage/>}/>
         
       </Routes>
     <Footer/>
