@@ -1569,10 +1569,11 @@ p{
     margin-top:15px;
 }
 .holiday-table{
-    width: 120%;
+    width: 145%;
     border-collapse: collapse;
     margin-left:60px;
     font-family: 'Inter', sans-serif;
+    margin-bottom: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
 .holiday-table th, .holiday-table td {
@@ -1595,7 +1596,7 @@ p{
     width:170px;
     height:32px;
     margin-top:30px;
-    margin-left:853px;
+    margin-left:1050px;
     font-size:15.5px;
     font-weight:bold;
     border-radius:20px;
