@@ -1825,10 +1825,22 @@ p{
 }
 /* Admin Dashboard Css */
 .dashboarddiv{
-    width:1000px;
-    height:500px;
+    width:1130px;
+    height:480px;
     display:flex;
 }
 .adflightdashboard{
+    width:376px;
+    height:480px;
+    border:2px solid black;
+}
+.adhotelinfo{
+    width:376px;
+    height:480px;
+    border:2px solid black;   
+}
+.adholidayinfo{
+    width:376px;
+    height:480px;
     border:2px solid black;
 }
