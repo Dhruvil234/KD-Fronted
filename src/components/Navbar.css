@@ -1841,16 +1841,110 @@ p{
 }
 .adflightdashboard{
     width:376px;
-    height:480px;
-    border:2px solid black;
+    height:460px;
+    border-radius:10px;
+    margin-left:10px;
+    margin-top:10px;
+    border:2px solid blue;
 }
 .adhotelinfo{
     width:376px;
-    height:480px;
-    border:2px solid black;   
+    height:460px;
+    border-radius:10px;
+    margin-left:10px;
+    margin-top:10px;
+    border:2px solid #FF735C;   
 }
 .adholidayinfo{
     width:376px;
-    height:480px;
-    border:2px solid black;
+    height:460px;
+    border-radius:10px;
+    margin-left:10px;
+    margin-top:10px;
+    border:2px solid #00B200;
 }
+.dashflighttag1{
+    margin-top:35px;
+    margin-left:77px;
+}
+.dashflighttag2{
+    margin-top:55px;
+    margin-left:50px;
+    font-size:17px;
+    color: blue;
+}
+.dashflighttag3{
+    margin-top:25px;
+    margin-left:50px;
+    font-size:17px;
+    color: blue;
+}
+.dashflighttag4{
+    margin-top:55px;
+    margin-left:50px;
+    font-size:19px;
+    color: blue;
+}
+.dashflighttag5{
+    margin-top:30px;
+    margin-left:5px;
+    font-size:19px;
+    color: blue;
+}
+.dashflighttag6{
+    margin-top:15px;
+    margin-left:5px;
+    font-size:19px;
+    color: blue;
+}
+.dashflighttag7{
+    margin-top:15px;
+    margin-left:5px;
+    font-size:19px;
+    color: blue;
+}
+.flightprofit{
+    color:#00B200;
+}
+.dashhoteltag1{
+    margin-top:35px;
+    margin-left:77px;   
+}
+.dashhoteltag2{
+    margin-top:35px;
+    margin-left:45px;   
+}
+.dashhoteltag3{
+    margin-top:25px;
+    margin-left:45px;  
+    font-weight:bold; 
+}
+.dashhoteltag4{
+    margin-top:25px;
+    margin-left:45px;  
+    font-weight:bold; 
+}
+.dashhoteltag5{
+    margin-top:25px;
+    margin-left:45px;  
+    font-weight:bold; 
+}
+.dashhoteltag6{
+    margin-top:25px;
+    margin-left:45px;  
+    font-weight:bold; 
+}
+.dashhoteltag7{
+    margin-top:25px;
+    margin-left:45px;  
+    font-weight:bold; 
+}
+.dashhoteltag8{
+    margin-top:25px;
+    margin-left:45px;  
+    font-weight:bold; 
+}
+
+
+
+

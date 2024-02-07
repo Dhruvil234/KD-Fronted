@@ -8,25 +8,25 @@ function AdminDashboard() {
   return (
     <div className='dashboarddiv'>
       <div className="adflightdashboard">
-        <h1>Flight Info <FaMoneyBillTrendUp /></h1>
-        <p>Total Flight Book: </p>
-        <p>Total Flight Booking Profit:Rs./-</p>
-        <h2>
-          Total Booking Based on class:
-          <p>Economy: </p>
-          <p>Premium Economy: </p>
-          <p>Business: </p>
+        <h1 className='dashflighttag1'>Flight Info <FaMoneyBillTrendUp style={{marginLeft:'5px',}} /></h1>
+        <p className='dashflighttag2'>Total Flight Book: </p>
+        <p className='dashflighttag3'>Total Flight Booking Profit:Rs.<span className='flightprofit'>999/-</span></p>
+        <h2 className='dashflighttag4'>
+          Total Booking Based on class
+          <p className='dashflighttag5'>Economy: </p>
+          <p className='dashflighttag6'>Premium Economy: </p>
+          <p className='dashflighttag7'>Business: </p>
         </h2>
       </div>
       <div className="adhotelinfo">
-        <h1>Hotel Info <FaMoneyBillTransfer /></h1>
-        <p>Total Hotel Booking Profit:Rs.-</p>
-          Total Hotel Book Per city:
-            <p>Ahemedabad</p>
-            <p>Delhi</p>
-            <p>Mumbai</p>
-            <p>Goa</p>
-            <p>Hydrabad</p>
+        <h1 className='dashhoteltag1'>Hotel Info <FaMoneyBillTransfer/></h1>
+        <p className='dashhoteltag2'>Total Hotel Booking Profit:Rs.-</p>
+            <p className='dashhoteltag3'>Total Hotel Book Per city</p>
+            <p className='dashhoteltag4'>Ahemedabad :</p>
+            <p className='dashhoteltag5'>Delhi :</p>
+            <p className='dashhoteltag6'>Mumbai :</p>
+            <p className='dashhoteltag7'>Goa :</p>
+            <p className='dashhoteltag8'>Hydrabad :</p>
          </div>
       <div className="adholidayinfo">
         <h1>Holiday Info <TbBeach /></h1>
