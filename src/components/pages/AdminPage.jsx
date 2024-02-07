@@ -17,9 +17,10 @@ const getallflight = `${API}/api/getflights`;
 let deleteflight = `${API}/api/deleteflight`;
 
 export const AdminPage = () => {
-  const [selectedOption, setSelectedOption] = useState(""); // State to track selected option
+  const [selectedOption, setSelectedOption] = useState(""); 
   const [showTable, setShowTable] = useState(true);
   const [tableData, setTableData] = useState([]);
+  const [showImage, setShowImage] = useState(true);  
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,6 +28,16 @@ export const AdminPage = () => {
   useEffect(() => {
     fetchFlightData();
   }, []);
+
+  useEffect(() => {
+    // If no option is selected, show the image
+    if (!selectedOption) {
+      setShowImage(true);
+    } else {
+      setShowImage(false);
+    }
+  }, [selectedOption]);
+
 
   const fetchFlightData = async () => {
     try {
@@ -83,7 +94,19 @@ export const AdminPage = () => {
   };
 
   const renderTable = () => {
-    if (selectedOption === "flight" && showTable) {
+    if (!selectedOption && showImage) {
+      return (
+        <div>
+          <img
+            src="https://cdni.iconscout.com/illustration/premium/thumb/admin-services-4500540-3804451.png"
+            alt="No option selected"
+            width={520}
+            height={430}
+            style={{marginTop:'10px',marginLeft:'350px'}}
+          />
+        </div>
+      );
+    }else if (selectedOption === "flight" && showTable) {
       return (
         <>
           <button
