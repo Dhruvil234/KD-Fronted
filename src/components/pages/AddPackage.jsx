@@ -4,6 +4,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup'; 
 import { toast } from 'react-toastify';
 
+const API = import.meta.env.VITE_BACKENDAPI;
+const addpackage = `${API}/api/addpackagedetails`;
+
+
 export const AddPackage = () => {
   const [fileInfo, setFileInfo] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null); 
@@ -47,7 +51,7 @@ export const AddPackage = () => {
       console.log(formData)
 
       try {
-        const response = await fetch('http://localhost:8080/api/addpackagedetails', {
+        const response = await fetch(addpackage, {
           method: 'POST',
           body: formData,
         });
