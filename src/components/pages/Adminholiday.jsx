@@ -1,11 +1,16 @@
 import React,{ useEffect, useState }  from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { HiPencilAlt } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 import { toast } from 'react-toastify';
 
+const API = import.meta.env.VITE_BACKENDAPI;
+const getallholiday = `${API}/api/getallpackages`;
+const deletepackage = `${API}/api/deletepackage`;
+
 export const Adminholiday = () => {
   const [holidayPackages, setHolidayPackages] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     // Fetch holiday packages data
@@ -14,7 +19,7 @@ export const Adminholiday = () => {
 
   const fetchHolidayPackages = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/getallpackages');
+      const response = await fetch(getallholiday);
       if (!response.ok) {
         throw new Error('Failed to fetch holiday packages');
       }
@@ -25,14 +30,15 @@ export const Adminholiday = () => {
     }
   };
 
-  const handlupdatebtn = () => {
-    navigate("/updatepackage");
+  const handlupdatebtn = (holidayPackage) => {
+    navigate("/updatepackage", { state: { holidayPackage } });
+    console.log("at upadate button"+ holidayPackage)
   }
   const handledeletebtn = async (id) => {
     const isConfirmed = window.confirm('Are you sure you want to delete this Package?');
     if (isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:8080/api/deletepackage/${id}`, {
+        const response = await fetch(`${deletepackage}/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) {
@@ -77,9 +83,9 @@ export const Adminholiday = () => {
               <td>{holidayPackage.duration}</td>
               <td>{holidayPackage.city}</td>
               <td>{holidayPackage.service}</td>
-              <td>{holidayPackage.price}</td>
+              <td>Rs.{holidayPackage.price}/-</td>
               <td>
-                <button className='holidayupdatebtn' onClick={() => handlupdatebtn(holidayPackage._id)}><HiPencilAlt style={{width:'25px',height:'22px',textAlign:'center'}} /></button>
+                <button className='holidayupdatebtn' onClick={() => handlupdatebtn(holidayPackage)}><HiPencilAlt style={{width:'25px',height:'22px',textAlign:'center'}} /></button>
                 <button className='holidaydeletebtn' onClick={() => handledeletebtn(holidayPackage._id)}><MdDelete style={{width:'25px',height:'22px',textAlign:'center'}}/></button>
               </td>
             </tr>

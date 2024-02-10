@@ -598,8 +598,9 @@ p{
     margin-bottom:120px;
 }
 .holidayimagediv{
-    width:330px;
-    height:410px;
+    width:500px;
+    height:500px;
+    display: flex;
 }
 .holidayimage{
     width:320px;
@@ -1627,6 +1628,7 @@ p{
     font-weight:bold;
     margin-top:10px;
     margin-left:60px;
+    margin-bottom: 40px;
 }
 .choosefiletag{
     margin-top:-10px;
@@ -1791,9 +1793,13 @@ p{
     margin-left:175px;
 
 }
+.updatpackageimage{
+    width: 50px;
+    height: 50px;
+}
 /* booked Holiday table css */
 .bookedholiday-table{
-    width: 120%;
+    width: 150%;
     border-collapse: collapse;
     margin-left:60px;
     font-family: 'Inter', sans-serif;
@@ -1802,8 +1808,9 @@ p{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
 .bookedpackagetag{
-    margin-left:350px;
+    margin-left:400px;
     margin-bottom:30px;
+    width: 100%;
 }
 .bookedholiday-table th, .bookedholiday-table td {
     padding: 10px;
@@ -1827,12 +1834,14 @@ p{
     color:white;
     border-color:blue;
     border-radius:2px;
+    cursor: pointer;
 }
 .holidaydeletebtn{
     background-color:red;
     color:white;
     border-color:red;
     border-radius:2px;
+    cursor: pointer;
 }
 /* Admin Dashboard Css */
 .dashboarddiv{

@@ -1,65 +1,58 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { TbBeach } from "react-icons/tb";
 
-import Logo from '../../Images/logo.png'
+const API = import.meta.env.VITE_BACKENDAPI;
+const getallbookedpackage = `${API}/api/getallbookedpackage`;
+
 
 export const AdminBookedHolidayData = () => {
+  const [bookedData, setBookedData] = useState([]);
 
- 
+  useEffect(() => {
+    const fetchBookedData = async () => {
+      try {
+        const response = await fetch(getallbookedpackage);
+        const data = await response.json();
+        setBookedData(data);
+      } catch (error) {
+        console.error('Error fetching booked data:', error);
+      }
+    };
+
+    fetchBookedData();
+  }, []);
 
   return (
     <div>
-      <h1 className='bookedpackagetag'>Booked Package Data <TbBeach /></h1>
-       <table className='bookedholiday-table'>
+      <h1 className='bookedpackagetag'>Booked Holiday Data <TbBeach /></h1>
+      <table className='bookedholiday-table'>
         <thead>
           <tr>
-            <th>HolidayImage</th>
-            <th>HolidayName</th>
+            <th>Holiday Name</th>
             <th>Duration</th>
             <th>City</th>
+            <th>Seller</th>
             <th>Services</th>
+            <th>Name</th>
+            <th>Email</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><img src={Logo} alt='Flight' className='flightimage'  style={{height:'60px',width:'60px'}}/></td>
-            <td>Xyz </td>
-            <td>2 Day / 1 Night</td>
-            <td>Mumbai</td>
-            <td>Meals,Wifi,Transport</td>
-            <td>8999</td>
-            
-          </tr>
-          <tr>
-            <td><img src={Logo} alt='Flight' className='flightimage'  style={{height:'60px',width:'60px'}}/></td>
-            <td>Xyz </td>
-            <td>2 Day / 1 Night</td>
-            <td>Mumbai</td>
-            <td>Meals,Wifi,Transport</td>
-            <td>8999</td>
-            
-          </tr>
-          <tr>
-            <td><img src={Logo} alt='Flight' className='flightimage'  style={{height:'60px',width:'60px'}}/></td>
-            <td>Xyz </td>
-            <td>2 Day / 1 Night</td>
-            <td>Mumbai</td>
-            <td>Meals,Wifi,Transport</td>
-            <td>8999</td>
-            
-          </tr>
-          <tr>
-            <td><img src={Logo} alt='Flight' className='flightimage'  style={{height:'60px',width:'60px'}}/></td>
-            <td>Xyz </td>
-            <td>2 Day / 1 Night</td>
-            <td>Mumbai</td>
-            <td>Meals,Wifi,Transport</td>
-            <td>8999</td>
-            
-          </tr>
+          {bookedData.map((booking) => (
+            <tr key={booking._id}>
+              <td>{booking.holidayTitle}</td>
+              <td>{booking.duration}</td>
+              <td>{booking.city}</td>
+              <td>{booking.seller}</td>
+              <td>{booking.service}</td>
+              <td>{booking.name}</td>
+              <td>{booking.email}</td>
+              <td>Rs.{booking.price}/-</td>
+            </tr>
+          ))}
         </tbody>
-        </table>
+      </table>
     </div>
-  )
-}
+  );
+};

@@ -24,19 +24,20 @@ export const Updateflight = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [userfrom, setFrom] = useState(location.state?.from || null);
-  const [userto, setTo] = useState(location.state?.to || null);
-  const [userflightClass, setFlightClass] = useState(location.state?.flightClass || null);
+  const [userfrom, setFrom] = useState(location.state?.from || cityOptions[0]);
+  const [userto, setTo] = useState(location.state?.to || cityOptions[0]);
+  const [userflightClass, setFlightClass] = useState(location.state?.flightClass || classOptions[0]);
   const [userflightPrice, setFlightPrice] = useState(location.state?.price || null);
  
   useEffect(() => {
-    console.log("userfrom:", userfrom);
-    console.log("userto:", userto);
-    console.log("userflightClass:", userflightClass);
-    console.log("userflightPrice:", userflightPrice);
-  }, [userfrom, userto, userflightClass, userflightPrice]);
-
-
+    if (location.state) {
+      setFrom(cityOptions.find(option => option.value === location.state.from) || cityOptions[0]);
+      setTo(cityOptions.find(option => option.value === location.state.to) || cityOptions[0]);
+      setFlightClass(classOptions.find(option => option.value === location.state.flightClass) || classOptions[0]);
+      setFlightPrice(location.state.price || null);
+    }
+  }, [location.state]);
+  
   const handleFromChange = (selectedOption) => {
     setFrom(selectedOption);
   };
@@ -53,7 +54,7 @@ export const Updateflight = () => {
     setFlightPrice(e.target.value);
   };
 
-  const handleUpdate = async() => {
+  const handleUpdate = async () => {
     try {
       const id = location.state.id; // Access the id from location.state
       const url = `${updateflight}/${id}`;
@@ -82,14 +83,6 @@ export const Updateflight = () => {
       toast.error('Failed to update flight details');
     }
   };
-  
-  useEffect(() => {
-    setFrom(location.state?.userfrom || cityOptions[0]);
-    setTo(location.state?.userto || cityOptions[0]);
-    setFlightClass(location.state?.flightClass || classOptions[0]);
-    setFlightPrice(location.state?.flightPrice || null);
-  }, [location.state]);
-  
 
   return (
     <div className='updateflightdiv'>
@@ -118,7 +111,7 @@ export const Updateflight = () => {
       <div className='updateflightclass'>
         <label className='updateflightlabel3'>Class :</label>
         <Select
-        value={userflightClass}
+          value={userflightClass}
           id='classflight'
           options={classOptions}
           className='flightclass'
@@ -136,7 +129,7 @@ export const Updateflight = () => {
           onChange={handlePriceChange}
         />
       </div>
-      <button className='updateflight-btn'onClick={handleUpdate}>Update</button>
+      <button className='updateflight-btn' onClick={handleUpdate}>Update</button>
     </div>
   );
 };
