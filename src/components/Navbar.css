@@ -161,6 +161,7 @@ li a.login.active {
 }
 .validation-text{
     color: red;
+    font-weight:bold;
 }
 /* line no 133 to 192 Register Page css */
 .RegPage{
@@ -370,8 +371,9 @@ input {
     margin-top:3px;
     margin-left:370px;
     margin-bottom: 10px;
+    font-size:15px;
     color: white;
-    font-style: bold;
+    font-weight:bold;
     border-color: blue;
     background-color: blue;
     border-radius: 15px;
@@ -1869,7 +1871,7 @@ p{
     margin-left:77px;
 }
 .dashflighttag2{
-    margin-top:55px;
+    margin-top:35px;
     margin-left:50px;
     font-size:17px;
     color: blue;
@@ -1883,19 +1885,19 @@ p{
 .dashflighttag4{
     margin-top:55px;
     margin-left:50px;
-    font-size:19px;
+    font-size:17px;
     color: blue;
 }
 .dashflighttag5{
     margin-top:30px;
     margin-left:5px;
-    font-size:19px;
+    font-size:17px;
     color: blue;
 }
 .dashflighttag6{
     margin-top:15px;
     margin-left:5px;
-    font-size:19px;
+    font-size:17px;
     color: blue;
 }
 .dashflighttag7{
@@ -1909,41 +1911,42 @@ p{
 }
 .dashhoteltag1{
     margin-top:35px;
-    margin-left:77px;   
+    margin-left:77px;  
 }
 .dashhoteltag2{
     margin-top:35px;
     margin-left:45px;   
+    color:#FF735C;
+    font-size:17px;
 }
-.dashhoteltag3{
-    margin-top:25px;
-    margin-left:45px;  
-    font-weight:bold; 
-}
-.dashhoteltag4{
-    margin-top:25px;
-    margin-left:45px;  
-    font-weight:bold; 
-}
-.dashhoteltag5{
-    margin-top:25px;
-    margin-left:45px;  
-    font-weight:bold; 
-}
-.dashhoteltag6{
-    margin-top:25px;
-    margin-left:45px;  
-    font-weight:bold; 
-}
-.dashhoteltag7{
-    margin-top:25px;
-    margin-left:45px;  
-    font-weight:bold; 
-}
+.dashhoteltag3,
+.dashhoteltag4,
+.dashhoteltag5,
+.dashhoteltag6,
+.dashhoteltag7,
 .dashhoteltag8{
     margin-top:25px;
     margin-left:45px;  
-    font-weight:bold; 
+    font-weight:bold;
+    color:#FF735C; 
+    font-size:17px;
+}
+.holidayprofit{
+    color:blue;
+}
+.dashholidaytag1{
+    margin-left:80px;
+    margin-top:35px;
+}
+.dashholidaytag2{
+    margin-left:50px;
+    color:#00B200;
+}
+.dashholidaytag3,.dashholidaytag4,.dashholidaytag5,.dashholidaytag6,.dashholidatag7{
+    margin-top:25px;
+    margin-left:50px;
+    color:#00B200;
+    font-size:17px;
 }
 /* Update Package page css */
 .updatepackagediv{
