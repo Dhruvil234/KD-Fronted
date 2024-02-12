@@ -1846,30 +1846,53 @@ p{
     cursor: pointer;
 }
 /* Admin Dashboard Css */
+.dashboardparent{
+    width: 1130px;
+    height: auto;
+}
+.dashboardchart{
+    width: 1130px;
+    height: 350px;
+    display: flex;
+}
+.hotelchartdiv{
+    width:420px;
+    height:500px;
+    margin-top: 60px;
+}
+.dashboardpiechart{
+    width: 500px;
+    height: 450px;
+    margin-top: 90px;
+    margin-left: 430px;
+    margin-bottom: 50px;
+    
+}
 .dashboarddiv{
-    width:1130px;
+    width:1300px;
     height:480px;
     display:flex;
+    margin-top: 20px;
 }
 .adflightdashboard{
-    width:376px;
-    height:460px;
+    width:430px;
+    height:auto;
     border-radius:10px;
     margin-left:10px;
     margin-top:10px;
     border:2px solid blue;
 }
 .adhotelinfo{
-    width:376px;
-    height:460px;
+    width:430px;
+    height:470px;
     border-radius:10px;
     margin-left:10px;
     margin-top:10px;
     border:2px solid #FF735C;   
 }
 .adholidayinfo{
-    width:376px;
-    height:460px;
+    width:460px;
+    height:470px;
     border-radius:10px;
     margin-left:10px;
     margin-top:10px;
@@ -1894,23 +1917,23 @@ p{
 .dashflighttag4{
     margin-top:55px;
     margin-left:50px;
-    font-size:17px;
+    font-size:20px;
     color: blue;
 }
 .dashflighttag5{
-    margin-top:30px;
+    margin-top:37px;
     margin-left:5px;
     font-size:17px;
     color: blue;
 }
 .dashflighttag6{
-    margin-top:15px;
+    margin-top:37px;
     margin-left:5px;
     font-size:17px;
     color: blue;
 }
 .dashflighttag7{
-    margin-top:15px;
+    margin-top:37px;
     margin-left:5px;
     font-size:19px;
     color: blue;
@@ -1928,18 +1951,13 @@ p{
     color:#FF735C;
     font-size:17px;
 }
-.dashhoteltag3,
-.dashhoteltag4,
-.dashhoteltag5,
-.dashhoteltag6,
-.dashhoteltag7,
-.dashhoteltag8{
-    margin-top:25px;
-    margin-left:45px;  
-    font-weight:bold;
-    color:#FF735C; 
-    font-size:17px;
+.hotelcitytag{
+    color:#FF735C;
 }
+.dashhoteltag3{
+    color: #FF735C;
+}
+
 .holidayprofit{
     color:blue;
 }
@@ -1951,11 +1969,12 @@ p{
     margin-left:50px;
     color:#00B200;
 }
-.dashholidaytag3,.dashholidaytag4,.dashholidaytag5,.dashholidaytag6,.dashholidatag7{
-    margin-top:25px;
-    margin-left:50px;
-    color:#00B200;
-    font-size:17px;
+.dashholidaytag3{
+    color:#00B200; 
+}
+.holidaycitytag{
+    color: #00B200;
+    margin-left: 50px;
 }
 /* Update Package page css */
 .updatepackagediv{
