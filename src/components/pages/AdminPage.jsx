@@ -211,7 +211,7 @@ export const AdminPage = () => {
                 }`}
                 onClick={() => handleOptionClick("contact")}
               >
-                Contact
+                CRM
               </button>
             </li>
             <li>
