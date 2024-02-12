@@ -56,6 +56,7 @@ export const AddHotel = () => {
       formik.resetForm();
       toast.success('Hotel added successfully!');
     }
+    
   });
    
   return (
