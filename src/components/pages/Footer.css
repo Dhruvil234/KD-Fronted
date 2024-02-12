@@ -9,6 +9,13 @@ body {
   flex: 1;
   padding: 20px;
 }
+.mainfooterdiv{
+  justify-content: space-around;
+  align-items: center;
+  height: 180px;
+  width: 100%;
+  background-color: #DAF5FE;
+}
 .foot {
   display: flex;
   justify-content: space-around;
@@ -21,6 +28,7 @@ body {
   width: 100%;
   position:sticky;
   margin-top: auto; 
+  
 }
 .column {
   padding: 5px;

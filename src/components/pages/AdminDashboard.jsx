@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { TbBeach } from "react-icons/tb";
-import Chart from "chart.js/auto";
+// import Chart from "chart.js/auto";
 import { FaChartLine } from "react-icons/fa";
 import { BsFillPieChartFill } from "react-icons/bs";
 

@@ -8,7 +8,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <>
+    <div className='mainfooterdiv'>
       <div className='foot'>
         <div className='column'>
           <ul>
@@ -69,7 +69,8 @@ export const Footer = () => {
             </li>
           </ul>
       </div>
-   </div>
-  </>
+    </div>
+    <h4 style={{marginLeft:'270px',marginTop:'-1px',}}>Copyright © 2023 KD  Travellers Limited (formerly known as KD Travellers Private Limited), India. All rights reserved</h4>
+  </div>
   );
 };

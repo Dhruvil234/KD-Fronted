@@ -1,9 +1,81 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { RiPencilLine } from "react-icons/ri";
+import { MdDeleteOutline } from "react-icons/md";
 
 export const AdminHotel = () => {
+  const navigate = useNavigate();
+
+  const handleaddhotel = () => {
+      navigate('/addhotel')
+   }
+
   return (
     <div>
-         <h1>Admin can see hotel data here</h1>
+        <button className='addhotelbtn' onClick={handleaddhotel}>Add Hotel</button>
+        <table className='hotel-table'>
+        <thead>
+          <tr>
+            <th>HotelImage</th>
+            <th>HotelName</th>
+            <th>Rating</th>
+            <th>City</th>
+            <th>Services</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hotel Image</td>
+              <td>Hotel Name</td>
+              <td>4.5</td>
+              <td>Delhi</td>
+              <td>Free Wifi</td>
+              <td>8999</td>
+              <td>
+                <button className='hotelupdatebtn' ><RiPencilLine  style={{width:'25px',height:'22px',textAlign:'center'}} /></button>
+                <button className='hoteldeletebtn' ><MdDeleteOutline  style={{width:'25px',height:'22px',textAlign:'center'}}/></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Hotel Image</td>
+              <td>Hotel Name</td>
+              <td>4.5</td>
+              <td>Delhi</td>
+              <td>Free Wifi</td>
+              <td>8999</td>
+              <td>
+                <button className='hotelupdatebtn' ><RiPencilLine  style={{width:'25px',height:'22px',textAlign:'center'}} /></button>
+                <button className='hoteldeletebtn' ><MdDeleteOutline  style={{width:'25px',height:'22px',textAlign:'center'}}/></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Hotel Image</td>
+              <td>Hotel Name</td>
+              <td>4.5</td>
+              <td>Delhi</td>
+              <td>Free Wifi</td>
+              <td>8999</td>
+              <td>
+                <button className='hotelupdatebtn' ><RiPencilLine  style={{width:'25px',height:'22px',textAlign:'center'}} /></button>
+                <button className='hoteldeletebtn' ><MdDeleteOutline  style={{width:'25px',height:'22px',textAlign:'center'}}/></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Hotel Image</td>
+              <td>Hotel Name</td>
+              <td>4.5</td>
+              <td>Delhi</td>
+              <td>Free Wifi</td>
+              <td>8999</td>
+              <td>
+                <button className='hotelupdatebtn' ><RiPencilLine  style={{width:'25px',height:'22px',textAlign:'center'}} /></button>
+                <button className='hoteldeletebtn' ><MdDeleteOutline  style={{width:'25px',height:'22px',textAlign:'center'}}/></button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
     </div>
   )
 }

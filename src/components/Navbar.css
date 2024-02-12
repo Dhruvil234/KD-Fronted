@@ -1990,5 +1990,252 @@ p{
     margin-left:110px;
     margin-top:20px;
 }
-
+/* Hotel Table CSS */ 
+.addhotelbtn{
+    width:165px;
+    height:27px;
+    cursor:pointer;
+    border-radius:20px;
+    font-size:16px;
+    font-weight:bold;
+    margin-top:26px;
+    margin-left:870px;
+    color:white;
+    background-color:#FF735C;
+    border-color:#FF735C;
+}
+.hotel-table {
+    width: 120%;
+    border-collapse: collapse;
+    margin-left: 60px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.hotel-table th, .hotel-table td {
+    padding: 12px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.hotel-table th {
+    background-color: #FF735C;
+    color: white;
+}
+.hotel-table tbody tr {
+    border:2px solid #f2f2f2;
+}
+.hotel-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+.addhoteldiv{
+    width:500px;
+    height:600px;
+    border:2px solid #FF735C;
+    border-radius:20px;
+    margin-top:20px;
+    margin-left:430px;
+    margin-bottom:50px;
+}
+.addhoteltag{
+    margin-top:15px;
+    margin-left:150px;
+}
+.hotelimagediv{
+    width:500px;
+    height:70px;
+    margin-top:25px;
+}
+.inputypefilehotel{
+    width:230px;
+    height:40px;
+    margin-left:5px;
+    background-color:transparent;
+}
+.hotelimagelabel{
+    font-weight:bold;
+    margin-top:10px;
+    margin-left:60px;
+    margin-bottom: 40px;
+}
+.choosefiletag{
+    margin-top:-10px;
+    margin-left:180px;
+}
+.hotelnamediv{
+    width:500px;
+    height:50px;
+    display:flex;
+    margin-top:5px;
+}
+.hotelnamelabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypetexthotel{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypetexthotel::placeholder{
+    color:#6a6a6a ;
+}
+.hotelrattingdiv{
+    width:500px;
+    height:55px;
+    display:flex;
+    margin-top:17px;
+}
+.hotelrattinglabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtyperatting{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtyperatting::placeholder{
+    color:#6a6a6a ;
+}
+.hotelcitydiv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:15px;
+}
+.hotelcitylabel{
+    margin-top:10px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.hotelcityinput{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+    font-weight:bold;
+}
+.hotelservicediv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:20px;
+}
+.hotelservicelabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypeservicehotel{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypeservicehotel::placeholder{
+    color:#6a6a6a ;
+}
+.hotelpricediv{
+    width:500px;
+    height:45px;
+    display:flex;
+    margin-top:20px;
+}
+.hotelpricelabel{
+    margin-top:7px;
+    margin-left:60px;
+    font-weight:bold;
+}
+.inputtypeforpricehotel{
+    width:270px;
+    height:35px;
+    margin-left:5px;
+    background-color:white;
+    color:black;
+    font-size:15px;
+}
+.inputtypeforpricehotel::placeholder{
+    color:#6a6a6a ;
+}
+.addhotel-button{
+    width:150px;
+    height:27px;
+    cursor:pointer;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    margin-top:26px;
+    margin-left:170px;
+    color:white;
+    background-color:#FF735C;
+    border-color:#FF735C;
+}
+.hotelnamevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-7px;
+    margin-left:190px;
+    margin-bottom:3px;
+}
+.hotelrattingvalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-4px;
+    margin-left:170px;
+}
+.hotelcityvalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:1px;
+    margin-left:120px;
+}
+.hotelservicevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-3px;
+    margin-left:150px;
+}
+.hotelpricevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-3px;
+    margin-left:150px;
+}
+.hotelimagevalidation{
+    color:red;
+    font-weight:bold;
+    margin-top:-10px;
+    margin-left:175px;
+}
+.hotelupdatebtn{
+    margin-right:8px;
+    background-color:#00B200;
+    color:white;
+    border-color:#00B200;
+    border-radius:2px;
+    cursor: pointer;
+}
+.hoteldeletebtn{
+    margin-right:8px;
+    background-color:red;
+    color:white;
+    border-color:red;
+    border-radius:2px;
+    cursor: pointer;
+}
 
