@@ -6,24 +6,21 @@ import Logo from "../../Images/logo.png"
 
 export const AdminHotel = () => {
   const navigate = useNavigate();
-
   const [hotelNameToUpdate, setHotelNameToUpdate] = useState('');
 
   const handleAddHotel = () => {
     navigate('/addhotel');
   }
-
   const handleUpdateBtn = (hotelName) => {
     setHotelNameToUpdate(hotelName);
     navigate('/updatehotel');
   }
   const handledelete = () =>{
-    const isConfirmed = window.confirm('Are you sure you want to delete this Package?');
+    const isConfirmed = window.confirm('Are you sure you want to delete this Hotel?');
     if (isConfirmed) {
       console.log("Delete Succssefully");
     }
   }
-
   return (
     <div>
         <button className='addhotelbtn' onClick={handleAddHotel}>Add Hotel</button>
@@ -52,7 +49,6 @@ export const AdminHotel = () => {
                 <button className='hoteldeletebtn' onClick={handledelete}><MdDeleteOutline  style={{width:'25px',height:'22px',textAlign:'center'}}/></button>
               </td>
             </tr>
-            
       </tbody>
     </table>
     </div>

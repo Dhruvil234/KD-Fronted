@@ -89,8 +89,8 @@ li a.login.active {
     margin-top: 30px;
       
 }
-.text{
-    margin-left:475px;
+.errorpagetext{
+    margin-left:468px;
     margin-bottom: 300px; 
 }
 /* line no 78 to 132 Login Page css */
@@ -1131,6 +1131,8 @@ p{
     border-top:none;
     border-bottom:none;
     margin-bottom:4px;
+    /* position: sticky;
+    top: 0; */
 }
 .adminflight{
     width:50px;
@@ -1141,7 +1143,7 @@ p{
     border-right:none;
     background-color:transparent;
     font-size:20px;
-    margin-left:65px;
+    margin-left:66px;
     margin-bottom:7px;
     cursor:pointer;
 }
@@ -1190,7 +1192,7 @@ p{
     border-right:none;
     background-color:transparent;
     font-size:20px;
-    margin-left:65px;
+    margin-left:66px;
     cursor:pointer;
 }
 .admincontact:hover{
@@ -2010,7 +2012,6 @@ p{
     margin-top: 20px;
     margin-bottom: 40px;
     margin-left: 80px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .hotel-table th,
 .hotel-table td {
@@ -2018,7 +2019,6 @@ p{
     color: black;
     font-weight: bold;
     padding: 8px;
-    border:1px solid #ddd;
 }
 .hotel-table th {
     background-color: #FF735C;
@@ -2051,7 +2051,7 @@ p{
 .hotelimagediv{
     width:500px;
     height:70px;
-    margin-top:25px;
+    margin-top:40px;
 }
 .inputypefilehotel{
     width:230px;
@@ -2073,7 +2073,7 @@ p{
     width:500px;
     height:50px;
     display:flex;
-    margin-top:15px;
+    margin-top:17px;
 }
 .hotelnamelabel{
     margin-top:7px;
@@ -2117,7 +2117,7 @@ p{
     width:500px;
     height:45px;
     display:flex;
-    margin-top:15px;
+    margin-top:17px;
 }
 .hotelcitylabel{
     margin-top:10px;
@@ -2137,7 +2137,7 @@ p{
     width:500px;
     height:45px;
     display:flex;
-    margin-top:20px;
+    margin-top:17px;
 }
 .hotelservicelabel{
     margin-top:7px;
@@ -2159,7 +2159,7 @@ p{
     width:500px;
     height:45px;
     display:flex;
-    margin-top:20px;
+    margin-top:17px;
 }
 .hotelpricelabel{
     margin-top:7px;
@@ -2193,14 +2193,14 @@ p{
 .hotelnamevalidation{
     color:red;
     font-weight:bold;
-    margin-top:-7px;
+    margin-top:-10px;
     margin-left:190px;
     margin-bottom:3px;
 }
 .hotelrattingvalidation{
     color:red;
     font-weight:bold;
-    margin-top:-4px;
+    margin-top:-15px;
     margin-left:170px;
 }
 .hotelcityvalidation{
@@ -2255,4 +2255,40 @@ p{
 .updatehoteltag{
     margin-left:125px;
     margin-top:20px;
+}
+/* Booked Hotel Table CSS */
+.bookedhoteltag{
+    margin-left:400px;
+    margin-bottom:30px;
+    width: 100%;
+}
+.bookedhotel-table{
+    width: 150%;
+    border-collapse: collapse;
+    margin-left:60px;
+    font-family: 'Inter', sans-serif;
+    margin-left:80px;
+    margin-bottom:40px;
+}
+.bookedhotel-table th,
+.bookedhotel-table td {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+}
+.bookedhotel-table th {
+    background-color: #FF735C;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.bookedhotel-table thead {
+    background-color: #FF735C;
+    color: white;
+}
+.bookedhotel-table tbody tr {
+    margin-top:50px;
+    box-shadow: 0 4px 8px 0 rgba(255, 115, 92, 0.5);
+    margin-bottom: 50px; 
 }

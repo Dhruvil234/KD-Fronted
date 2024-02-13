@@ -57,7 +57,6 @@ export const UpdateHotel = () => {
             toast.success('Hotel updated successfully!');
         }
     });
-
     return (
         <div className='updatehoteldiv'>
             <h2 className='updatehoteltag'>Update Hotel Details</h2>
