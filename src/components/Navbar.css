@@ -2005,30 +2005,35 @@ p{
     border-color:#FF735C;
 }
 .hotel-table {
-    width: 120%;
+    width: 150%;
     border-collapse: collapse;
-    margin-left: 60px;
-    font-family: 'Inter', sans-serif;
     margin-top: 20px;
-    margin-left: 80px;
     margin-bottom: 40px;
+    margin-left: 80px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.hotel-table th, .hotel-table td {
-    padding: 12px;
+.hotel-table th,
+.hotel-table td {
     text-align: center;
     color: black;
     font-weight: bold;
+    padding: 8px;
+    border:1px solid #ddd;
 }
 .hotel-table th {
     background-color: #FF735C;
     color: white;
+    padding: 10px;
+    text-align: center;
+}
+.hotel-table thead {
+    background-color: #FF735C;
+    color: white;
 }
 .hotel-table tbody tr {
-    border:2px solid #f2f2f2;
-}
-.hotel-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2; 
+    margin-top:50px;
+    box-shadow: 0 4px 8px 0 rgba(255, 115, 92, 0.5);
+    margin-bottom: 50px; 
 }
 .addhoteldiv{
     width:500px;
@@ -2224,9 +2229,9 @@ p{
 }
 .hotelupdatebtn{
     margin-right:8px;
-    background-color:#00B200;
+    background-color:blue;
     color:white;
-    border-color:#00B200;
+    border-color:blue;
     border-radius:2px;
     cursor: pointer;
 }
