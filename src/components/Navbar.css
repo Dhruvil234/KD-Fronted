@@ -1992,14 +1992,14 @@ p{
 }
 /* Hotel Table CSS */ 
 .addhotelbtn{
-    width:165px;
-    height:27px;
+    width:175px;
+    height:37px;
     cursor:pointer;
     border-radius:20px;
-    font-size:16px;
+    font-size:20px;
     font-weight:bold;
     margin-top:26px;
-    margin-left:870px;
+    margin-left:1090px;
     color:white;
     background-color:#FF735C;
     border-color:#FF735C;
@@ -2051,7 +2051,8 @@ p{
 .hotelimagediv{
     width:500px;
     height:70px;
-    margin-top:25px;
+    margin-top:35px;
+    display: flex;
 }
 .inputypefilehotel{
     width:230px;
@@ -2073,7 +2074,7 @@ p{
     width:500px;
     height:50px;
     display:flex;
-    margin-top:15px;
+    margin-top:35px;
 }
 .hotelnamelabel{
     margin-top:7px;
