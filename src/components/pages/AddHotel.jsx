@@ -4,6 +4,9 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup'; 
 import { toast } from 'react-toastify';
 
+const API = import.meta.env.VITE_BACKENDAPI;
+const addhotelapi = `${API}/api/addhoteldetails`;
+
 export const AddHotel = () => {
   const [fileInfo, setFileInfo] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null); 
@@ -51,12 +54,32 @@ export const AddHotel = () => {
       service: Yup.string().trim().required('Service is required'),
       price: Yup.number().required('Price is required'),
     }),
-    onSubmit: (values) => {
-      console.log("Hotel Name:", values.holidayName);
-      formik.resetForm();
-      toast.success('Hotel added successfully!');
-    }
+    onSubmit: async (values, { resetForm }) => {
+      const formData = new FormData();
+      formData.append('hotelImage', fileInfo);
+      formData.append('hotelName', values.holidayName);
+      formData.append('rating', values.rating);
+      formData.append('city', values.city);
+      formData.append('service', values.service);
+      formData.append('price', values.price);
     
+      try {
+        const response = await fetch(addhotelapi, {
+          method: 'POST',
+          body: formData,
+        });
+    
+        if (!response.ok) {
+          throw new Error('Failed to add hotel');
+        }
+    
+        toast.success('Hotel added successfully!');
+        resetForm();
+      } catch (error) {
+        console.error('Error adding hotel:', error);
+        alert('Failed to add hotel');
+      }
+    },      
   });
    
   return (
@@ -149,7 +172,7 @@ export const AddHotel = () => {
         {formik.touched.price && formik.errors.price ? (
             <div className='hotelpricevalidation'>{formik.errors.price}</div>
           ) : null}
-        <button type='submit' className='addhotel-button'>Add Hotel</button>
+        <button type='submit' className='addhotel-button' >Add Hotel</button>
       </form>
     </div>
   )
