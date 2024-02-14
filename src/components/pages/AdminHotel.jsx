@@ -5,6 +5,7 @@ import { MdDeleteOutline } from "react-icons/md";
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const admingetallhotelapi = `${API}/api/gethoteldetails`;
+const deletehotel = `${API}/api/deletehotel`;
 
 export const AdminHotel = () => {
   const navigate = useNavigate();
@@ -32,7 +33,6 @@ export const AdminHotel = () => {
   };
 
   const handleUpdateBtn = (hotel) => {
-    console.log(hotel.hotelImage);
     navigate('/updatehotel', { state: { hotel } });
   };
 
@@ -40,12 +40,11 @@ export const AdminHotel = () => {
     const isConfirmed = window.confirm('Are you sure you want to delete this Hotel?');
     if (isConfirmed) {
       try {
-        const response = await fetch(`${API}/api/deletehotel/${hotelId}`, {
+        const response = await fetch(`${deletehotel}/${hotelId}`, {
           method: 'DELETE',
         });
         const data = await response.json();
         if (response.ok) {
-          // Update the hotels state to reflect the deletion
           setHotels(hotels.filter(hotel => hotel._id !== hotelId));
           console.log('Hotel deleted successfully');
         } else {
