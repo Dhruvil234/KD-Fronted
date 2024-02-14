@@ -409,7 +409,7 @@ p{
     height:580px;
     border:2px solid white;
     border-radius:20px;
-    margin-left:480px;
+    margin-left:570px;
     margin-top:27px;
     margin-bottom:400px;
 }
@@ -423,13 +423,14 @@ p{
 .paynowbtn{
     margin-top:30px;
     margin-left:125px;
-    width:170px;
+    width:175px;
     height:30px; 
     font-size:15px;
     border-radius:20px;
     cursor:pointer;
     background-color: blue;  
     color:white;
+    font-weight: bolder;
     border-color:blue;
 }
 /* line no 434 to 635 Home Page css */
@@ -787,7 +788,7 @@ p{
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
-    margin-left:440px;
+    margin-left:520px;
     margin-bottom:300px;
 }
 .holidaybookingtag{
@@ -812,15 +813,17 @@ p{
     
 }
 .holidaybookbtn{
-    width:130px;
-    height:25px;
+    width:175px;
+    height:30px;
+    font-size: 15px;
     cursor:pointer;
     border-radius:20px;
     border-color:blue;
     color:white;
     background-color:blue;
-    margin-top:30px;
-    margin-left:180px;
+    margin-top:50px;
+    margin-left:170px;
+    font-weight: bolder;
 }
 /* line no 801 to 1032 Hotel Page css */
 .randomhotel{
@@ -1078,7 +1081,7 @@ p{
     border:2px solid white;
     border-radius:20px;
     margin-top:40px;
-    margin-left:430px;
+    margin-left:490px;
     margin-bottom:300px;
 
 }
@@ -1103,15 +1106,16 @@ p{
     margin-left:120px;
 }
 .hotelpreviewbtn{
-    width:130px;
-    height:25px;
+    width:175px;
+    height:30px;
     cursor:pointer;
+    font-size: 15px;
     border-radius:20px;
     border-color:#FF735C;
     color:white;
     background-color:#FF735C;
     margin-top:30px;
-    margin-left:180px;
+    margin-left:210px;
 }
 /* Admin Page css */
 .adminpage{
