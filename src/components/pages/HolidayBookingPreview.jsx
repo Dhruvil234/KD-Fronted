@@ -136,7 +136,7 @@ export const HolidayBookingPreview = () => {
         onClick={handlebookholiday}
         className="holidaybookbtn"
       >
-        Book Now
+         Proceed to Payment
       </button>
     </div>
   );

@@ -160,7 +160,7 @@ export const Hotelpreview = () => {
         onClick={handleHotelBooking}
         className="hotelpreviewbtn"
       >
-        Book Now
+        Proceed to Payment
       </button>
     </div>
   );
