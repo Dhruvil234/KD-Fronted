@@ -180,7 +180,8 @@ export const UpdateHotel = () => {
             className="inputtypeforpricehotel"
             {...formik.getFieldProps("price")}
           />
-    });
+          </div>
+    );
     return (
         <div className='updatehoteldiv'>
             <h2 className='updatehoteltag'>Update Hotel Details</h2>

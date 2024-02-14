@@ -37,7 +37,7 @@ export const AdminHotel = () => {
   };
 
   const handleDelete = async(hotelId) => {
-=======
+
   const [hotelNameToUpdate, setHotelNameToUpdate] = useState('');
 
   const handleAddHotel = () => {
@@ -47,7 +47,7 @@ export const AdminHotel = () => {
     setHotelNameToUpdate(hotelName);
     navigate('/updatehotel');
   }
-  const handledelete = () =>{
+  const handledelete = async () =>{
 
     const isConfirmed = window.confirm('Are you sure you want to delete this Hotel?');
     if (isConfirmed) {
@@ -101,8 +101,8 @@ export const AdminHotel = () => {
           ))}
         </tbody>
       </table>
-      </tbody>
-    </table>
+      
+  
     </div>
   );
 };

@@ -9,14 +9,19 @@ export const AdminBookedHotelData = () => {
         <table className='bookedhotel-table'>
         <thead>
           <tr>
-            <th>HotelName</th>
-            <th>Rating</th>
-            <th>City</th>
-            <th>Seller</th>
-            <th>Services</th>
             <th>Name</th>
             <th>Email</th>
+            <th>HotelName</th>
+            <th>City</th>
+            <th>CheckInDate</th>
+            <th>CheckOutDate</th>
+            <th>Seller</th>
+            <th>Rating</th>
+            <th>Services</th>
             <th>Price</th>
+            <th>Adult</th>
+            <th>Children</th>
+            <th>hotelroom</th>
           </tr>
         </thead>
       </table>
