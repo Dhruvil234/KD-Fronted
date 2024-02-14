@@ -37,6 +37,18 @@ export const AdminHotel = () => {
   };
 
   const handleDelete = async(hotelId) => {
+=======
+  const [hotelNameToUpdate, setHotelNameToUpdate] = useState('');
+
+  const handleAddHotel = () => {
+    navigate('/addhotel');
+  }
+  const handleUpdateBtn = (hotelName) => {
+    setHotelNameToUpdate(hotelName);
+    navigate('/updatehotel');
+  }
+  const handledelete = () =>{
+
     const isConfirmed = window.confirm('Are you sure you want to delete this Hotel?');
     if (isConfirmed) {
       try {
@@ -55,7 +67,7 @@ export const AdminHotel = () => {
       }
     }
   };
-
+  }
   return (
     <div>
       <button className='addhotelbtn' onClick={handleAddHotel}>Add Hotel</button>
@@ -88,6 +100,8 @@ export const AdminHotel = () => {
           ))}
         </tbody>
       </table>
+      </tbody>
+    </table>
     </div>
   );
 };
