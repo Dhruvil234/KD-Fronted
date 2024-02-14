@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 
 const API = import.meta.env.VITE_BACKENDAPI;
-
+let passcity = "";
 export const UpdateHotel = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -51,6 +51,8 @@ export const UpdateHotel = () => {
         service: "",
         price: "",
       };
+
+  
 
   const formik = useFormik({
     initialValues: initialValues,
@@ -152,7 +154,8 @@ export const UpdateHotel = () => {
             className="hotelcityinput"
             placeholder="Select City"
             options={cities}
-            {...formik.getFieldProps("city")}
+            // value={{...formik.getFieldProps("city").value}}
+            {...formik.getFieldProps("city").name}
           />
         </div>
         {formik.touched.city && formik.errors.city ? (
