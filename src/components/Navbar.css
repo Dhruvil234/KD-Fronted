@@ -65,13 +65,8 @@ li a.login {
     margin-top: -70px;
 }
 .logout:hover{
-    border: 2px solid blue; 
-    padding: 10px 25px; 
-    border-radius: 25px; 
-    color:blue;
-    background-color: white;
-    font-size: 18px;
-    margin-top: -70px;
+    color: white;
+    background-color: #0000FF;
     cursor: pointer;
 }
 li a.login:hover {
@@ -1269,17 +1264,17 @@ p{
 }
 /* FLight table css */ 
 .addflightbtn{
-    width:140px;
-    height:25px;
+    width:180px;
+    height:30px;
     color:#0A92C6;
     background-color:white;
     border-color:#0A92C6;
     border-radius:15px;
-    font-size:16px;
+    font-size:18px;
     font-weight:bold;
     cursor:pointer;
     margin-top:30px;
-    margin-left:710px;
+    margin-left:870px;
     margin-bottom:17px;
 }
 .addflightbtn:hover{
@@ -1291,16 +1286,37 @@ p{
     margin-left: 10px; 
 }
 .flight-table {
-    width: 700px;
+    width: 100%;
     border-collapse: collapse;
-    margin-left:150px;
+    margin-left:250px;
     margin-bottom: 70px;
 }
+
 .flight-table th, .flight-table td {
     padding: 10px;
     text-align: center;
+    font-weight: bolder;
 }
 .flight-table th {
+    background-color: #0A92C6;
+    color:white;
+}
+.bookflight-table {
+    width: 130%;
+    border-collapse: collapse;
+    margin-left:120px;
+    margin-bottom: 70px;
+}
+.bokkflighttag{
+    margin-left: 400px;
+    width: auto;
+}
+.bookflight-table th, .bookflight-table td {
+    padding: 10px;
+    text-align: center;
+    font-weight: bolder;
+}
+.bookflight-table th {
     background-color: #0A92C6;
     color:white;
 }
@@ -1535,10 +1551,11 @@ p{
 }
 /* Contact page css */
 .contact-table {
-    width: 100%;
+    width: 120%;
+    height: auto;
     border-collapse: collapse;
     margin-top: 30px;
-    margin-left:140px;
+    margin-left:160px;
     margin-bottom: 70px;
     font-family: 'Inter', sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1598,11 +1615,11 @@ p{
     background-color: #cccccc;
 }
 .addpackagebtn{
-    width:170px;
-    height:32px;
+    width:180px;
+    height:35px;
     margin-top:30px;
-    margin-left:1050px;
-    font-size:15.5px;
+    margin-left:1040px;
+    font-size:17.5px;
     font-weight:bold;
     border-radius:20px;
     color:#00B200;
@@ -1812,7 +1829,7 @@ p{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
 .bookedpackagetag{
-    margin-left:400px;
+    margin-left:490px;
     margin-bottom:30px;
     width: 100%;
 }
@@ -1993,6 +2010,11 @@ p{
     margin-top:20px;
 }
 /* Hotel Table CSS */ 
+.adminbookhotel{
+    width: 100%;
+    height: auto;
+}
+
 .addhotelbtn{
     width:175px;
     height:37px;
@@ -2001,10 +2023,15 @@ p{
     font-size:20px;
     font-weight:bold;
     margin-top:26px;
-    margin-left:1090px;
+    margin-left:1100px;
+    color:#FF735C;
+    background-color:transparent;
+    border-color:#FF735C;
+}
+.addhotelbtn:hover{
     color:white;
     background-color:#FF735C;
-    border-color:#FF735C;
+    border-color:whitesmoke;
 }
 .hotel-table {
     width: 150%;
@@ -2256,16 +2283,15 @@ p{
 }
 /* Booked Hotel Table CSS */
 .bookedhoteltag{
-    margin-left:400px;
+    margin-left:500px;
     margin-bottom:30px;
     width: 100%;
 }
 .bookedhotel-table{
-    width: 150%;
+    width: 100%;
     border-collapse: collapse;
-    margin-left:60px;
     font-family: 'Inter', sans-serif;
-    margin-left:80px;
+    margin-left:20px;
     margin-bottom:40px;
 }
 .bookedhotel-table th,
