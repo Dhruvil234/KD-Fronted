@@ -27,8 +27,8 @@ function AdminBookedFlightData() {
 
   return (
     <div>
-      <h1 style={{marginLeft:"360px"}}>Booked Flight Data <MdFlightTakeoff style={{marginBottom:'-5px',marginLeft:'10px',width:'48px'}}/></h1>
-      <table className="flight-table">
+      <h1 className='bokkflighttag'>Booked Flight Data <MdFlightTakeoff style={{marginTop:'8px',height:'35px'}}/></h1>
+      <table className="bookflight-table">
         <thead>
           <tr>
             <th>From</th>
