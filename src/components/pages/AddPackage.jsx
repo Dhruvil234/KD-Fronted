@@ -3,6 +3,7 @@ import Select from 'react-select';
 import { useFormik } from 'formik'; 
 import * as Yup from 'yup'; 
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const addpackage = `${API}/api/addpackagedetails`;
@@ -48,7 +49,6 @@ export const AddPackage = () => {
       formData.append('city', values.city);
       formData.append('service', values.service);
       formData.append('price', values.price);
-      console.log(formData)
 
       try {
         const response = await fetch(addpackage, {
@@ -61,10 +61,10 @@ export const AddPackage = () => {
         }
 
         toast.success('Package added successfully!');
+        Navigate("/adminpage");
         resetForm();
       } catch (error) {
         console.error('Error adding package:', error);
-        alert('Failed to add package');
       }
       toast.success('Package added successfully!');
       resetForm();
