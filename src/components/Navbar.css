@@ -566,6 +566,7 @@ p{
     margin-bottom:3px;
 }
 .hotelinfotag3{
+    width:100%;
     font-size:33px;
     margin-top:5px;
     font-weight:bold;
@@ -605,6 +606,7 @@ p{
     height:420px;
 }
 .holidayinfo{
+    width:100%;
     margin-top:50px;
     margin-left:180px;
 }
