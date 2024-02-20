@@ -1559,11 +1559,8 @@ p{
     height: auto;
     border-collapse: collapse;
     margin-top: 30px;
-<<<<<<< HEAD
     margin-left:200px;
-=======
     margin-left:160px;
->>>>>>> 1f05135e504faa775074e55d0bc99adb964f51be
     margin-bottom: 70px;
     font-family: 'Inter', sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -2086,6 +2083,7 @@ p{
 .hotelimagediv{
     width:500px;
     height:70px;
+    margin-bottom: 70px
 }
 .inputypefilehotel{
     width:230px;

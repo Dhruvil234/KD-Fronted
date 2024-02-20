@@ -104,8 +104,8 @@ export const UpdateHotel = () => {
           <img src={formik.values.hotelImage} alt="Hotel" style={{
               width: "90px",
               height: "90px",
-              marginBottom: "10px",
-              marginTop:"-25px",
+              marginBottom: "-10px",
+              marginTop:"10px",
               marginLeft: "30px",
               border:"1px solid #FF735C",
               borderRadius:"5px"
@@ -184,107 +184,11 @@ export const UpdateHotel = () => {
             {...formik.getFieldProps("price")}
           />
           </div>
-    );
-    return (
-        <div className='updatehoteldiv'>
-            <h2 className='updatehoteltag'>Update Hotel Details</h2>
-            <form onSubmit={formik.handleSubmit}>
-                <div className='hotelimagediv'>
-                    <label className='hotelimagelabel'>Holiday Image:</label>
-                    <input
-                        type="file"
-                        className='inputypefilehotel'
-                        accept=".jpeg, .jpg, .png"
-                        onChange={handleFileChange}
-                    />
-                </div>
-                {formik.touched.hotelImage && formik.errors.hotelImage ? (
-                    <div className='hotelimagevalidation'>{formik.errors.hotelImage}</div>    
-                ) : (
-                    <div className='hotelimagevalidation'>{validateFileFormat(fileInfo)}</div>
-                )}
-                <div className='hotelnamediv'>
-                    <label className='hotelnamelabel'>Hotel Name:</label>
-                    <input
-                        type="text"
-                        className='inputtypetexthotel'
-                        placeholder="Enter Hotel Name"
-                        maxLength={25}
-                        {...formik.getFieldProps("hotelName")}
-                    />
-                </div>
-                {formik.touched.hotelName && formik.errors.hotelName ? (
-                    <div className='hotelnamevalidation'>{formik.errors.hotelName}</div>
-                ) : null}
-                <div className='hotelrattingdiv'>
-                    <label className='hotelrattinglabel'>Rating :</label>
-                    <input
-                        type="number"
-                        step="0.1"
-                        min="0"
-                        max="5"
-                        className='inputtyperatting'
-                        placeholder="Enter Rating (0.0 - 5.0)"
-                        {...formik.getFieldProps("rating")}
-                    />
-                </div>
-                {formik.touched.rating && formik.errors.rating ? (
-                    <div className='hotelrattingvalidation'>{formik.errors.rating}</div>
-                ) : null}
-                <div className='hotelcitydiv'>
-                    <label className='hotelcitylabel'>City :</label>
-                    <Select
-                        id='city'
-                        name='city'
-                        className='hotelcityinput'
-                        placeholder='Select City'
-                        options={cities}
-                        value={selectedCity}
-                        onChange={(selectedOption) => {
-                            formik.setFieldValue('city', selectedOption.value);
-                            setSelectedCity(selectedOption);
-                        }}
-                    />
-                </div>
-                {formik.touched.city && formik.errors.city ? (
-                    <div className='hotelcityvalidation'>{formik.errors.city}</div>
-                ) : null}
-                <div className='hotelservicediv'>
-                    <label className='hotelservicelabel'>Service :</label>
-                    <input
-                        type="text"
-                        className='inputtypeservicehotel'
-                        placeholder="Enter Service"
-                        maxLength={20}
-                        {...formik.getFieldProps("service")}
-                    />
-                </div>
-                {formik.touched.service && formik.errors.service ? (
-                    <div className='hotelservicevalidation'>{formik.errors.service}</div>
-                ) : null}
-                <div className="hotelpricediv">
-                    <label className="hotelpricelabel">Price :</label>
-                    <input
-                        type="number"
-                        placeholder="Enter Price"
-                        autoComplete="off"
-                        className="inputtypeforpricehotel"
-                        {...formik.getFieldProps("price")}
-                    />
-                </div>
-                {formik.touched.price && formik.errors.price ? (
+          {formik.touched.price && formik.errors.price ? (
                     <div className='hotelpricevalidation'>{formik.errors.price}</div>
                 ) : null}
                 <button type='submit' className='addhotel-button'>Update Hotel</button>
             </form>
         </div>
-        {formik.touched.price && formik.errors.price ? (
-          <div className="hotelpricevalidation">{formik.errors.price}</div>
-        ) : null}
-        <button type="submit" className="addhotel-button">
-          Update Hotel
-        </button>
-      </form>
-    </div>
-  );
+    );
 };

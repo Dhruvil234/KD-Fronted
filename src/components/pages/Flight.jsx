@@ -207,7 +207,7 @@ export const Flight = () => {
         <p>To: <br/>{flight.to}</p>
         <p>Departure Date: <br/>{departureDate.toDateString()}</p>
         <p>Class: <br/>{flight.flightClass}</p>
-        <p>Price: <br/>{flight.price}</p>
+        <p>Price: <br/>Rs.{flight.price}/-</p>
 
         {/* Book Now Button */}
         <button className='bookNowBtn' onClick={() => handleBookNowClick(flight)}>Book Now</button>
