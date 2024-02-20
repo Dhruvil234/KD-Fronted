@@ -70,7 +70,7 @@ export const AdminHotel = () => {
   }
   return (
     <div>
-      <button className='addhotelbtn' onClick={handleAddHotel}>Add Hotel</button>
+      <button className='addhotelbtn' onClick={handleAddHotel}>Add Hotel </button>
       <table className='hotel-table'>
         <thead>
           <tr>

@@ -11,6 +11,8 @@ import { AdminHotel } from "./AdminHotel";
 import { Adminholiday } from "./Adminholiday";
 import { AdminBookedHotelData } from "./AdminBookedHotelData";
 import { AdminBookedHolidayData } from "./AdminBookedHolidayData";
+import { IoIosContact } from "react-icons/io";
+import { MdOutlineFlight } from "react-icons/md";
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const getallflight = `${API}/api/getflights`;
@@ -204,6 +206,7 @@ export const AdminPage = () => {
                 </button>
             </li>
             <li>
+            <IoIosContact style={{width:'30px',height:'25px',marginBottom:'-5.3px',marginRight:'-60px',marginLeft:'53px',cursor:'pointer',}}/>
               <button
                 type="submit"
                 className={`admincontact ${
@@ -211,11 +214,11 @@ export const AdminPage = () => {
                 }`}
                 onClick={() => handleOptionClick("contact")}
               >
-                CRM
+                CRM 
               </button>
             </li>
             <li>
-              <button
+            <button
                 type="submit"
                 className={`adminflight ${
                   selectedOption === "flight" ? "selectedOption" : ""
@@ -224,6 +227,7 @@ export const AdminPage = () => {
               >
                 Flight
               </button>
+              <MdOutlineFlight style={{width:'30px',height:'25px',marginBottom:'-5.3px',marginLeft:'-1px',cursor:'pointer',}} />
             </li>
             <li>
               
