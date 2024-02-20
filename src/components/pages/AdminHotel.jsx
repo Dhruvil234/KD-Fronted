@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RiPencilLine } from "react-icons/ri";
 import { MdDeleteOutline } from "react-icons/md";
+import { toast } from 'react-toastify';
 
 const API = import.meta.env.VITE_BACKENDAPI;
 const admingetallhotelapi = `${API}/api/gethoteldetails`;
@@ -28,26 +29,17 @@ export const AdminHotel = () => {
     fetchHotels();
   }, []);
 
-  const handleAddHotel = () => {
-    navigate('/addhotel');
-  };
 
   const handleUpdateBtn = (hotel) => {
     navigate('/updatehotel', { state: { hotel } });
   };
 
-  const handleDelete = async(hotelId) => {
-
-  const [hotelNameToUpdate, setHotelNameToUpdate] = useState('');
 
   const handleAddHotel = () => {
     navigate('/addhotel');
   }
-  const handleUpdateBtn = (hotelName) => {
-    setHotelNameToUpdate(hotelName);
-    navigate('/updatehotel');
-  }
-  const handledelete = async () =>{
+
+  const handledelete = async (hotelId) =>{
 
     const isConfirmed = window.confirm('Are you sure you want to delete this Hotel?');
     if (isConfirmed) {
@@ -59,6 +51,7 @@ export const AdminHotel = () => {
         if (response.ok) {
           setHotels(hotels.filter(hotel => hotel._id !== hotelId));
           console.log('Hotel deleted successfully');
+          toast.success("Hotel deleted successfully");
         } else {
           console.error('Failed to delete hotel:', data.message);
         }
@@ -67,7 +60,6 @@ export const AdminHotel = () => {
       }
     }
   };
-  }
   return (
     <div>
       <button className='addhotelbtn' onClick={handleAddHotel}>Add Hotel </button>
@@ -94,7 +86,7 @@ export const AdminHotel = () => {
               <td>Rs.{hotel.price}/-</td>
               <td>
                 <button className='hotelupdatebtn' onClick={() => handleUpdateBtn(hotel)}><RiPencilLine style={{ width: '25px', height: '22px', textAlign: 'center' }} /></button>
-                <button className='hoteldeletebtn' onClick={() => handleDelete(hotel._id)}><MdDeleteOutline style={{ width: '25px', height: '22px', textAlign: 'center' }} /></button>
+                <button className='hoteldeletebtn' onClick={() => handledelete(hotel._id)}><MdDeleteOutline style={{ width: '25px', height: '22px', textAlign: 'center' }} /></button>
               </td>
             </tr>
           ))}

@@ -74,10 +74,10 @@ export const AddHotel = () => {
         }
     
         toast.success('Hotel added successfully!');
+        Navigate("/adminpage");
         resetForm();
       } catch (error) {
         console.error('Error adding hotel:', error);
-        alert('Failed to add hotel');
       }
     },      
   });

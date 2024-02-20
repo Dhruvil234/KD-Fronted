@@ -163,7 +163,7 @@ export const Packages = () => {
                 <p className='resultseller'>Service : {holidayPackage.service}</p>
               </div>
               <div className='resultinfo2'>
-                <p className='resultprice'>Price : {holidayPackage.price}<br/>*per person</p>
+                <p className='resultprice'>Price : Rs.{holidayPackage.price}/-<br/>*per person</p>
                 <button type='button' onClick={() => handlebookholiday(holidayPackage)}className='btnbookholiday'>
                   Book Now
                 </button>

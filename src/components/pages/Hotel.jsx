@@ -241,8 +241,8 @@ export const Hotel = () => {
                 <p className='hotelresultservice'>Service: {hotel.service}</p>
               </div>
               <div className='hotelresultinfo2'>
-                <p className='hotelresultprice'>Price: {hotel.price}/-</p>
-                <p className='hotelresultperperson'>For 1 Night</p>
+                <p className='hotelresultprice'>Price: Rs.{hotel.price}/-</p>
+                <p className='hotelresultperperson'>*For 1 Night</p>
                 <button type='submit' className='btnbookhotel' onClick={() => handlebookhotel(hotel)}>
                   Book Now
                 </button>
