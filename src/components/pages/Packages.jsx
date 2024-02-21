@@ -85,7 +85,7 @@ export const Packages = () => {
   
 
   const containerStyle = {
-    backgroundImage: 'url("https://i0.wp.com/madhuonthego.com/wp-content/uploads/2023/12/Alleppey.jpg?fit=5477%2C3651&ssl=1")',
+    backgroundImage:'url("https://i0.wp.com/madhuonthego.com/wp-content/uploads/2023/12/Alleppey.jpg?fit=5477%2C3651&ssl=1")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 1.5)',

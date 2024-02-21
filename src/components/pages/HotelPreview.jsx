@@ -7,8 +7,7 @@ const API = import.meta.env.VITE_BACKENDAPI;
 const sendHotelBookingApi = `${API}/api/bookhotel`;
 
 const containerStyle = {
-  backgroundImage:
-    'url("https://img.freepik.com/free-photo/blur-hotel-room_74190-5745.jpg?w=996&t=st=1706090244~exp=1706090844~hmac=1cc438fc8fa33990d67ccb3adad8ad0969c5f3150110444a78cc2047c566189d")',
+  backgroundImage:'url("https://img.freepik.com/free-photo/blur-hotel-room_74190-5745.jpg?w=996&t=st=1706090244~exp=1706090844~hmac=1cc438fc8fa33990d67ccb3adad8ad0969c5f3150110444a78cc2047c566189d")',
   backgroundSize: "cover",
   backgroundPosition: "center",
 };
