@@ -16,7 +16,7 @@ import { AdminPage } from './components/pages/AdminPage';
 import { FlightBookingPreview } from './components/pages/FlightBookingPreview'
 import AdminRouteGuard from './components/pages/AdminRouteGuard'
 import { HolidayBookingPreview } from './components/pages/HolidayBookingPreview'
-import  { Hotelpreview }  from './components/pages/hotelpreview'
+import { Hotelpreview } from './components/pages/hotelpreview'
 import  AdminFlight  from './components/pages/AddFlight'
 import  {Updateflight}  from './components/pages/Updateflight'
 import { AddPackage } from './components/pages/AddPackage'
