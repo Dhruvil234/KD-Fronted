@@ -218,7 +218,7 @@ function AdminDashboard() {
             Total Flight Book: {dashboardData.totalFlightBook}
           </p>
           <p className="dashflighttag3">
-            Total Flight Booking Profit: Rs.
+            Total Flight Booking Sales: Rs.
             <span className="flightprofit">
               {dashboardData.totalflightbookingprice}/-
             </span>
@@ -244,7 +244,7 @@ function AdminDashboard() {
             Hotel Info <FaMoneyBillTransfer style={{ marginLeft: "5px" }} />
           </h1>
           <p className="dashhoteltag2">
-            Total Hotel Booking Profit: Rs.
+            Total Hotel Booking Sales: Rs.
             {dashboardData.totalHotelbookingPrice}/-
           </p>
           <p className="dashhoteltag3">Total Hotel Book Per city</p>
@@ -264,7 +264,7 @@ function AdminDashboard() {
             Holiday Info <TbBeach />
           </h1>
           <p className="dashholidaytag2">
-            Total Holiday Package Booking Profit: Rs.
+            Total Holiday Package Booking Sales: Rs.
             {dashboardData.totalHolidayBookingPrice}/-
           </p>
           {Object.entries(dashboardData.totalBookedHolidaysPerCity)
