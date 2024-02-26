@@ -21,11 +21,11 @@ const Login = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting ,resetForm}) => {
-      console.log('Login Data:', values);
-      
-        
       if (values.email === import.meta.env.VITE_ADMIN_EMAIL && values.password === import.meta.env.VITE_ADMIN_PASSWORD) {
         localStorage.setItem('isAdmin','true');
+        localStorage.setItem('userFullName','Admin');
+        localStorage.setItem('userEmail','admin@123.gmail.com')
+        localStorage.setItem('token', 'admin@123adm@123');
         window.location.href = '/adminpage';
         return;
       }
