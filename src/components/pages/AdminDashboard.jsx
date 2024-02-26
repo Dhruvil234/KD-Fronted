@@ -224,7 +224,7 @@ function AdminDashboard() {
             </span>
           </p>
           <h2 className="dashflighttag4">
-            Total Booking Based on class
+            Total Booking Based on class:
             <p className="dashflighttag5">
               Economy: {dashboardData.totalEconomyBook}
             </p>
@@ -247,7 +247,7 @@ function AdminDashboard() {
             Total Hotel Booking Sales: Rs.
             {dashboardData.totalHotelbookingPrice}/-
           </p>
-          <p className="dashhoteltag3">Total Hotel Book Per city</p>
+          <p className="dashhoteltag3">Total Hotel Book Per city:</p>
           {Object.entries(dashboardData.totalBookedHotelsPerCity).map(
             ([city, count]) => (
               <p className="hotelcitytag" key={city}>
@@ -267,6 +267,7 @@ function AdminDashboard() {
             Total Holiday Package Booking Sales: Rs.
             {dashboardData.totalHolidayBookingPrice}/-
           </p>
+          <p style={{color:'#00B200'}}>Total Package Book Per city:</p>
           {Object.entries(dashboardData.totalBookedHolidaysPerCity)
             .filter(([city]) => city !== "undefined")
             .map(([city, count]) => (
