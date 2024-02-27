@@ -8,7 +8,6 @@ import { Navigate } from 'react-router-dom';
 const API = import.meta.env.VITE_BACKENDAPI;
 const addpackage = `${API}/api/addpackagedetails`;
 
-
 export const AddPackage = () => {
   const [fileInfo, setFileInfo] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null); 

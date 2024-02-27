@@ -20,7 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             theme="colored"
             bodyClassName="toastBody"
         />
-        
     </BrowserRouter>
   </React.StrictMode>
 )

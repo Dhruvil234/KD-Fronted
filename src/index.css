@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
- 
 }
 body {
   font-family: 'Inter', sans-serif;
@@ -10,9 +9,7 @@ body {
 .toastBody {
   font-family: "Inter" sans-serif;
   font-size: 0.8rem;
-  
 }
-
 ::-webkit-scrollbar {
   width: 7px; 
 }

@@ -51,7 +51,6 @@ function App() {
         <Route path='/updatepackage' element={<UpdatePackage/>}/>
         <Route path='/addhotel' element={<AddHotel/>}/>
         <Route path='/updatehotel' element={<UpdateHotel/>}/>
-      
       </Routes>
     <Footer/>
     

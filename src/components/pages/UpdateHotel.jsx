@@ -51,12 +51,9 @@ export const UpdateHotel = () => {
         service: "",
         price: "",
       };
-
-  
-
   const formik = useFormik({
-    initialValues: initialValues,
-    validationSchema: Yup.object({
+      initialValues: initialValues,
+      validationSchema: Yup.object({
       hotelName: Yup.string().trim().required("Hotel Name is required"),
       rating: Yup.number()
         .min(0, "Rating must be at least 0")

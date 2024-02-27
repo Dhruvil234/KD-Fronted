@@ -4,7 +4,6 @@ import { TbBeach } from "react-icons/tb";
 const API = import.meta.env.VITE_BACKENDAPI;
 const getallbookedpackage = `${API}/api/getallbookedpackage`;
 
-
 export const AdminBookedHolidayData = () => {
   const [bookedData, setBookedData] = useState([]);
 

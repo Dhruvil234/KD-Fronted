@@ -10,9 +10,7 @@ const changepasswordapi = `${API}/api/updatepassword`;
 const ChangePassword = () => {
   const location = useLocation();
   const userEmail = location.state?.userEmail || "";
-
-
-   const validationSchema = yup.object().shape({
+  const validationSchema = yup.object().shape({
     email: yup.string().email("Invalid email format").required("Email is required"),
     password: yup.string().min(6).required("Password is required"),
     confirmPassword: yup
