@@ -18,6 +18,8 @@ KD TRAVELS is a leading online travel agency committed to providing exceptional 
 
 - **24/7 Customer Support**: Have questions or need assistance? Our dedicated customer support team is available 24/7 to assist you every step of the way. From booking inquiries to travel emergencies, we're here to ensure your journey is smooth and stress-free.
 
+- **Formik and Yup Validation**: Our booking platform utilizes Formik and Yup validation for ensuring the accuracy and integrity of your input data. With Formik, we streamline the form handling process, while Yup allows us to define validation schemas with ease, ensuring that your information is validated accurately before submission. This ensures a smooth and error-free booking experience for our users.
+
 ## Local Setup and Run
 
 To set up KD TRAVELS locally and run the code on your machine, follow these steps:
