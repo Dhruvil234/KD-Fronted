@@ -247,7 +247,7 @@ export const Hotel = () => {
                   Book Now
                 </button>
               </div>
-            </div>
+            </div>  
           ))
         )}
         </div>
