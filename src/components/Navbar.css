@@ -61,8 +61,10 @@ li a.login {
     border-radius: 25px; 
     color: blue; 
     background-color: white;
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-top: -70px;
+    font-family: 'Inter', sans-serif;
+    font-weight:bold;
 }
 .logout:hover{
     color: white;
