@@ -24,7 +24,7 @@ To set up KD TRAVELS locally and run the code on your machine, follow these step
 
 1. **Clone the Repository**:
 
-git clone https://github.com/Dhruvil234/KD-Fronted
+git clone  https://github.com/Dhruvil234/KD-Fronted
 
 2. **Navigate to the Project Directory**:
 
@@ -48,11 +48,11 @@ Before running the application, make sure to create a `.env` file in the root di
 
 | Variable                | Description                                    |
 |-------------------------|------------------------------------------------|
-| `VITE_ADMIN_EMAIL`      | Your admin email for the application           |
-| `VITE_ADMIN_PASSWORD`   | Your admin password for the application        |
-| `VITE_BACKENDAPI`       | The URL of the backend API in your local setup |
-| `VITE_RAZORPAY_ID_KEY`  | Your Razorpay ID key                           |
-| `VITE_RAZORPAY_SECRET_KEY` | Your Razorpay secret key                     |
+|  VITE_ADMIN_EMAIL      | Your admin email for the application           |
+|  VITE_ADMIN_PASSWORD   | Your admin password for the application        |
+|  VITE_BACKENDAPI       | The URL of the backend API in your local setup |
+|  VITE_RAZORPAY_ID_KEY  | Your Razorpay ID key                           |
+|  VITE_RAZORPAY_SECRET_KEY | Your Razorpay secret key                     |
 
 
 Replace the placeholder values with your actual values. This table provides a clear overview of each environment variable and its purpose.
