@@ -113,7 +113,7 @@ export const Hotelpreview = () => {
       currency: "INR",
       name: "skynet",
       description: "Hotel Booking",
-      image: "https://iili.io/J19QQjI.png",
+      image: "https://iili.io/JMBpb94.png",
       handler: handlePaymentSuccess,
       prefill: {
         name: storedUserName,
