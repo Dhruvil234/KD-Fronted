@@ -94,7 +94,7 @@ export const FlightBookingPreview = () => {
       currency: 'INR',
       name: 'skynet',
       description: 'Flight Booking',
-      image: 'https://iili.io/J19QQjI.png', // skynet company logo
+      image: 'https://iili.io/JMBpb94.png', // skynet company logo
       handler: handlePaymentSuccess,
       prefill: {
         name: storedUserName,

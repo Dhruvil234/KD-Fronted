@@ -90,7 +90,7 @@ export const HolidayBookingPreview = () => {
       currency: "INR",
       name: "skynet",
       description: "Holiday Package Booking",
-      image: 'https://iili.io/J19QQjI.png',
+      image: 'https://iili.io/JMBpb94.png',
       handler: handlePaymentSuccess,
       prefill: {
         name: storedUserName,
